@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about A-D Kay Publications, a publishing house dedicated to amplifying African voices through diverse storytelling.">
+    <title>About Us - A-D Kay Publications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #F9F9F9;
+            overflow-x: hidden;
+        }
+
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .image-strip {
+        height: 300px;
+        overflow: hidden;
+        }
+
+        .image-strip img {
+        width: 100%;
+        height: auto;
+        display: block;
+        }
+
+        /* General Section Styles */
+        section {
+            position: relative;
+           
+        }
+
+        section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section .section-header {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        section .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: #4267b2;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        section .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, #4267b2, #D4C9BE);
+        }
+
+        section .section-header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Our Story Section - Click-to-View Timeline */
+        #our-story {
+            background: linear-gradient(135deg, #FFFFFF, #F5F5F5);
+        }
+
+        #our-story .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        #our-story .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #D4C9BE;
+            transform: translateX(-50%);
+        }
+
+        #our-story .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #our-story .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        #our-story .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        #our-story .timeline-item .timeline-content {
+            flex: 1;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 45%;
+        }
+
+        #our-story .timeline-item .timeline-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #4267b2;
+            margin-bottom: 10px;
+        }
+
+        #our-story .timeline-item .timeline-content .short-desc {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        #our-story .timeline-item .timeline-content .full-desc {
+            display: none;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        #our-story .timeline-item.expanded .full-desc {
+            display: block;
+        }
+
+        #our-story .timeline-item .timeline-image {
+            flex: 1;
+            width: 45%;
+            text-align: center;
+        }
+
+        #our-story .timeline-item .timeline-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        #our-story .timeline-item .timeline-marker {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #4267b2;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #our-story .timeline-item .toggle-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 1.2rem;
+            color: #4267b2;
+            transition: transform 0.3s ease;
+        }
+
+        #our-story .timeline-item.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            #our-story .timeline::before {
+                left: 30px;
+            }
+
+            #our-story .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #our-story .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            #our-story .timeline-item .timeline-content,
+            #our-story .timeline-item .timeline-image {
+                width: 100%;
+                margin-left: 50px;
+            }
+
+            #our-story .timeline-item .timeline-image {
+                margin-top: 20px;
+            }
+
+            #our-story .timeline-item .timeline-marker {
+                left: 30px;
+            }
+        }
+
+        /* Mission Section */
+        #mission {
+            background: #FFFFFF;
+        }
+
+        #mission .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        #mission .content .mission-card {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(145deg, #F5F5F5, #FFFFFF);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        #mission .content .mission-card:hover {
+            transform: translateY(-10px);
+        }
+
+        #mission .content .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #4267b2, #D4C9BE);
+        }
+
+        #mission .content .mission-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #4267b2;
+            margin-bottom: 15px;
+        }
+
+        #mission .content .mission-card p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            #mission .content .mission-card {
+                min-width: 100%;
+            }
+        }
+
+        /* Team Section - Management */
+        #team {
+            background: linear-gradient(135deg, #F5F5F5, #FFFFFF);
+        }
+
+        #team .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        #team .team-member {
+            background: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        #team .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        #team .team-member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #D4C9BE;
+        }
+
+        #team .team-member h3 {
+            font-family : 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #030303;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        #team .team-member p.role {
+            font-size: 0.9rem;
+            color: #4267b2;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        #team .team-member p {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            #team .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Impact Section - Interactive Hover Effects */
+        #impact {
+            background: #FFFFFF;
+        }
+
+        #impact .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #impact .stat {
+            background: #F5F5F5;
+            padding: 30px;
+            border-radius: 10px 10px 30px 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #impact .stat:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        #impact .stat i {
+            font-size: 2.5rem;
+            color: #4267b2;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        #impact .stat:hover i {
+            transform: rotate(360deg);
+        }
+
+        #impact .stat h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: #030303;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        #impact .stat p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            #impact .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Future Plans Section - Expandable Cards */
+        #future-plans {
+            background: linear-gradient(135deg, #FFFFFF, #F5F5F5);
+        }
+
+        #future-plans .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        #future-plans .plan {
+            background: #FFFFFF;
+            border-radius: 0 20px 20px 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: height 0.3s ease;
+        }
+
+        #future-plans .plan i {
+            font-size: 2.5rem;
+            color: #4267b2;
+            margin-bottom: 20px;
+        }
+
+        #future-plans .plan h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #030303;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        #future-plans .plan .short-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #future-plans .plan .full-desc {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        #future-plans .plan.expanded .full-desc {
+            display: block;
+        }
+
+        #future-plans .plan .toggle-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 1.2rem;
+            color: #4267b2;
+            transition: transform 0.3s ease;
+        }
+
+        #future-plans .plan.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            #future-plans .plans-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Call to Action Section */
+        #cta {
+            background: linear-gradient(135deg, #4267b2, #35508a);
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta .container {
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+        }
+
+        #cta::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+            border-radius: 50%;
+        }
+
+        #cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #cta p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #cta .btn {
+            display: inline-block;
+            padding: 12px 40px;
+            background: linear-gradient(135deg, #D4C9BE, #FFFFFF);
+            color: #4267b2;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        #cta .btn:hover {
+            background: linear-gradient(135deg, #FFFFFF, #D4C9BE);
+            color: #030303;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#authors">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="image-strip">
+            <img src="assets/images/background/about_section_background_top.jpg" alt="Banner Image" />
+          </section>
+
+        <!-- Our Story Section - Click-to-View Timeline -->
+        <section id="our-story" aria-labelledby="story-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="story-heading">Our Story</h2>
+                    <p>From a vision to amplify African voices to a thriving publishing house, here’s how we began.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2020: The Beginning</h3>
+                            <div class="short-desc">
+                                <p>A-D Kay Publications was founded by Kojo Ampem Daako.</p>
+                            </div>
+                            <div class="full-desc">
+                                <p>A-D Kay Publications was founded by Kojo Ampem Daako with a mission to amplify African voices through diverse genres like politics, tradition, and culture. His vision was to create a platform where African stories could reach a global audience.</p>
+                            </div>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="assets/images/about_us/kojo_ampem_darko.jpg" alt="Kojo Ampem Daako founding A-D Kay Publications">
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2021: First Book Release</h3>
+                            <div class="short-desc">
+                                <p>We published our first book, marking a significant milestone.</p>
+                            </div>
+                            <div class="full-desc">
+                                <p>In 2021, A-D Kay Publications released its first book, a collection of essays on African politics by Kojo Ampem Daako. This debut set the tone for our commitment to thought-provoking literature.</p>
+                            </div>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="assets/images/BOOKS/killed_by_illiteracy_book_spotlight.webp" alt="First book release by A-D Kay Publications">
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2022: Key Partnerships</h3>
+                            <div class="short-desc">
+                                <p>We partnered with global platforms to expand our reach.</p>
+                            </div>
+                            <div class="full-desc">
+                                <p>In 2022, we formed partnerships with platforms like Amazon, Kobo, and Apple Books, making our titles accessible to readers worldwide and significantly boosting our visibility.</p>
+                            </div>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="assets/images/about-us/partnerships.webp" alt="A-D Kay Publications forming partnerships">
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2023: Transition & Growth</h3>
+                            <div class="short-desc">
+                                <p>After Kojo’s passing, Nana Kwesi Safo took over as CEO.</p>
+                            </div>
+                            <div class="full-desc">
+                                <p>After Kojo’s passing in 2023, his son Nana Kwesi Safo took over as CEO, continuing to nurture talent and expand our global reach while honoring his father’s legacy.</p>
+                            </div>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="assets/images/about-us/transition.webp" alt="Nana Kwesi Safo leading A-D Kay Publications">
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2025: Today</h3>
+                            <div class="short-desc">
+                                <p>Five years strong, redefining local literature.</p>
+                            </div>
+                            <div class="full-desc">
+                                <p>Now 5 years strong, we’re redefining local literature with 10+ titles, 1,600+ readers, and a commitment to global impact through diverse storytelling.</p>
+                            </div>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="assets/images/about_us/child_reading_book.jpg" alt="A-D Kay Publications today">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" aria-labelledby="mission-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="mission-heading">Our Mission & Vision</h2>
+                    <p>We’re here to preserve heritage, spark meaningful discourse, and create a lasting impact.</p>
+                </div>
+                <div class="content">
+                    <div class="mission-card">
+                        <h3>Our Mission</h3>
+                        <p>At A-D Kay Publications, our mission is to amplify African voices by publishing stories that resonate with youth, Africans, educators, and businesses worldwide. We believe in the transformative power of storytelling—whether it’s through fiction, non-fiction, educational books, or romantic poems—to preserve heritage, address social issues, and foster global connections.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Our Vision</h3>
+                        <p>Our vision is to redefine local literature by embracing diverse genres and innovative publishing practices, ensuring that African narratives not only endure but also inspire the next generation of readers and thinkers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section - Management -->
+        <section id="team" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="team-heading">Our Management Team</h2>
+                    <p>Meet the leadership team driving our mission forward.</p>
+                </div>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <img src="assets/images/management/nana-kwesi-safo.webp" alt="Nana Kwesi Safo">
+                        <h3>Nana Kwesi Safo</h3>
+                        <p class="role">CEO</p>
+                        <p>As the son of our founder Kojo Ampem Daako, Nana Kwesi Safo carries forward his father’s legacy as CEO, steering A-D Kay Publications toward greater heights with a focus on global impact and nurturing new talent.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <img src="assets/images/management/placeholder1.webp" alt="[Management Member 1]">
+                        <h3>[Management Member 1]</h3>
+                        <p class="role">[Role]</p>
+                        <p>[Brief description of the management member’s role and contributions.]</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <img src="assets/images/management/placeholder2.webp" alt="[Management Member 2]">
+                        <h3>[Management Member 2]</h3>
+                        <p class="role">[Role]</p>
+                        <p>[Brief description of the management member’s role and contributions.]</p>
+                    </div>
+                    <!-- Tribute to Kojo Ampem Daako -->
+                    <div class="team-member">
+                        <img src="assets/images/management/kojo-ampem-daako.webp" alt="Kojo Ampem Daako">
+                        <h3>Kojo Ampem Daako</h3>
+                        <p class="role">Founder (In Memoriam)</p>
+                        <p>The visionary behind A-D Kay Publications, Kojo’s legacy lives on through his 7 published titles and 5 upcoming works, continuing to inspire readers worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" aria-labelledby="impact-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="impact-heading">Our Impact</h2>
+                    <p>We’re proud to connect African stories with readers around the world.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <i class="fas fa-book-open"></i>
+                        <h3>10+ Titles</h3>
+                        <p>Published works spanning politics, culture, education, and more.</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <h3>1,600+ Readers</h3>
+                        <p>Engaging audiences in Ghana, Africa, and globally.</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Reach</h3>
+                        <p>Available on platforms like Amazon, Kobo, and Apple Books.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Plans Section - Expandable Cards -->
+        <section id="future-plans" aria-labelledby="future-plans-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="future-plans-heading">What’s Next</h2>
+                    <p>We’re excited to bring more stories and initiatives to life.</p>
+                </div>
+                <div class="plans-grid">
+                    <div class="plan">
+                        <i class="fas fa-book"></i>
+                        <h3>Upcoming Releases</h3>
+                        <div class="short-desc">
+                            <p>Look forward to new titles by our authors.</p>
+                        </div>
+                        <div class="full-desc">
+                            <p>Look forward to 5 new titles by Kojo Ampem Daako, a book by NecroseWrites, a poem collection, and a short story collection by our talented authors.</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="plan">
+                        <i class="fas fa-users"></i>
+                        <h3>Ampem-Daako Book Club</h3>
+                        <div class="short-desc">
+                            <p>Join our upcoming book club to connect with readers.</p>
+                        </div>
+                        <div class="full-desc">
+                            <p>Join our upcoming book club to engage in discussions, author Q&As, and explore African literature with a community of readers.</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="plan">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Social Projects</h3>
+                        <div class="short-desc">
+                            <p>We’re launching initiatives to support kids.</p>
+                        </div>
+                        <div class="full-desc">
+                            <p>We’re launching initiatives to support needy kids, fostering literacy and education through the power of storytelling.</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading">Join Our Journey</h2>
+                <p>Are you an author with a story to tell? We’re open to manuscript submissions! Or, join our upcoming book club to connect with fellow readers and celebrate African literature.</p>
+                <a href="contact.html" class="btn">Get Involved</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <!-- Newsletter Subscription -->
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Divider -->
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+
+            <!-- Branding/Logo -->
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+
+            <!-- Footer Content Wrapper -->
+            <div class="footer_content_wrapper">
+                <!-- Quick Links -->
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Join Us Links -->
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="#submissions">Author Submissions</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Expandable Timeline Items in Our Story Section
+            const timelineItems = document.querySelectorAll('#our-story .timeline-item');
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('expanded');
+                });
+            });
+
+            // Expandable Cards in Future Plans Section
+            const plans = document.querySelectorAll('#future-plans .plan');
+            plans.forEach(plan => {
+                plan.addEventListener('click', () => {
+                    plan.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

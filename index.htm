@@ -9,8 +9,8 @@
     <meta name="author" content="github.com/safoisgod">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+
     <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
     <!-- Additional Fonts for Carousel -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -28,17 +28,29 @@
     <header class="header-space">
         <nav class="navigation-space">
             <div class="left-side">
-                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.png" alt="Logo"></a>
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
             </div>
             <div class="right-side">
                 <ul class="menu-space">
-                    <li><a style="color: #4267b2; font-weight:bold;" href="index.htm">Home</a></li>
+                    <li><a href="index.htm">Home</a></li>
                     <li><a href="books.htm">Book Collection</a></li>
-                    <li><a href="authors.htm">Authors</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#authors">Authors</a></li>
+                        </ul>
+                    </li>
                     <li><a href="blogs.htm">Blog</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
-                <label class="hamburger-icon">
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
                     <input type="checkbox" id="hamburger-checkbox">
                     <svg viewBox="0 0 32 32">
                         <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
@@ -57,7 +69,7 @@
                 <div class="header-text">
                     <span class="category">Heritage, <em>African Voices</em></span>
                     <h2>Inspire You!<br>Celebrate Our Roots</h2>
-                    <p>We amplify African stories that honor<span style="font-family: Monsieur La Doulaise; font-size: 45px; font-weight: 450; color: #4267b2;"> culture and history.</span></p>
+                    <p>We amplify African stories that honor<span style="font-family: Monsieur La Doulaise; font-size: 35px; font-weight: 400; color: #4267b2;"> culture and history.</span></p>
                     <div class="motto">Changing history, one story at a time</div>
                 </div>
             </div>
@@ -66,7 +78,7 @@
                 <div class="header-text">
                     <span class="category">Discourse, <em>Ideas</em></span>
                     <h2>Challenge You!<br>Spark Bold Conversations</h2>
-                    <p>We publish works that ignite debate on<span style="font-family: Monsieur La Doulaise; font-size: 45px; font-weight: 450; color: #4267b2;"> politics and society.</span></p>
+                    <p>We publish works that ignite debate on<span style="font-family: Monsieur La Doulaise; font-size: 35px; font-weight: 400; color: #4267b2;"> politics and society.</span></p>
                     <div class="motto">Changing history, one story at a time</div>
                 </div>
             </div>
@@ -75,7 +87,7 @@
                 <div class="header-text">
                     <span class="category">Impact, <em>Global Reach</em></span>
                     <h2>Empower You!<br>Authors to the World</h2>
-                    <p>We take African authors to international stages, <span style="font-family: Monsieur La Doulaise; font-size: 45px; font-weight: 450; color: #4267b2;"> transforming lives.</span></p>
+                    <p>We take African authors to international stages, <span style="font-family: Monsieur La Doulaise; font-size: 35px; font-weight: 400; color: #4267b2;"> transforming lives.</span></p>
                     <div class="motto">Changing history, one story at a time</div>
                 </div>
             </div>
@@ -108,7 +120,7 @@
                 <!-- Add a new column for the book image (on the right side) -->
                 <div class="col-md-6 book-image-col">
                     <div class="book-image">
-                        <img src="assets/images/BOOKS/book-spotlight.png" class="img-responsive" alt="Killed by Illiteracy Book">
+                        <img src="assets/images/BOOKS/killed_by_illiteracy_book_spotlight.webp" class="img-responsive" alt="Killed by Illiteracy Book">
                     </div>
                 </div>
             </div>
@@ -128,7 +140,7 @@
         <div class="fact">
             <i class="fas fa-book-open"></i>
             <div class="fact-content">
-                <h3>30+ Titles</h3>
+                <h3>10+ Titles</h3>
                 <p>Local stories that resonate</p>
             </div>
         </div>
@@ -136,7 +148,7 @@
         <div class="fact">
             <i class="fas fa-user-friends"></i>
             <div class="fact-content">
-                <h3>15 Authors</h3>
+                <h3>4 Authors</h3>
                 <p>Nurturing regional talent</p>
             </div>
         </div>
@@ -144,8 +156,8 @@
         <div class="fact">
             <i class="fas fa-bullseye"></i>
             <div class="fact-content">
-                <h3>Next Big Thing</h3>
-                <p>Aiming to redefine local lit</p>
+                <h3>1,600+ Readers</h3>
+                <p>Reaching audiences worldwide</p>
             </div>
         </div>
     </section>
@@ -282,80 +294,101 @@
             <div class="container">
                 <!-- Static Section Title at the Top -->
                 <div class="section-header">
-                    <h2 id="pubco_section_heading">Featured Books</h2>
+                    <h2 id="pubco_section_heading">Most Popular Books</h2>
                 </div>
                 <div class="pubco_content_wrapper">
                     <!-- Description -->
                     <div class="pubco_books_description">
                         <h3 id="pubco_book_title">Culture Brewed in an African Pot</h3>
-                        <span class="pubco_category" id="pubco_category_text">Cultural Heritage</span>
+                        <span class="pubco_category" id="pubco_category_text">Cultural Reflections</span>
+                        <span class="pubco_author_display" id="pubco_author_text">by Kojo Ampem Daako</span>
                         <p class="pubco_description_text" id="pubco_description_text">
-                            A beautifully written novel that delves into the rich cultural heritage of Africa, following a family’s journey through generations of tradition and change.
+                            Dive into stories that walk with you—through history, heart, and heritage. From stirring traditions to modern awakenings, each book is a companion in your journey through the African narrative.
                         </p>
-                        <a href="book-details.html?title=Culture%20Brewed%20in%20an%20African%20Pot" class="pubco_btn" aria-label="Read more about the selected book">Read More</a>
+                        <!-- Updated Read More Button -->
+                        <button class="learn-more" id="learn-more-btn" aria-label="Read more about Culture Brewed in an African Pot by Kojo Ampem Daako">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Read More</span>
+                        </button>
                     </div>
+
                     <!-- Carousel Wrapper -->
                     <div class="pubco_books_carousel_wrapper">
                         <div class="pubco_books_carousel">
                             <div class="owl-carousel owl-theme" id="pubco_books_carousel" role="region" aria-label="Featured books carousel">
                                 <!-- Book 1 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Cultural Heritage"
+                                    data-pubco-category="Cultural Reflections"
                                     data-pubco-title="Culture Brewed in an African Pot"
-                                    data-pubco-description="A beautifully written novel that delves into the rich cultural heritage of Africa, following a family’s journey through generations of tradition and change.">
-                                    <img src="assets\images\BOOKS\book1.png" alt="Cover of Culture Brewed in an African Pot" loading="lazy">
+                                    data-pubco-description="An evocative tribute to ancestral wisdom and evolving customs, this book explores identity and transformation through a family’s lived experience.">
+                                    <img src="assets/images/BOOKS/culture_brewed_in_an_african_pot.webp" alt="Cover of Culture Brewed in an African Pot" loading="lazy">
                                     <div class="pubco_book_title" aria-hidden="true">Culture Brewed in an African Pot</div>
+                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
                                 </div>
+
                                 <!-- Book 2 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Fiction"
+                                    data-pubco-category="Social Justice Fiction"
                                     data-pubco-title="Killed by Illiteracy"
-                                    data-pubco-description="A gripping tale of struggle and triumph, this book explores the impact of illiteracy on a young African community, weaving a powerful narrative of resilience and hope.">
-                                    <img src="assets\images\BOOKS\book2.png" alt="Cover of Killed by Illiteracy" loading="lazy">
+                                    data-pubco-description="A haunting narrative spotlighting the dire consequences of educational neglect, and one community’s struggle to reclaim its future.">
+                                    <img src="assets/images/BOOKS/killed_by_illiteracy.webp" alt="Cover of Killed by Illiteracy" loading="lazy">
                                     <div class="pubco_book_title" aria-hidden="true">Killed by Illiteracy</div>
+                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
                                 </div>
+
                                 <!-- Book 3 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Tradition & Modernity"
-                                    data-pubco-title="the King's Dilemma"
-                                    data-pubco-description="A powerful narrative that explores the intersection of tradition and modernity in an African setting, filled with vivid characters and emotional depth.">
-                                    <img src="assets\images\BOOKS\book3.jpg" alt="Cover of the King's Dilemma" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">the King's Dilemma</div>
+                                    data-pubco-category="Traditional Leadership"
+                                    data-pubco-title="The King's Dilemma"
+                                    data-pubco-description="A king must choose between age-old customs and progressive ideals—an intricate tale of power, legacy, and personal conflict.">
+                                    <img src="assets/images/BOOKS/the_kings_dilemma.webp" alt="Cover of The King's Dilemma" loading="lazy">
+                                    <div class="pubco_book_title" aria-hidden="true">The King's Dilemma</div>
+                                    <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
                                 </div>
+
                                 <!-- Book 4 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Education"
+                                    data-pubco-category="Language Learning"
                                     data-pubco-title="BECE French Composition"
-                                    data-pubco-description="A thought-provoking story about a quiet revolution in a small village, where education becomes the key to unlocking a brighter future for all.">
-                                    <img src="assets\images\BOOKS\book4.png" alt="Cover of BECE French Composition" loading="lazy">
+                                    data-pubco-description="A resourceful guide for students preparing for exams in French writing—includes sample compositions and guided practice.">
+                                    <img src="assets/images/BOOKS/picture_description_&_guided_composition.webp" alt="Cover of BECE French Composition" loading="lazy">
                                     <div class="pubco_book_title" aria-hidden="true">BECE French Composition</div>
+                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
                                 </div>
+
                                 <!-- Book 5 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Tradition & Modernity"
-                                    data-pubco-title="the King's Dilemma"
-                                    data-pubco-description="A powerful narrative that explores the intersection of tradition and modernity in an African setting, filled with vivid characters and emotional depth.">
-                                    <img src="assets\images\BOOKS\book5.png" alt="Cover of the King's Dilemma" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">the King's Dilemma</div>
+                                    data-pubco-category="Political Commentary"
+                                    data-pubco-title="Politics for Sale"
+                                    data-pubco-description="A bold look at the commodification of leadership, where personal ambition clashes with civic duty in modern African politics.">
+                                    <img src="assets/images/BOOKS/politics_for_sale.webp" alt="Cover of Politics for Sale" loading="lazy">
+                                    <div class="pubco_book_title" aria-hidden="true">Politics for Sale</div>
+                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
                                 </div>
+
                                 <!-- Book 6 -->
                                 <div class="pubco_item"
-                                    data-pubco-category="Love & Loss"
-                                    data-pubco-title="Son of a King"
-                                    data-pubco-description="A captivating story of love and loss, set against the backdrop of a vibrant African city, where the past and present collide in unexpected ways.">
-                                    <img src="assets\images\BOOKS\book6.jpg" alt="Cover of Son of a King" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">Son of a King</div>
+                                    data-pubco-category="Emotional Wisdom"
+                                    data-pubco-title="Particles of Wisdom"
+                                    data-pubco-description="Short stories infused with insight, heartache, and beauty—reminders that in every loss, there are lessons waiting to be held.">
+                                    <img src="assets/images/BOOKS/particles_of_wisdom.webp" alt="Cover of Particles of Wisdom" loading="lazy">
+                                    <div class="pubco_book_title" aria-hidden="true">Particles of Wisdom</div>
+                                    <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Navigation Buttons -->
                 <div class="pubco_carousel_nav">
                     <div class="owl-nav"></div>
                 </div>
             </div>
         </section>
+
 
     <!-- Blog Section -->
     <section id="blog-section">
@@ -368,7 +401,7 @@
                 <!-- Blog Post 1 -->
                 <a href="blog-post1.html" class="blog-card">
                     <div class="blog-image">
-                        <img src="assets/images/blog/Killed by Illiteracy mockup 1.png" alt="Killed by Illiteracy Book Cover">
+                        <img src="assets/images/blog/killed_by_illiteracy_book_spotlight.webp" alt="Killed by Illiteracy Book Cover">
                     </div>
                     <div class="blog-content">
                         <span class="blog-date">10 Apr, 2025</span>
@@ -379,7 +412,7 @@
                 <!-- Blog Post 2 -->
                 <a href="blog-post2.html" class="blog-card">
                     <div class="blog-image">
-                        <img src="assets/images/blog/book-club.jpg" alt="Ampem-Daako Book Club">
+                        <img src="assets/images/blog/ampem_daako_book_club.webp" alt="Ampem-Daako Book Club">
                     </div>
                     <div class="blog-content">
                         <span class="blog-date">05 Apr, 2025</span>
@@ -390,7 +423,7 @@
                 <!-- Blog Post 3 -->
                 <a href="blog-post3.html" class="blog-card">
                     <div class="blog-image">
-                        <img src="assets/images/blog/memorial.jpg" alt="Memorial Service for Ampem-Daako Kay">
+                        <img src="assets/images/blog/memorial_poster.webp" alt="Memorial Service for Ampem-Daako Kay">
                     </div>
                     <div class="blog-content">
                         <span class="blog-date">01 Apr, 2025</span>
@@ -401,6 +434,212 @@
             </div>
         </div>
     </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms_section" aria-labelledby="platforms_section_heading">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-header">
+                <h2 id="platforms_section_heading">Where to Find Our Books</h2>
+            </div>
+            <div class="platforms_carousel_wrapper">
+                <div class="platforms_carousel">
+                    <div class="owl-carousel owl-theme" id="platforms_carousel" role="region" aria-label="Platforms carousel">
+                        <!-- Platform 1 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/amazon.webp" alt="Amazon logo" loading="lazy">
+                        </div>
+                        <!-- Platform 2 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/barnes_&_nobel.webp" alt="Barnes & Noble logo" loading="lazy">
+                        </div>
+                        <!-- Platform 3 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/kobo.webp" alt="Kobo logo" loading="lazy">
+                        </div>
+                        <!-- Platform 4 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/apple_books.webp" alt="Apple Books logo" loading="lazy">
+                        </div>
+                        <!-- Platform 5 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/google_books.webp" alt="Google Play Books logo" loading="lazy">
+                        </div>
+                        <!-- Platform 6 -->
+                        <div class="platform_item">
+                            <img src="assets/images/platforms/scribd.webp" alt="Scribd logo" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq_section" aria-labelledby="faq_heading">
+        <div class="faq_container">
+            <h2 id="faq_heading">Got Questions? We Have Answers!</h2>
+            <div class="faq_wrapper">
+                <div class="faq_card">
+                    <div class="faq_item">
+                        <button class="faq_question" aria-expanded="false" aria-controls="faq_answer_1">
+                            How can I find a specific book?
+                            <span class="faq_toggle_icon">
+                                <svg class="plus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 4v16m-8-8h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                                <svg class="minus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M4 12h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq_answer" id="faq_answer_1">
+                            <p>Use our Book Collection page to browse or search for titles. You can filter by genre, author, or keyword to find exactly what you’re looking for.</p>
+                        </div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question" aria-expanded="false" aria-controls="faq_answer_2">
+                            What formats are your books available in?
+                            <span class="faq_toggle_icon">
+                                <svg class="plus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 4v16m-8-8h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                                <svg class="minus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M4 12h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq_answer" id="faq_answer_2">
+                            <p>Our books are available in hardcover, paperback, and eBook formats. Check each book’s page for specific availability.</p>
+                        </div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question" aria-expanded="false" aria-controls="faq_answer_3">
+                            Do you ship internationally?
+                            <span class="faq_toggle_icon">
+                                <svg class="plus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 4v16m-8-8h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                                <svg class="minus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M4 12h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq_answer" id="faq_answer_3">
+                            <p>Yes, we ship to many countries worldwide. Shipping costs and times vary by location—visit our shipping page for details.</p>
+                        </div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question" aria-expanded="false" aria-controls="faq_answer_4">
+                            Can I request a signed copy?
+                            <span class="faq_toggle_icon">
+                                <svg class="plus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 4v16m-8-8h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                                <svg class="minus-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M4 12h16" stroke="#e7e7e7" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq_answer" id="faq_answer_4">
+                            <p>We occasionally offer signed copies during special events. Sign up for our newsletter to stay updated on these opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <!-- Newsletter Subscription -->
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Divider -->
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+
+            <!-- Branding/Logo -->
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+
+            <!-- Footer Content Wrapper -->
+            <div class="footer_content_wrapper">
+                <!-- Quick Links -->
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Join Us Links -->
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="#submissions">Author Submissions</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
