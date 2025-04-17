@@ -1,0 +1,1255 @@
+
+
+/*=============================
+ Banner Section 
+ ==============================*/
+.top-banner-section {
+    position: relative;
+    height: 600px;
+    color: #FFFFFF;
+}
+
+.top-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay for readability */
+}
+
+.top-banner-section .banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-banner-section .banner-content .breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.top-banner-section .banner-content .breadcrumb a,
+.top-banner-section .breadcrumb span {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.top-banner-section .banner-content .breadcrumb a:hover {
+    color: #4267b2;
+}
+
+.top-banner-section .banner-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .top-banner-section {
+        height: 500px;
+    }
+
+    .top-banner-section .banner-content {
+        padding: 0 20px;
+    }
+
+    .top-banner-section .banner-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-banner-section {
+        height: 400px;
+    }
+
+    .top-banner-section .banner-content h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/*=============================
+ Main Content
+ ==============================*/
+
+main {
+    margin-top: 0; /* Adjusted since banner is now separate */
+}
+
+/*=============================
+ General Section Styles
+ ==============================*/
+
+section {
+    position: relative;
+    padding: 60px 0;
+}
+
+section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section .section-header {
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+section .section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #4267b2;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+section .section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/*=============================
+===============================
+ ABOUT US PAGE
+ ===============================
+ ==============================*/
+
+
+ /*=============================
+ Our Story Section - Timeline
+ ==============================*/
+
+#our-story {
+    background: linear-gradient(135deg, #FFFFFF, #4267b263);
+}
+
+#our-story .timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+#our-story .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4267b263, #ffffff);
+    transform: translateX(-50%);
+}
+
+#our-story .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+#our-story .timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+#our-story .timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#our-story .timeline-item .timeline-content {
+    flex: 1;
+    padding: 15px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 45%;
+    max-width: 450px;
+}
+
+#our-story .timeline-item .timeline-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #4267b2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#our-story .timeline-item .timeline-content .short-desc {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#our-story .timeline-item .timeline-content .full-desc {
+    display: none;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+#our-story .timeline-item.expanded .full-desc {
+    display: block;
+}
+
+#our-story .timeline-item .timeline-image {
+    flex: 1;
+    width: 45%;
+    text-align: center;
+}
+
+#our-story .timeline-item .timeline-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+#our-story .timeline-item .timeline-marker {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #4267b2;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#our-story .timeline-item .toggle-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1rem;
+    color: #4267b2;
+    transition: transform 0.3s ease;
+}
+
+#our-story .timeline-item.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    #our-story .timeline::before {
+        left: 20px;
+    }
+
+    #our-story .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #our-story .timeline-item:nth-child(odd),
+    #our-story .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    #our-story .timeline-item .timeline-content,
+    #our-story .timeline-item .timeline-image {
+        width: 100%;
+        margin-left: 40px;
+    }
+
+    #our-story .timeline-item .timeline-content {
+        max-width: 100%;
+    }
+
+    #our-story .timeline-item .timeline-image {
+        margin-top: 15px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #our-story .timeline-item .timeline-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #our-story .timeline-item .timeline-marker {
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #our-story .timeline-item .timeline-content {
+        padding: 10px;
+    }
+
+    #our-story .timeline-item .timeline-image img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ======================
+Our Founder Section 
+=========================*/
+#founder .founder-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#founder .founder-text {
+    flex: 2;
+}
+
+#founder .founder-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #4267b2;
+    margin-bottom: 15px;
+}
+
+#founder .founder-text p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#founder .founder-image {
+    flex: 1;
+    text-align: center;
+}
+
+#founder .founder-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #D4C9BE;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #founder .founder-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #founder .founder-image {
+        margin-top: 20px;
+    }
+
+    #founder .founder-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+/* ======================
+Mission & Vision Section
+=========================*/
+
+#mission-vision {
+    background: linear-gradient(135deg, #FFFFFF, #4267b263);
+}
+
+#mission-vision .mission-vision-toggle {
+    text-align: center;
+}
+
+#mission-vision .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#mission-vision .toggle-button {
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#mission-vision .toggle-button.active {
+    background: #4267b2;
+    color: #FFFFFF;
+}
+
+#mission-vision .toggle-button:not(.active) {
+    background: #e7e7e7;
+    color: #030303;
+}
+
+#mission-vision .toggle-button:hover:not(.active) {
+    background: #c5b8a8;
+}
+
+#mission-vision .toggle-content {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#mission-vision .toggle-content.active {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#mission-vision .toggle-content .text {
+    flex: 2;
+}
+
+#mission-vision .toggle-content .text p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+#mission-vision .toggle-content .image {
+    flex: 1;
+    text-align: center;
+}
+
+#mission-vision .toggle-content .image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #mission-vision .toggle-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mission-vision .toggle-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+    }
+
+    #mission-vision .toggle-content.active {
+        flex-direction: column;
+    }
+
+    #mission-vision .toggle-content .image {
+        margin-top: 20px;
+    }
+
+    #mission-vision .toggle-content .image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #mission-vision .toggle-content .text p {
+        font-size: 0.9rem;
+    }
+
+    #mission-vision .toggle-content .image img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Call to Action Section */
+#cta {
+    background: linear-gradient(135deg, #4267b2, #35508a);
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#cta .container {
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#cta::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 50%;
+}
+
+#cta::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    border-radius: 50%;
+}
+
+#cta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #081c43;
+}
+
+#cta p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cta .btn {
+    display: inline-block;
+    padding: 10px 35px;
+    background: linear-gradient(135deg, #D4C9BE, #FFFFFF);
+    color: #4267b2;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#cta .btn:hover {
+    background: linear-gradient(135deg, #FFFFFF, #D4C9BE);
+    color: #030303;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #cta .container {
+        padding: 40px 15px;
+    }
+
+    #cta p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #cta .btn {
+        padding: 8px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ======================
+=========================
+ TEAM PAGE 
+ ==========================
+ ==========================*/
+
+/* ======================
+ Team Section
+=========================*/
+#team {
+    background: linear-gradient(135deg, #FFFFFF, #4267b263);
+    padding: 60px 0;
+}
+
+#team .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+#team .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#team .section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #4267b2;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#team .section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Bar */
+#team .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+#team .filter-bar button {
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background: #e7e7e7;
+    color: #030303;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#team .filter-bar button.active {
+    background: #4267b2;
+    color: #FFFFFF;
+}
+
+#team .filter-bar button:hover:not(.active) {
+    background: #c5b8a8;
+}
+
+#team .filter-dropdown {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #FFFFFF;
+    color: #333;
+}
+
+/* Team Grid */
+#team .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+
+#team .team-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#team .team-card:hover {
+    transform: scale(1.05);
+}
+
+#team .team-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#team .team-card:hover img {
+    transform: scale(1.1);
+}
+
+#team .team-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+#team .team-card:hover .overlay {
+    transform: translateY(0);
+}
+
+#team .team-card .overlay h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+#team .team-card .overlay p {
+    font-size: 0.9rem;
+    color: #D4C9BE;
+}
+
+/* ======================
+ Modal
+=========================*/
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the modal is hidden by default */
+#author-modal {
+    display: none;
+}
+
+/* Reinforce carousel hiding (already present, but included for clarity) */
+#modal-books-carousel .owl-carousel {
+    display: none;
+}
+
+#modal-books-carousel .owl-carousel.initialized {
+    display: block;
+}
+
+.modal-content {
+    background: #FFFFFF;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.modal-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #4267b2;
+    text-align: center;
+    margin: 15px 0 5px;
+}
+
+.modal-content .role {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-content .bio {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.modal-content .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-content .social-links a {
+    color: #4267b2;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.modal-content .social-links a:hover {
+    color: #D4C9BE;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #team .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #team .filter-bar {
+        display: none;
+    }
+
+    #team .filter-dropdown {
+        display: block;
+    }
+
+    #team .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #team .team-card img {
+        height: 250px;
+    }
+
+    .modal-content img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal-content .role {
+        font-size: 0.9rem;
+    }
+
+    .modal-content .bio {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #team .team-card img {
+        height: 200px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-content img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .modal-content .role {
+        font-size: 0.85rem;
+    }
+
+    .modal-content .bio {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ======================
+=========================
+ AUTHORS PAGE
+ ========================
+=========================*/
+#authors {
+    background: linear-gradient(135deg, #FFFFFF, #f5f7fa);
+    padding: 60px 0;
+}
+
+#authors .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#authors .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#authors .section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #4267b2;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#authors .section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Bar */
+#authors .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+#authors .filter-bar button {
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background: #e7e7e7;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#authors .filter-bar button.active {
+    background: #4267b2;
+    color: #FFFFFF;
+}
+
+#authors .filter-bar button:hover:not(.active) {
+    background: #D4C9BE;
+}
+
+#authors .filter-dropdown {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #FFFFFF;
+    color: #333;
+}
+
+/* Authors Grid */
+#authors .authors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+
+#authors .author-card {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+}
+
+#authors .author-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+#authors .author-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+#authors .author-card .info {
+    padding: 15px;
+    text-align: center;
+}
+
+#authors .author-card .info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #4267b2;
+    margin-bottom: 5px;
+}
+
+#authors .author-card .info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #FFFFFF;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-content .author-details {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.modal-content img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.modal-content .text-content {
+    flex: 1;
+}
+
+.modal-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #4267b2;
+    margin-bottom: 5px;
+}
+
+.modal-content .genre {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.modal-content .bio {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modal-content .social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-content .social-links a {
+    color: #4267b2;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.modal-content .social-links a:hover {
+    color: #D4C9BE;
+}
+
+/* Books Carousel in Modal */
+.modal-content .books-carousel {
+    margin-top: 20px;
+}
+
+.modal-content .books-carousel .owl-carousel .book-item {
+    text-align: center;
+}
+
+.modal-content .books-carousel .owl-carousel .book-item img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.modal-content .books-carousel .owl-carousel .book-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.modal-content .books-carousel .owl-carousel .book-item a {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #4267b2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.modal-content .books-carousel .owl-carousel .book-item a:hover {
+    color: #D4C9BE;
+}
+
+.modal-content .books-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-content .books-carousel .owl-nav button {
+    font-size: 1.2rem;
+    color: #4267b2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content .books-carousel .owl-nav button.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #authors .authors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #authors .filter-bar {
+        display: none;
+    }
+
+    #authors .filter-dropdown {
+        display: block;
+    }
+
+    #authors .authors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #authors .author-card img {
+        height: 200px;
+    }
+
+    .modal-content .author-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .modal-content img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal-content .genre {
+        font-size: 0.9rem;
+    }
+
+    .modal-content .bio {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #authors .author-card img {
+        height: 180px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-content img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .modal-content .genre {
+        font-size: 0.85rem;
+    }
+
+    .modal-content .bio {
+        font-size: 0.85rem;
+    }
+
+    .modal-content .books-carousel .owl-carousel .book-item img {
+        width: 100px;
+        height: 150px;
+    }
+
+    .modal-content .books-carousel .owl-carousel .book-item h4 {
+        font-size: 0.9rem;
+    }
+}

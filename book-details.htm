@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Details - A-D Kay Publications</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="Detailed information about your selected book from A-D Kay Publications.">
+    <meta name="keywords" content="African literature, book details, A-D Kay Publications">
+    <meta name="author" content="github.com/safoisgod">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Book Details Section */
+        #book-details-section {
+            padding: 60px 0;
+            background: #FFFFFF;
+            min-height: calc(100vh - 80px - 300px); /* Adjust for header and footer */
+        }
+
+        .book-details-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .book-details-image {
+            flex: 0 0 300px;
+        }
+
+        .book-details-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-details-content {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .book-details-content h1 {
+            font-size: 2rem;
+            color: #4267b2;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .book-details-content .category {
+            font-size: 0.9rem;
+            color: #D4C9BE;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .book-details-content .author {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .book-details-content .description {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .book-details-meta {
+            margin-bottom: 20px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+
+        .book-details-meta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .book-details-meta li {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .book-details-meta li span:first-child {
+            font-weight: 500;
+            color: #4267b2;
+        }
+
+        .book-details-content .price {
+            font-size: 1.2rem;
+            color: #4267b2;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .book-details-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .book-details-actions button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .book-details-actions .buy-btn {
+            background-color: #4267b2;
+            color: #FFFFFF;
+        }
+
+        .book-details-actions .buy-btn:hover {
+            background-color: #5b7bd6;
+            transform: scale(1.05);
+        }
+
+        .book-details-actions .read-more-btn {
+            background-color: #FFFFFF;
+            color: #4267b2;
+            border: 1px solid #4267b2;
+        }
+
+        .book-details-actions .read-more-btn:hover {
+            background-color: #5b7bd6;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .author-bio {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .author-bio h3 {
+            font-size: 1.3rem;
+            color: #4267b2;
+            margin-bottom: 10px;
+        }
+
+        .author-bio p {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .related-books {
+            margin-top: 40px;
+        }
+
+        .related-books h3 {
+            font-size: 1.3rem;
+            color: #4267b2;
+            margin-bottom: 20px;
+        }
+
+        .related-books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .related-book-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .related-book-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-book-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .related-book-content {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .related-book-content h4 {
+            font-size: 0.9rem;
+            color: #030303;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1000px) {
+            .book-details-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-details-image {
+                flex: 0 0 250px;
+            }
+
+            .book-details-image img {
+                height: 375px;
+            }
+
+            .related-books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+
+            .related-book-image img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .book-details-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .book-details-content .description {
+                font-size: 0.9rem;
+            }
+
+            .book-details-meta li {
+                font-size: 0.9rem;
+            }
+
+            .book-details-content .price {
+                font-size: 1.1rem;
+            }
+
+            .book-details-image {
+                flex: 0 0 200px;
+            }
+
+            .book-details-image img {
+                height: 300px;
+            }
+
+            .author-bio h3 {
+                font-size: 1.2rem;
+            }
+
+            .author-bio p {
+                font-size: 0.9rem;
+            }
+
+            .related-books h3 {
+                font-size: 1.2rem;
+            }
+
+            .related-book-content h4 {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-details-actions {
+                flex-direction: column;
+            }
+
+            .book-details-actions button {
+                width: 100%;
+            }
+
+            .book-details-image {
+                flex: 0 0 180px;
+            }
+
+            .book-details-image img {
+                height: 270px;
+            }
+
+            .related-books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .related-book-image img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm" class="active">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Book Details Section -->
+    <section id="book-details-section">
+        <div class="book-details-container">
+            <div class="book-details-image">
+                <img id="book-image" src="" alt="">
+            </div>
+            <div class="book-details-content">
+                <h1 id="book-title">Book Title</h1>
+                <span class="category" id="book-category">Category</span>
+                <div class="author" id="book-author">by Author Name</div>
+                <div class="price" id="book-price">$0.00</div>
+                <div class="book-details-meta">
+                    <ul>
+                        <li><span>Publication Year:</span> <span id="book-year">N/A</span></li>
+                        <li><span>ISBN:</span> <span id="book-isbn">N/A</span></li>
+                        <li><span>Pages:</span> <span id="book-pages">N/A</span></li>
+                        <li><span>Language:</span> <span id="book-language">N/A</span></li>
+                    </ul>
+                </div>
+                <p class="description" id="book-description">Book description goes here.</p>
+                <div class="book-details-actions">
+                    <button class="buy-btn">Buy Now</button>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="author-bio">
+                    <h3>About the Author</h3>
+                    <p id="author-bio">Author biography goes here.</p>
+                </div>
+                <div class="related-books" id="related-books">
+                    <h3>More by This Author</h3>
+                    <div class="related-books-grid" id="related-books-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <div class="footer_content_wrapper">
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="submissions.htm">Author Submissions</a></li>
+                        <li><a href="careers.htm">Careers</a></li>
+                        <li><a href="partnerships.htm">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Book data
+            const books = [
+                // Kojo Ampem Daako
+                {
+                    id: "culture-brewed",
+                    title: "Culture Brewed in an African Pot",
+                    author: "Kojo Ampem Daako",
+                    category: "Cultural Reflections",
+                    description: "An evocative tribute to ancestral wisdom and evolving customs, this book explores identity and transformation through a family’s lived experience.",
+                    image: "assets/images/BOOKS/culture_brewed_in_an_african_pot.webp",
+                    year: "2023",
+                    isbn: "978-9988-3-1234-5",
+                    pages: "280",
+                    language: "English",
+                    price: "$15.99"
+                },
+                {
+                    id: "killed-by-illiteracy",
+                    title: "Killed by Illiteracy",
+                    author: "Kojo Ampem Daako",
+                    category: "Social Justice Fiction",
+                    description: "A haunting narrative spotlighting the dire consequences of educational neglect, and one community’s struggle to reclaim its future.",
+                    image: "assets/images/BOOKS/killed_by_illiteracy.webp",
+                    year: "2022",
+                    isbn: "978-9988-3-1235-2",
+                    pages: "320",
+                    language: "English",
+                    price: "$18.50"
+                },
+                {
+                    id: "bece-french",
+                    title: "BECE French Composition",
+                    author: "Kojo Ampem Daako",
+                    category: "Language Learning",
+                    description: "A resourceful guide for students preparing for exams in French writing—includes sample compositions and guided practice.",
+                    image: "assets/images/BOOKS/picture_description_&_guided_composition.webp",
+                    year: "2021",
+                    isbn: "978-9988-3-1236-9",
+                    pages: "150",
+                    language: "French/English",
+                    price: "$12.99"
+                },
+                {
+                    id: "politics-for-sale",
+                    title: "Politics for Sale",
+                    author: "Kojo Ampem Daako",
+                    category: "Political Commentary",
+                    description: "A bold look at the commodification of leadership, where personal ambition clashes with civic duty in modern African politics.",
+                    image: "assets/images/BOOKS/politics_for_sale.webp",
+                    year: "2024",
+                    isbn: "978-9988-3-1237-6",
+                    pages: "300",
+                    language: "English",
+                    price: "$20.00"
+                },
+                {
+                    id: "word-of-god",
+                    title: "Word of God",
+                    author: "Kojo Ampem Daako",
+                    category: "Cultural Reflections",
+                    description: "A spiritual exploration of faith and wisdom within an African context, blending tradition with divine insight.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2020",
+                    isbn: "978-9988-3-1238-3",
+                    pages: "250",
+                    language: "English",
+                    price: "$14.99"
+                },
+                {
+                    id: "the-young-shall-grow",
+                    title: "The Young Shall Grow",
+                    author: "Kojo Ampem Daako",
+                    category: "Social Justice Fiction",
+                    description: "A powerful story of youth overcoming systemic challenges to achieve their potential in a changing society.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2019",
+                    isbn: "978-9988-3-1239-0",
+                    pages: "340",
+                    language: "English",
+                    price: "$17.50"
+                },
+                {
+                    id: "the-teacher-and-his-pupils",
+                    title: "The Teacher and His Pupils",
+                    author: "Kojo Ampem Daako",
+                    category: "Language Learning",
+                    description: "An educational narrative that combines moral lessons with linguistic growth, ideal for young learners.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2022",
+                    isbn: "978-9988-3-1240-6",
+                    pages: "180",
+                    language: "English",
+                    price: "$13.99"
+                },
+                {
+                    id: "the-chronicles-of-addo-yobo",
+                    title: "The Chronicles of Addo-Yobo",
+                    author: "Kojo Ampem Daako",
+                    category: "Political Commentary",
+                    description: "A satirical take on political events through the life of Addo-Yobo, revealing the complexities of leadership.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2023",
+                    isbn: "978-9988-3-1241-3",
+                    pages: "310",
+                    language: "English",
+                    price: "$19.99"
+                },
+                // Nana Kwesi Safo
+                {
+                    id: "the-kings-dilemma",
+                    title: "The King's Dilemma",
+                    author: "Nana Kwesi Safo",
+                    category: "Traditional Leadership",
+                    description: "A king must choose between age-old customs and progressive ideals—an intricate tale of power, legacy, and personal conflict.",
+                    image: "assets/images/BOOKS/the_kings_dilemma.webp",
+                    year: "2022",
+                    isbn: "978-9988-3-1242-0",
+                    pages: "290",
+                    language: "English",
+                    price: "$16.99"
+                },
+                {
+                    id: "particles-of-wisdom",
+                    title: "Particles of Wisdom",
+                    author: "Nana Kwesi Safo",
+                    category: "Emotional Wisdom",
+                    description: "Short stories infused with insight, heartache, and beauty—reminders that in every loss, there are lessons waiting to be held.",
+                    image: "assets/images/BOOKS/particles_of_wisdom.webp",
+                    year: "2021",
+                    isbn: "978-9988-3-1243-7",
+                    pages: "220",
+                    language: "English",
+                    price: "$14.50"
+                },
+                {
+                    id: "echoes-of-the-ancestors",
+                    title: "Echoes of the Ancestors",
+                    author: "Nana Kwesi Safo",
+                    category: "Traditional Leadership",
+                    description: "A young leader must heed the lessons of past generations to unite his fractured community.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2024",
+                    isbn: "978-9988-3-1244-4",
+                    pages: "270",
+                    language: "English",
+                    price: "$17.99"
+                },
+                {
+                    id: "tears-of-the-baobab",
+                    title: "Tears of the Baobab",
+                    author: "Nana Kwesi Safo",
+                    category: "Emotional Wisdom",
+                    description: "A collection of tales exploring resilience and hope, set against the backdrop of a village’s sacred baobab tree.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2023",
+                    isbn: "978-9988-3-1245-1",
+                    pages: "200",
+                    language: "English",
+                    price: "$13.99"
+                },
+                {
+                    id: "the-chieftains-oath",
+                    title: "The Chieftain’s Oath",
+                    author: "Nana Kwesi Safo",
+                    category: "Traditional Leadership",
+                    description: "A gripping tale of honor and betrayal as a chieftain faces a moral crisis that threatens his lineage.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2020",
+                    isbn: "978-9988-3-1246-8",
+                    pages: "260",
+                    language: "English",
+                    price: "$16.50"
+                },
+                // Ama Serwaa Mensah
+                {
+                    id: "moonlight-and-melodies",
+                    title: "Moonlight & Melodies",
+                    author: "Ama Serwaa Mensah",
+                    category: "Emotional Wisdom",
+                    description: "A lyrical exploration of emotions through the lens of night and music, capturing the essence of the human spirit.",
+                    image: "assets/images/BOOKS/moonlight_&_melodies.webp",
+                    year: "2022",
+                    isbn: "978-9988-3-1247-5",
+                    pages: "190",
+                    language: "English",
+                    price: "$14.99"
+                },
+                {
+                    id: "whispers-of-the-savanna",
+                    title: "Whispers of the Savanna",
+                    author: "Ama Serwaa Mensah",
+                    category: "Emotional Wisdom",
+                    description: "A poetic journey through love, loss, and healing, inspired by the rhythms of nature.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2023",
+                    isbn: "978-9988-3-1248-2",
+                    pages: "210",
+                    language: "English",
+                    price: "$15.50"
+                },
+                {
+                    id: "daughters-of-the-sun",
+                    title: "Daughters of the Sun",
+                    author: "Ama Serwaa Mensah",
+                    category: "Cultural Reflections",
+                    description: "A celebration of female strength and heritage through the interconnected lives of three generations.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2024",
+                    isbn: "978-9988-3-1249-9",
+                    pages: "280",
+                    language: "English",
+                    price: "$18.99"
+                },
+                // Kwame Osei Tutu
+                {
+                    id: "son-of-king",
+                    title: "Son of King",
+                    author: "Kwame Osei Tutu",
+                    category: "Traditional Leadership",
+                    description: "The journey of a young prince navigating the expectations of royalty and the challenges of his lineage.",
+                    image: "assets/images/BOOKS/son_of_king.webp",
+                    year: "2021",
+                    isbn: "978-9988-3-1250-5",
+                    pages: "300",
+                    language: "English",
+                    price: "$17.99"
+                },
+                {
+                    id: "crown-of-courage",
+                    title: "Crown of Courage",
+                    author: "Kwame Osei Tutu",
+                    category: "Traditional Leadership",
+                    description: "A prince’s quest to prove his worthiness for the throne amidst political intrigue and war.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2023",
+                    isbn: "978-9988-3-1251-2",
+                    pages: "320",
+                    language: "English",
+                    price: "$19.50"
+                },
+                {
+                    id: "the-elders-prophecy",
+                    title: "The Elder’s Prophecy",
+                    author: "Kwame Osei Tutu",
+                    category: "Cultural Reflections",
+                    description: "A young man uncovers an ancient prophecy that could change the fate of his kingdom, blending tradition with destiny.",
+                    image: "assets/images/BOOKS/placeholder.webp",
+                    year: "2022",
+                    isbn: "978-9988-3-1252-9",
+                    pages: "290",
+                    language: "English",
+                    price: "$18.50"
+                }
+            ];
+
+            // Author bios
+            const authorBios = {
+                "Kojo Ampem Daako": "Kojo Ampem Daako is a renowned Ghanaian author and educator with a passion for preserving African culture and addressing social issues through literature. With over two decades of writing, his works often blend tradition with contemporary challenges, earning him multiple literary awards.",
+                "Nana Kwesi Safo": "Nana Kwesi Safo is a storyteller and historian from Ghana, deeply rooted in the traditions of his Akan heritage. His writing explores themes of leadership, wisdom, and emotional resilience, drawing from oral traditions and personal experiences.",
+                "Ama Serwaa Mensah": "Ama Serwaa Mensah is a rising voice in African literature, known for her poetic prose and focus on emotional and cultural narratives. Based in Accra, she has quickly gained recognition for her evocative storytelling that celebrates African womanhood.",
+                "Kwame Osei Tutu": "Kwame Osei Tutu is a Ghanaian author and cultural scholar whose works delve into the complexities of traditional leadership and heritage. His narratives often weave historical elements with modern dilemmas, offering profound insights into African governance."
+            };
+
+            // Get book ID from URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('id');
+
+            // Find the book by ID
+            const book = books.find(b => b.id === bookId);
+
+            // If book is found, populate the page; otherwise, show a fallback
+            if (book) {
+                // Populate book details
+                $('#book-title').text(book.title);
+                $('#book-author').text('by ' + book.author);
+                $('#book-category').text(book.category);
+                $('#book-description').text(book.description);
+                $('#book-image').attr('src', book.image).attr('alt', book.title);
+                $('#book-year').text(book.year);
+                $('#book-isbn').text(book.isbn);
+                $('#book-pages').text(book.pages);
+                $('#book-language').text(book.language);
+                $('#book-price').text(book.price);
+                $('title').text(book.title + ' - A-D Kay Publications');
+                $('meta[name="description"]').attr('content', book.description);
+
+                // Populate author bio
+                $('#author-bio').text(authorBios[book.author] || 'No biography available for this author.');
+
+                // Populate related books
+                const relatedBooks = books.filter(b => b.author === book.author && b.id !== bookId);
+                if (relatedBooks.length > 0) {
+                    relatedBooks.forEach(relatedBook => {
+                        const bookCard = `
+                            <a href="book-details.html?id=${relatedBook.id}" class="related-book-card">
+                                <div class="related-book-image">
+                                    <img src="${relatedBook.image}" alt="${relatedBook.title}">
+                                </div>
+                                <div class="related-book-content">
+                                    <h4>${relatedBook.title}</h4>
+                                </div>
+                            </a>
+                        `;
+                        $('#related-books-grid').append(bookCard);
+                    });
+                } else {
+                    $('#related-books').hide();
+                }
+            } else {
+                $('#book-title').text('Book Not Found');
+                $('#book-author').text('');
+                $('#book-category').text('');
+                $('#book-description').text('Sorry, the book you are looking for could not be found.');
+                $('#book-image').attr('src', '').attr('alt', 'Book not found');
+                $('#book-year').text('N/A');
+                $('#book-isbn').text('N/A');
+                $('#book-pages').text('N/A');
+                $('#book-language').text('N/A');
+                $('#book-price').text('$0.00');
+                $('#author-bio').text('No author information available.');
+                $('#related-books').hide();
+            }
+        });
+    </script>
+</body>
+</html>

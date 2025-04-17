@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the talented authors of A-D Kay Publications, whose works amplify African voices through diverse storytelling.">
+    <title>Authors - A-D Kay Publications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Banner Section -->
+    <section class="top-banner-section" style="background: url(assets/images/background/authors-banner.jpg) no-repeat center center/cover;">
+        <div class="banner-content">
+            <div class="breadcrumb">
+                <a href="index.htm">Home</a> <span>></span> <span>Authors</span>
+            </div>
+            <h1>OUR AUTHORS</h1>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Authors Section -->
+        <section id="authors" aria-labelledby="authors-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="authors-heading">Meet Our Authors</h2>
+                    <p>Explore the brilliant minds behind A-D Kay Publications’ stories.</p>
+                </div>
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="fiction">Fiction</button>
+                    <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
+                    <button class="filter-btn" data-filter="poetry">Poetry</button>
+                </div>
+                <select class="filter-dropdown">
+                    <option value="all">All</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="poetry">Poetry</option>
+                </select>
+                <div class="authors-grid">
+                    <!-- Author 1 -->
+                    <div class="author-card" data-category="non-fiction">
+                        <img src="assets/images/team/author1.webp" alt="Kojo Ampem-Darko">
+                        <div class="info">
+                            <h3>Kojo Ampem-Darko</h3>
+                            <p>Non-Fiction Writer</p>
+                        </div>
+                    </div>
+                    <!-- Author 2 -->
+                    <div class="author-card" data-category="fiction">
+                        <img src="assets/images/team/author2.webp" alt="Yaw Asamoah Gyansah">
+                        <div class="info">
+                            <h3>Yaw Asamoah Gyansah</h3>
+                            <p>Fiction Writer</p>
+                        </div>
+                    </div>
+                    <!-- Author 3 -->
+                    <div class="author-card" data-category="non-fiction">
+                        <img src="assets/images/team/author3.webp" alt="Kofi Mensah">
+                        <div class="info">
+                            <h3>Kofi Mensah</h3>
+                            <p>Non-Fiction Writer</p>
+                        </div>
+                    </div>
+                    <!-- Author 4 -->
+                    <div class="author-card" data-category="poetry">
+                        <img src="assets/images/team/author6.webp" alt="Nana Kwesi Safo">
+                        <div class="info">
+                            <h3>Nana Kwesi Safo</h3>
+                            <p>Poet</p>
+                        </div>
+                    </div>
+
+                    <!-- Author 5 -->
+                    <div class="author-card" data-category="fiction">
+                        <img src="assets/images/about_us/kojo_ampem_darko.webp" alt="Ampem-Daako Kay">
+                        <div class="info">
+                            <h3>Ampem-Daako Kay</h3>
+                            <p>Poet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading">Join Our Journey</h2>
+                <p>Are you an author with a story to tell? We’re open to manuscript submissions! Or, join our upcoming book club to celebrate African literature.</p>
+                <a href="contact.html" class="btn">Get Involved</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Author Details -->
+    <div class="modal" id="author-modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div class="author-details">
+                <img id="modal-image" src="" alt="">
+                <div class="text-content">
+                    <h3 id="modal-name"></h3>
+                    <p id="modal-genre" class="genre"></p>
+                    <p id="modal-bio" class="bio"></p>
+                    <div class="social-links" id="modal-social-links">
+                        <!-- Social links will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+            <div class="books-carousel" id="modal-books-carousel">
+                <!-- Books carousel will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <!-- Newsletter Subscription -->
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <!-- Divider -->
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <!-- Branding/Logo -->
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <!-- Footer Content Wrapper -->
+            <div class="footer_content_wrapper">
+                <!-- Quick Links -->
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Join Us Links -->
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="submissions.htm">Author Submissions</a></li>
+                        <li><a href="careers.htm">Careers</a></li>
+                        <li><a href="partnerships.htm">Partnerships</a></li>
+                    </ul>
+                </div>
+                <!-- Social Links -->
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Contact Info -->
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <!-- Copyright -->
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

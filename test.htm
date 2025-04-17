@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Books Carousel - Publishing Company</title>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            overflow-x: hidden; /* Prevent horizontal scroll on body */
+        }
+
+        /*==================================
+           FEATURED BOOKS SECTION
+        ==================================*/
+        #books-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://via.placeholder.com/1920x1080?text=Background');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #books-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        #books-section .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%; /* Ensure container doesn't exceed viewport */
+        }
+
+        /* Left Side: Description */
+        .books-description {
+            flex: 0 0 35%;
+            color: #ffffff;
+        }
+
+        .books-description .logo {
+            margin-bottom: 20px;
+        }
+
+        .books-description .logo img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        .books-description .category {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .books-description h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .books-description h2 span {
+            color: #7b3fe4;
+        }
+
+        .books-description .description-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .books-description .btn {
+            display: inline-flex;
+            align-items: center;
+            background: none;
+            border: 1px solid #7b3fe4;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .books-description .btn:hover {
+            background: #7b3fe4;
+        }
+
+        .books-description .btn:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+
+        /* Right Side: Carousel */
+        .books-carousel {
+            flex: 1;
+            position: relative;
+            max-width: 65%; /* Ensure carousel doesn't exceed its allocated space */
+        }
+
+        #books-carousel {
+            overflow: hidden; /* Changed from visible to prevent overflow */
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #books-carousel .owl-stage-outer {
+            overflow: hidden; /* Ensure the stage doesn't overflow */
+        }
+
+        #books-carousel .item {
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+        }
+
+        #books-carousel .item img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Book Title Inside Image */
+        #books-carousel .item .book-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.85rem;
+            padding: 8px;
+            text-align: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Active Item (Larger, Not Blurred) */
+        #books-carousel .owl-item.active:first-child .item img {
+            width: 260px;
+            height: 390px;
+            filter: none !important;
+        }
+
+        #books-carousel .owl-item.active:first-child .item .book-title {
+            opacity: 1;
+        }
+
+        /* Non-Active Items (Smaller, Blurred) */
+        #books-carousel .owl-item.active:not(:first-child) .item img,
+        #books-carousel .owl-item:not(.active) .item img {
+            filter: blur(2px);
+        }
+
+        #books-carousel .owl-item.active:not(:first-child) .item .book-title,
+        #books-carousel .owl-item:not(.active) .item .book-title {
+            opacity: 0.7;
+        }
+
+        /* Navigation Arrows */
+        #books-carousel .owl-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        #books-carousel .owl-nav button {
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: 1px solid #7b3fe4;
+            border-radius: 50%;
+            color: #7b3fe4;
+            font-size: 1.2rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        #books-carousel .owl-nav button:hover {
+            background: #7b3fe4;
+            color: #ffffff;
+        }
+
+        #books-carousel .owl-nav button:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+
+        #books-carousel .owl-nav .owl-prev::before {
+            content: '←';
+        }
+
+        #books-carousel .owl-nav .owl-next::before {
+            content: '→';
+        }
+
+        /* Hide Dots */
+        #books-carousel .owl-dots {
+            display: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1000px) {
+            #books-section .container {
+                gap: 30px;
+            }
+
+            .books-description {
+                flex: 0 0 35%;
+            }
+
+            .books-carousel {
+                flex: 1;
+                max-width: 65%;
+            }
+
+            #books-carousel .item img {
+                width: 180px; /* Slightly smaller to prevent overflow */
+                height: 270px;
+            }
+
+            #books-carousel .owl-item.active:first-child .item img {
+                width: 234px;
+                height: 351px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #books-section {
+                min-height: auto;
+                padding: 40px 0;
+            }
+
+            #books-section .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .books-description {
+                flex: 1;
+                text-align: center;
+                max-width: 100%;
+                margin-bottom: 0;
+            }
+
+            .books-description .logo {
+                margin: 0 auto 20px;
+            }
+
+            .books-description h2 {
+                font-size: 2.25rem;
+            }
+
+            .books-description .description-text {
+                font-size: 1rem;
+            }
+
+            .books-carousel {
+                flex: 1;
+                max-width: 100%;
+            }
+
+            #books-carousel .item img {
+                width: 200px;
+                height: 300px;
+            }
+
+            #books-carousel .owl-item.active:first-child .item img {
+                width: 260px;
+                height: 390px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #books-section .container {
+                padding: 0 15px;
+            }
+
+            .books-description h2 {
+                font-size: 2.25rem;
+            }
+
+            .books-description .description-text {
+                font-size: 1rem;
+            }
+
+            #books-carousel .item img {
+                width: 180px;
+                height: 270px;
+            }
+
+            #books-carousel .owl-item.active:first-child .item img {
+                width: 234px;
+                height: 351px;
+            }
+
+            #books-carousel {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            #books-carousel .item {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Featured Books Section -->
+    <section id="books-section" aria-labelledby="books-heading">
+        <div class="container">
+            <!-- Description -->
+            <div class="books-description">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/150x50?text=Publisher+Logo" alt="Publishing Company Logo">
+                </div>
+                <span class="category" id="category-text">Fiction</span>
+                <h2 id="books-heading"><span>Book</span> A</h2>
+                <p class="description-text" id="description-text">
+                    A gripping tale of struggle and triumph, this book explores the impact of illiteracy on a young African community, weaving a powerful narrative of resilience and hope.
+                </p>
+                <a href="book-details.html?title=Book%20A" class="btn" aria-label="Read more about the selected book">Read More</a>
+            </div>
+            <!-- Carousel -->
+            <div class="books-carousel">
+                <div class="owl-carousel owl-theme" id="books-carousel" role="region" aria-label="Featured books carousel">
+                    <!-- Book A -->
+                    <div class="item"
+                         data-category="Fiction"
+                         data-title="Book A"
+                         data-description="A gripping tale of struggle and triumph, this book explores the impact of illiteracy on a young African community, weaving a powerful narrative of resilience and hope.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+A" alt="Cover of Book A" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book A</div>
+                    </div>
+                    <!-- Book B -->
+                    <div class="item"
+                         data-category="Cultural Heritage"
+                         data-title="Book B"
+                         data-description="A beautifully written novel that delves into the rich cultural heritage of Africa, following a family’s journey through generations of tradition and change.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+B" alt="Cover of Book B" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book B</div>
+                    </div>
+                    <!-- Book C -->
+                    <div class="item"
+                         data-category="Short Stories"
+                         data-title="Book C"
+                         data-description="An inspiring collection of short stories that highlight the dreams and aspirations of Africa’s youth, set against the backdrop of a rapidly changing continent.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+C" alt="Cover of Book C" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book C</div>
+                    </div>
+                    <!-- Book D -->
+                    <div class="item"
+                         data-category="Education"
+                         data-title="Book D"
+                         data-description="A thought-provoking story about a quiet revolution in a small village, where education becomes the key to unlocking a brighter future for all.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+D" alt="Cover of Book D" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book D</div>
+                    </div>
+                    <!-- Book E -->
+                    <div class="item"
+                         data-category="Tradition & Modernity"
+                         data-title="Book E"
+                         data-description="A powerful narrative that explores the intersection of tradition and modernity in an African setting, filled with vivid characters and emotional depth.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+E" alt="Cover of Book E" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book E</div>
+                    </div>
+                    <!-- Book F -->
+                    <div class="item"
+                         data-category="Love & Loss"
+                         data-title="Book F"
+                         data-description="A captivating story of love and loss, set against the backdrop of a vibrant African city, where the past and present collide in unexpected ways.">
+                        <img src="https://via.placeholder.com/300x450?text=Book+F" alt="Cover of Book F" loading="lazy">
+                        <div class="book-title" aria-hidden="true">Book F</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- JavaScript for Carousel and Dynamic Updates -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Books Carousel
+            const booksCarousel = $("#books-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                items: 3,
+                center: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1000: { items: 3 }
+                },
+                onInitialized: updateDescriptionAndStyles,
+                onTranslated: updateDescriptionAndStyles,
+                onDragged: updateDescriptionAndStyles
+            });
+
+            // Function to update description, blur, and size based on the active item
+            function updateDescriptionAndStyles() {
+                // Reset all items to non-active styles
+                $("#books-carousel .item img").css({
+                    'filter': 'blur(2px)',
+                    'width': window.innerWidth <= 480 ? '180px' : window.innerWidth <= 1000 ? '180px' : '200px',
+                    'height': window.innerWidth <= 480 ? '270px' : window.innerWidth <= 1000 ? '270px' : '300px'
+                });
+
+                // Identify the active item (first visible active item)
+                const activeItem = $("#books-carousel .owl-item.active").first().find('.item');
+                
+                // Apply active styles to the first active item
+                activeItem.find('img').css({
+                    'filter': 'blur(0)',
+                    'width': window.innerWidth <= 480 ? '234px' : window.innerWidth <= 1000 ? '234px' : '260px',
+                    'height': window.innerWidth <= 480 ? '351px' : window.innerWidth <= 1000 ? '351px' : '390px'
+                });
+
+                // Update the category, title, and description
+                const category = activeItem.data('category') || 'Category';
+                const title = activeItem.data('title') || 'Title';
+                const description = activeItem.data('description') || 'Description.';
+                $('#category-text').text(category);
+                $('#books-heading').html(`<span>Book</span> ${title.replace('Book ', '')}`);
+                $('#description-text').text(description);
+                $('#books-section .btn').attr('href', `book-details.html?title=${encodeURIComponent(title)}`);
+            }
+
+            // Update on window resize
+            window.addEventListener('resize', updateDescriptionAndStyles);
+
+            // Accessibility: Keyboard navigation for carousel items
+            $('.item').on('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const index = $(this).closest('.owl-item').index();
+                    booksCarousel.trigger('to.owl.carousel', index);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

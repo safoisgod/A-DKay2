@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Collection - A-D Kay Publications</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="Explore our collection of books celebrating African voices, heritage, and stories.">
+    <meta name="keywords" content="African literature, books, A-D Kay Publications">
+    <meta name="author" content="github.com/safoisgod">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Banner Section */
+        #book-banner-section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: url('assets/images/background/service-section-background.webp') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+        }
+
+        #book-banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        .book-banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .book-banner-content h1 {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-banner-content p {
+            font-size: 1.2rem;
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Book Collection Section */
+        #book-collection-section {
+            padding: 60px 0;
+            background: #FFFFFF;
+            min-height: calc(100vh - 80px - 300px - 300px); /* Adjust for header, banner, and footer */
+        }
+
+        .book-collection-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Section Header */
+        .book-collection-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .book-collection-header h2 {
+            font-size: 2rem;
+            color: #4267b2;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .book-collection-header p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search and Filter */
+        .book-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .book-search {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .book-search input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            font-size: 0.9rem;
+            border: 1px solid #4267b2;
+            border-radius: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            background-color: #ffffff;
+        }
+
+        .book-search input::placeholder {
+            color: #999999;
+        }
+
+        .book-search input:focus {
+            outline: 2px solid #5b7bd6;
+            outline-offset: 2px;
+        }
+
+        .book-search i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4267b2;
+            font-size: 1rem;
+        }
+
+        .book-filter select {
+            padding: 10px 30px 10px 15px;
+            font-size: 0.9rem;
+            border: 1px solid #4267b2;
+            border-radius: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            background-color: #ffffff;
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%234267b2' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .book-filter select:focus {
+            outline: 2px solid #5b7bd6;
+            outline-offset: 2px;
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 380px; /* Increased height to display full cover */
+            background-color: #f5f5f5; /* Light background for empty space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Show full image without cropping */
+            object-position: center;
+            display: block;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .book-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .book-content h3 {
+            font-size: 1.1rem;
+            color: #030303;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .book-content .author {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .book-content .category {
+            font-size: 0.85rem;
+            color: #4267b2;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1000px) {
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .book-image {
+                height: 350px;
+            }
+
+            #book-banner-section {
+                height: 250px;
+            }
+
+            .book-banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .book-banner-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .book-collection-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .book-collection-header p {
+                font-size: 0.9rem;
+            }
+
+            .book-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .book-search {
+                max-width: 100%;
+            }
+
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+
+            .book-content h3 {
+                font-size: 1rem;
+            }
+
+            .book-image {
+                height: 320px;
+            }
+
+            #book-banner-section {
+                height: 200px;
+            }
+
+            .book-banner-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .book-banner-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .book-image {
+                height: 280px;
+            }
+
+            #book-banner-section {
+                height: 180px;
+            }
+
+            .book-banner-content h1 {
+                font-size: 1.2rem;
+            }
+
+            .book-banner-content p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm" class="active">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="book-banner-section">
+        <div class="book-banner-content">
+            <h1>Our Book Collection</h1>
+            <p>"Stories that weave the past into the future."</p>
+        </div>
+    </section>
+
+    <!-- Book Collection Section -->
+    <section id="book-collection-section">
+        <div class="book-collection-container">
+            <div class="book-collection-header">
+                <h2>Explore Our Books</h2>
+                <p>Discover a rich collection of stories that celebrate African heritage, culture, and voices.</p>
+            </div>
+
+            <div class="book-controls">
+                <div class="book-search">
+                    <input type="text" id="book-search-input" placeholder="Search books by title or author...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="book-filter">
+                    <select id="book-filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="Cultural Reflections">Cultural Reflections</option>
+                        <option value="Social Justice Fiction">Social Justice Fiction</option>
+                        <option value="Traditional Leadership">Traditional Leadership</option>
+                        <option value="Language Learning">Language Learning</option>
+                        <option value="Political Commentary">Political Commentary</option>
+                        <option value="Emotional Wisdom">Emotional Wisdom</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="book-grid" id="book-grid">
+                <!-- Kojo Ampem Daako -->
+                <a href="book-details.htm?id=culture-brewed" class="book-card" data-category="Cultural Reflections" data-title="Culture Brewed in an African Pot" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/culture_brewed_in_an_african_pot.webp" alt="Culture Brewed in an African Pot">
+                    </div>
+                    <div class="book-content">
+                        <h3>Culture Brewed in an African Pot</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Cultural Reflections</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=killed-by-illiteracy" class="book-card" data-category="Social Justice Fiction" data-title="Killed by Illiteracy" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/killed_by_illiteracy.webp" alt="Killed by Illiteracy">
+                    </div>
+                    <div class="book-content">
+                        <h3>Killed by Illiteracy</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Social Justice Fiction</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=bece-french" class="book-card" data-category="Language Learning" data-title="BECE French Composition" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/picture_description_&_guided_composition.webp" alt="BECE French Composition">
+                    </div>
+                    <div class="book-content">
+                        <h3>BECE French Composition</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Language Learning</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=politics-for-sale" class="book-card" data-category="Political Commentary" data-title="Politics for Sale" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/politics_for_sale.webp" alt="Politics for Sale">
+                    </div>
+                    <div class="book-content">
+                        <h3>Politics for Sale</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Political Commentary</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=word-of-god" class="book-card" data-category="Cultural Reflections" data-title="Word of God" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Word of God">
+                    </div>
+                    <div class="book-content">
+                        <h3>Word of God</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Cultural Reflections</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=the-young-shall-grow" class="book-card" data-category="Social Justice Fiction" data-title="The Young Shall Grow" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="The Young Shall Grow">
+                    </div>
+                    <div class="book-content">
+                        <h3>The Young Shall Grow</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Social Justice Fiction</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=the-teacher-and-his-pupils" class="book-card" data-category="Language Learning" data-title="The Teacher and His Pupils" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="The Teacher and His Pupils">
+                    </div>
+                    <div class="book-content">
+                        <h3>The Teacher and His Pupils</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Language Learning</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=the-chronicles-of-addo-yobo" class="book-card" data-category="Political Commentary" data-title="The Chronicles of Addo-Yobo" data-author="Kojo Ampem Daako">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="The Chronicles of Addo-Yobo">
+                    </div>
+                    <div class="book-content">
+                        <h3>The Chronicles of Addo-Yobo</h3>
+                        <div class="author">by Kojo Ampem Daako</div>
+                        <div class="category">Political Commentary</div>
+                    </div>
+                </a>
+                <!-- Nana Kwesi Safo -->
+                <a href="book-details.htm?id=the-kings-dilemma" class="book-card" data-category="Traditional Leadership" data-title="The King's Dilemma" data-author="Nana Kwesi Safo">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/the_kings_dilemma.webp" alt="The King's Dilemma">
+                    </div>
+                    <div class="book-content">
+                        <h3>The King's Dilemma</h3>
+                        <div class="author">by Nana Kwesi Safo</div>
+                        <div class="category">Traditional Leadership</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=particles-of-wisdom" class="book-card" data-category="Emotional Wisdom" data-title="Particles of Wisdom" data-author="Nana Kwesi Safo">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/particles_of_wisdom.webp" alt="Particles of Wisdom">
+                    </div>
+                    <div class="book-content">
+                        <h3>Particles of Wisdom</h3>
+                        <div class="author">by Nana Kwesi Safo</div>
+                        <div class="category">Emotional Wisdom</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=echoes-of-the-ancestors" class="book-card" data-category="Traditional Leadership" data-title="Echoes of the Ancestors" data-author="Nana Kwesi Safo">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Echoes of the Ancestors">
+                    </div>
+                    <div class="book-content">
+                        <h3>Echoes of the Ancestors</h3>
+                        <div class="author">by Nana Kwesi Safo</div>
+                        <div class="category">Traditional Leadership</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=tears-of-the-baobab" class="book-card" data-category="Emotional Wisdom" data-title="Tears of the Baobab" data-author="Nana Kwesi Safo">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Tears of the Baobab">
+                    </div>
+                    <div class="book-content">
+                        <h3>Tears of the Baobab</h3>
+                        <div class="author">by Nana Kwesi Safo</div>
+                        <div class="category">Emotional Wisdom</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=the-chieftains-oath" class="book-card" data-category="Traditional Leadership" data-title="The Chieftain’s Oath" data-author="Nana Kwesi Safo">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="The Chieftain’s Oath">
+                    </div>
+                    <div class="book-content">
+                        <h3>The Chieftain’s Oath</h3>
+                        <div class="author">by Nana Kwesi Safo</div>
+                        <div class="category">Traditional Leadership</div>
+                    </div>
+                </a>
+                <!-- Ama Serwaa Mensah -->
+                <a href="book-details.htm?id=moonlight-and-melodies" class="book-card" data-category="Emotional Wisdom" data-title="Moonlight & Melodies" data-author="Ama Serwaa Mensah">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/moonlight_&_melodies.webp" alt="Moonlight & Melodies">
+                    </div>
+                    <div class="book-content">
+                        <h3>Moonlight & Melodies</h3>
+                        <div class="author">by Ama Serwaa Mensah</div>
+                        <div class="category">Emotional Wisdom</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=whispers-of-the-savanna" class="book-card" data-category="Emotional Wisdom" data-title="Whispers of the Savanna" data-author="Ama Serwaa Mensah">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Whispers of the Savanna">
+                    </div>
+                    <div class="book-content">
+                        <h3>Whispers of the Savanna</h3>
+                        <div class="author">by Ama Serwaa Mensah</div>
+                        <div class="category">Emotional Wisdom</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=daughters-of-the-sun" class="book-card" data-category="Cultural Reflections" data-title="Daughters of the Sun" data-author="Ama Serwaa Mensah">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Daughters of the Sun">
+                    </div>
+                    <div class="book-content">
+                        <h3>Daughters of the Sun</h3>
+                        <div class="author">by Ama Serwaa Mensah</div>
+                        <div class="category">Cultural Reflections</div>
+                    </div>
+                </a>
+                <!-- Kwame Osei Tutu -->
+                <a href="book-details.htm?id=son-of-king" class="book-card" data-category="Traditional Leadership" data-title="Son of King" data-author="Kwame Osei Tutu">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/son_of_king.webp" alt="Son of King">
+                    </div>
+                    <div class="book-content">
+                        <h3>Son of King</h3>
+                        <div class="author">by Kwame Osei Tutu</div>
+                        <div class="category">Traditional Leadership</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=crown-of-courage" class="book-card" data-category="Traditional Leadership" data-title="Crown of Courage" data-author="Kwame Osei Tutu">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="Crown of Courage">
+                    </div>
+                    <div class="book-content">
+                        <h3>Crown of Courage</h3>
+                        <div class="author">by Kwame Osei Tutu</div>
+                        <div class="category">Traditional Leadership</div>
+                    </div>
+                </a>
+                <a href="book-details.htm?id=the-elders-prophecy" class="book-card" data-category="Cultural Reflections" data-title="The Elder’s Prophecy" data-author="Kwame Osei Tutu">
+                    <div class="book-image">
+                        <img src="assets/images/BOOKS/placeholder.webp" alt="The Elder’s Prophecy">
+                    </div>
+                    <div class="book-content">
+                        <h3>The Elder’s Prophecy</h3>
+                        <div class="author">by Kwame Osei Tutu</div>
+                        <div class="category">Cultural Reflections</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <!-- Newsletter Subscription -->
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Divider -->
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+
+            <!-- Branding/Logo -->
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+
+            <!-- Footer Content Wrapper -->
+            <div class="footer_content_wrapper">
+                <!-- Quick Links -->
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Join Us Links -->
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="submissions.htm">Author Submissions</a></li>
+                        <li><a href="careers.htm">Careers</a></li>
+                        <li><a href="partnerships.htm">Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Search Functionality
+            $('#book-search-input').on('input', function() {
+                const searchTerm = $(this).val().toLowerCase();
+                $('.book-card').each(function() {
+                    const title = $(this).data('title').toLowerCase();
+                    const author = $(this).data('author').toLowerCase();
+                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            // Filter Functionality
+            $('#book-filter-select').on('change', function() {
+                const category = $(this).val();
+                $('.book-card').each(function() {
+                    const bookCategory = $(this).data('category');
+                    if (category === 'all' || bookCategory === category) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
