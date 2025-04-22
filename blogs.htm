@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog - A-D Kay Publications</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="Explore the latest blog posts from A-D Kay Publications, featuring book releases, author spotlights, events, and insights into African literature.">
+    <meta name="keywords" content="African literature, blog, book releases, author spotlights, A-D Kay Publications">
+    <meta name="author" content="github.com/safoisgod">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- External Styles (Assumed to include header/footer styles) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Blog-Specific Styles -->
+    <style>
+        /* Banner Section */
+        .banner-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url('assets/images/background/book-section-background1.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            font-family: 'Roboto', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .banner-section {
+                height: 300px;
+            }
+
+            .banner-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-section {
+                height: 250px;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .banner-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 40px 0;
+            background-color: #E6F0FA;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid #4267b2;
+            border-radius: 25px;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #5b7bd6;
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            background-color: #4267b2;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background-color: #5b7bd6;
+            box-shadow: 0 0 10px rgba(66, 103, 178, 0.5);
+        }
+
+        .search-box button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .search-box button svg path {
+            stroke: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-box input {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .search-box button {
+                padding: 10px 15px;
+            }
+        }
+
+        /* Blog Section */
+        #blog-section {
+            margin: 0;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        #blog-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+        }
+
+        #blog-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        #blog-section .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #blog-section .section-header h2 {
+            font-size: 2.5rem;
+            color: #4267b2;
+            font-weight: 700;
+            margin-bottom: 15px;
+            height: 80px;
+            line-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #blog-section .section-header h2::after {
+            content: "\00a0";
+            display: inline;
+        }
+
+        #blog-section .section-header p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: #FFFFFF;
+            border: 2px solid #4267b2;
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            color: #4267b2;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: #4267b2;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        /* Blog Grid */
+        #blog-section .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        #blog-section .blog-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #blog-section .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #blog-section .blog-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #4267b2;
+            transition: width 0.3s ease;
+        }
+
+        #blog-section .blog-card:hover::after {
+            width: 100%;
+        }
+
+        #blog-section .blog-image {
+            width: 100%;
+            height: 200px;
+        }
+
+        #blog-section .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #blog-section .blog-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        #blog-section .blog-content .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #blog-section .blog-content .blog-date {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        #blog-section .blog-content .blog-author {
+            font-size: 0.85rem;
+            color: #4267b2;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        #blog-section .blog-content h3 {
+            font-size: 1.25rem;
+            color: #030303;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        #blog-section .blog-content p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin: 0 0 15px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #blog-section .blog-content .read-more {
+            font-size: 0.85rem;
+            color: #4267b2;
+            font-weight: 500;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        #blog-section .blog-content .read-more:hover {
+            color: #5b7bd6;
+        }
+
+        @media (max-width: 1000px) {
+            #blog-section .blog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            #blog-section .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #blog-section .section-header h2 {
+                font-size: 2rem;
+                height: 64px;
+                line-height: 32px;
+            }
+
+            #blog-section .section-header p {
+                font-size: 0.9rem;
+            }
+
+            #blog-section .blog-image {
+                height: 180px;
+            }
+
+            #blog-section .blog-content h3 {
+                font-size: 1.1rem;
+            }
+
+            #blog-section .blog-content p {
+                font-size: 0.85rem;
+            }
+
+            .filter-bar {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (Styles in style.css) -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="A-D Kay Publications Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm" aria-current="page" class="active">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-content">
+            <h1>Our Blog</h1>
+            <p>Discover the latest insights, updates, and stories from A-D Kay Publications.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for blogs..." aria-label="Search for blog posts">
+                <button onclick="searchBlogPosts()" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 29" fill="none">
+                        <g clip-path="url(#clip0_2_17)">
+                            <g filter="url(#filter0_d_2_17)">
+                                <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
+                            </g>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_2_17" x="-0.418549" y="3.70435" width="29.7139" height="29.7139" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                <feOffset dy="4"></feOffset>
+                                <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_17"></feBlend>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_17" result="shape"></feBlend>
+                            </filter>
+                            <clipPath id="clip0_2_17">
+                                <rect width="28.0702" height="28.0702" fill="white" transform="translate(0.403503 0.526367)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Blog Posts</h2>
+                <p>Stay updated with our insights on African literature, author spotlights, events, and more.</p>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="announcements">Announcements</button>
+                <button class="filter-btn" data-filter="book-club">Book Club</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+                <button class="filter-btn" data-filter="author-insights">Author Insights</button>
+                <button class="filter-btn" data-filter="submission-guide">Submission Guide</button>
+                <button class="filter-btn" data-filter="insights">Insights</button>
+            </div>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <a href="blog-details.htm?id=exciting-new-release-killed-by-illiteracy" class="blog-card" data-category="announcements">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/killed_by_illiteracy_book_spotlight.webp" alt="Killed by Illiteracy Book Cover" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Apr, 2025</span>
+                            <span class="blog-author">Nana Kwesi</span>
+                        </div>
+                        <h3>Exciting New Release - Killed by Illiteracy</h3>
+                        <p>Announcements for new book releases, giving readers insights into the plot, characters, and themes of the book, as well as details on where to purchase or pre-order.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 2 -->
+                <a href="blog-details.htm?id=join-our-monthly-book-club-ampem-daako-book-club" class="blog-card" data-category="book-club">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/ampem_daako_book_club.webp" alt="Ampem-Daako Book Club" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">05 Apr, 2025</span>
+                            <span class="blog-author">Thomas Kumah</span>
+                        </div>
+                        <h3>Join Our Monthly Book Club: Ampem-Daako Book Club</h3>
+                        <p>Information about book clubs, both online and offline, featuring the latest book discussions, author Q&As, and recommendations for group reads.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 3 -->
+                <a href="blog-details.htm?id=upcoming-event-memorial-service" class="blog-card" data-category="event">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/memorial_poster.webp" alt="Memorial Service for Ampem-Daako Kay" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">01 Apr, 2025</span>
+                            <span class="blog-author">Kwame Yeboah</span>
+                        </div>
+                        <h3>Upcoming Event: Memorial Service</h3>
+                        <p>Join us for a memorial service to honor the life and legacy of Kojo Ampem-Darko, the visionary behind A-D Kay Publications.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 4 -->
+                <a href="blog-details.htm?id=the-impact-of-african-literature-on-global-narratives" class="blog-card" data-category="insights">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/african_literature_impact.webp" alt="African Literature Impact">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">15 Mar, 2025</span>
+                            <span class="blog-author">Efua Asantewaa</span>
+                        </div>
+                        <h3>The Impact of African Literature on Global Narratives</h3>
+                        <p>Explore how African literature shapes global perspectives, challenges stereotypes, and fosters cross-cultural understanding through powerful storytelling.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 5 -->
+                <a href="blog-details.htm?id=spotlight-on-our-authors" class="blog-card" data-category="author-insights">
+                    <div class="blog-image">
+                        <img src="assets/images/authors/Ampem-Daako Kay -nb.png" alt="Ampem-Daako Kay" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">05 Mar, 2025</span>
+                            <span class="blog-author">Nana Kwesi</span>
+                        </div>
+                        <h3>Spotlight on Our Authors</h3>
+                        <p>Features focused on one author, exploring their writing journey, books, influences, and personal stories, giving readers an intimate look into the author’s career.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 6 -->
+                <a href="blog-details.htm?id=tips-for-aspiring-authors-crafting-a-compelling-story" class="blog-card" data-category="author-insights">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/crafting_story.webp" alt="Crafting a Story">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">01 Mar, 2025</span>
+                            <span class="blog-author">Thomas Kumah</span>
+                        </div>
+                        <h3>Tips for Aspiring Authors: Crafting a Compelling Story</h3>
+                        <p>Practical advice for new writers on building engaging narratives, developing characters, and finding their unique voice in the literary world.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 7 -->
+                <a href="blog-details.htm?id=how-to-submit-your-manuscript" class="blog-card" data-category="submission-guide">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/submit-book.jpg" alt="Submit Manuscript" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">25 Feb, 2025</span>
+                            <span class="blog-author">Kwame Yeboah</span>
+                        </div>
+                        <h3>How to Submit Your Manuscript</h3>
+                        <p>A guide for new authors on how to get their work published, what publishers are looking for, and tips to increase chances of success in a competitive market.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+                <!-- Blog Post 8 -->
+                <a href="blog-details.htm?id=celebrating-5-years-of-a-d-kay-publications" class="blog-card" data-category="announcements">
+                    <div class="blog-image">
+                        <img src="assets/images/blog/5_years_celebration.webp" alt="5 Years Celebration">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">20 Feb, 2025</span>
+                            <span class="blog-author">Efua Asantewaa</span>
+                        </div>
+                        <h3>Celebrating 5 Years of A-D Kay Publications</h3>
+                        <p>Reflecting on five years of amplifying African voices, with highlights of our journey, key milestones, and future aspirations.</p>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Styles in style.css) -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <div class="footer_content_wrapper">
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="submissions.htm">Author Submissions</a></li>
+                        <li><a href="careers.htm">Careers</a></li>
+                        <li><a href="partnerships.htm">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Search and Filter Functions -->
+    <script>
+        // Search Functionality
+        function searchBlogPosts() {
+            const input = document.getElementById('searchInput')?.value.toLowerCase().trim() || '';
+            const blogPosts = document.querySelectorAll('.blog-card');
+
+            blogPosts.forEach(post => {
+                const title = post.querySelector('h3')?.textContent.toLowerCase() || '';
+                const content = post.querySelector('p')?.textContent.toLowerCase() || '';
+                const matchesSearch = title.includes(input) || content.includes(input);
+                const matchesFilter = post.style.display !== 'none';
+
+                post.style.display = (matchesSearch && matchesFilter) ? 'block' : 'none';
+            });
+        }
+
+        // Add Enter key support for search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchBlogPosts();
+            }
+        });
+
+        // Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                blogCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                searchBlogPosts();
+            });
+        });
+    </script>
+</body>
+</html>

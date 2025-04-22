@@ -1588,6 +1588,8 @@ header.fixed + .hero-section {
     position: relative;
     display: inline-block;
     z-index: 1;
+    color: #4267b2;
+    text-decoration: none;
 }
 
 #pubco_books_carousel .pubco_item img {
@@ -2094,6 +2096,7 @@ header.fixed + .hero-section {
     font-weight: 700;
     color: #333333;
     margin: 0;
+    padding: 0;
 }
 
 /* Carousel Wrapper */
@@ -2130,7 +2133,7 @@ header.fixed + .hero-section {
 
 /* Logos */
 #platforms_carousel .platform_item img {
-    width: 150px; /* Defined width for easy identification */
+    width: 200px; /* Defined width for easy identification */
     height: auto;
     object-fit: contain;
     display: block; /* Prevent inline-block spacing issues */

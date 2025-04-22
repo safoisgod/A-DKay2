@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 const category = activeItem.data('pubco-category') || 'Category';
                 const title = activeItem.data('pubco-title') || 'Title';
+                const id = activeItem.data('pubco-id') || 'default-id'; // Get the ID for navigation
                 const author = activeItem.find('.pubco_author').text() || 'Author';
                 const description = activeItem.data('pubco-description') || 'Description.';
                 $('#pubco_category_text').text(category);
@@ -220,11 +221,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 $('#pubco_author_text').text(author);
                 $('#pubco_description_text').text(description);
                 
-                // Update the Read More button's onclick event
+                // Update the Read More button's onclick event to match the <a> tag's href format
                 const readMoreBtn = document.getElementById('learn-more-btn');
                 if (readMoreBtn) {
                     readMoreBtn.onclick = function() {
-                        window.location.href = `book-details.html?title=${encodeURIComponent(title)}`;
+                        window.location.href = `book-details.htm?id=${id}`; // Use the ID to match the URL format
                     };
                     // Update aria-label for accessibility
                     readMoreBtn.setAttribute('aria-label', `Read more about ${title} by ${author}`);
@@ -679,67 +680,67 @@ document.addEventListener('DOMContentLoaded', function () {
         const authorsData = [
             {
                 name: "Kojo Ampem-Darko",
-                genre: "Non-Fiction Writer",
-                image: "assets/images/team/author1.webp",
-                bio: "Kojo Ampem-Darko, the founder of A-D Kay Publications, is a renowned non-fiction writer dedicated to African politics and culture. Under his pen name Ampem-Daako Kay, he also explores fiction, weaving narratives of heritage and legacy.",
+                genre: "Non-Fiction & Fiction Writer",
+                image: "assets/images/about_us/kojo_ampem_darko.webp",
+                bio: "Kojo Ampem-Darko is a renowned Ghanaian author and educator with a passion for preserving African cultural heritage through non-fiction and educational works. With a background in linguistics and cultural studies, he has dedicated his career to empowering young minds, particularly through language learning and spiritual reflections. Writing under the pen name Ampem-Daako Kay, he also crafts powerful fiction that tackles social issues with emotional depth, exploring themes like educational inequality and cultural transformation. His works have earned him critical acclaim for their authenticity and impact.",
                 social: [
                     { platform: "linkedin", url: "https://linkedin.com/in/kojo-ampem-darko" },
                     { platform: "twitter", url: "https://twitter.com/kojoampem" }
                 ],
                 books: [
-                    { title: "Picture Description & Guided Composition", cover: "assets/images/BOOKS/picture_description_&_guided_composition.webp", link: "book-details.html?title=picture-description-and-guided-composition" },
+                    { title: "Word of God", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=word-of-god" },
+                    { title: "The Chronicles of Addo-Yobo", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=chronicles-of-addo-yobo" },
+                    { title: "The Young Shall Grow", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=the-young-shall-grow" },
+                    { title: "The Teacher and His Pupils", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=the-teacher-and-his-pupils" },
+                    { title: "Picture Description & Guided Composition", cover: "assets/images/BOOKS/picture_description_&_guided_composition.webp", link: "book-details.htm?id=bece-french" },
+                    { title: "Culture Brewed in an African Pot", cover: "assets/images/BOOKS/culture_brewed_in_an_african_pot.webp", link: "book-details.htm?id=culture-brewed" },
+                    { title: "Killed by Illiteracy", cover: "assets/images/BOOKS/killed_by_illiteracy.webp", link: "book-details.htm?id=killed-by-illiteracy" },
+                    { title: "Particles of Wisdom 2", cover: "assets/images/BOOKS/particles_of_wisdom2.webp", link: "book-details.htm?id=particles-of-wisdom-2" }
                 ]
             },
             {
-                name: "Yaw Asamoah Gyansah",
+                name: "Necr0seWrites",
                 genre: "Fiction Writer",
                 image: "assets/images/team/author2.webp",
-                bio: "Yaw Asamoah Gyansah crafts compelling fictional narratives that explore the complexities of African family dynamics and traditions.",
+                bio: "Necr0seWrites is the pen name of a rising star in African literature, known for crafting emotionally resonant stories that blend romance, cultural reflection, and personal growth. With works like 'Moonlight & Melodies' and 'Daughters of the Sun,' Necr0seWrites captures the beauty of African landscapes and the complexities of human relationships, offering readers a deeply immersive experience. Their unique voice has quickly garnered a dedicated following among fans of heartfelt storytelling.",
                 social: [
-                    { platform: "instagram", url: "https://instagram.com/yawasamoahgyansah" }
+                    { platform: "instagram", url: "https://instagram.com/Necr0seWrites" }
                 ],
                 books: [
-                    { title: "Moonlight & Melodies", cover: "assets/images/BOOKS/moonlight_&_melodies.webp", link: "book-details.html?title=moonlight-and-melodies" }
+                    { title: "Moonlight & Melodies", cover: "assets/images/BOOKS/moonlight_&_melodies.webp", link: "book-details.htm?id=moonlight-and-melodies" },
+                    { title: "Whispers of the Savanna", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=whispers-of-the-savanna" },
+                    { title: "Daughters of the Sun", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=daughters-of-the-sun" }
                 ]
             },
             {
                 name: "Kofi Mensah",
                 genre: "Non-Fiction Writer",
                 image: "assets/images/team/author3.webp",
-                bio: "Kofi Mensah writes thought-provoking non-fiction on African history and socio-political issues, aiming to educate and inspire.",
+                bio: "Kofi Mensah is a fearless Ghanaian writer and political analyst whose work focuses on the intricacies of governance in modern Africa. His book 'Politics for Sale' exemplifies his commitment to exposing corruption and advocating for systemic change through sharp, thought-provoking commentary. With a background in political science, Mensah’s writings inspire readers to engage critically with the political landscape and envision a more equitable future.",
                 social: [
                     { platform: "linkedin", url: "https://linkedin.com/in/kofi-mensah" }
                 ],
                 books: [
-                    { title: "Politics for Sale", cover: "assets/images/BOOKS/politics_for_sale.webp", link: "book-details.html?title=politics-for-sale" }
+                    { title: "Politics for Sale", cover: "assets/images/BOOKS/politics_for_sale.webp", link: "book-details.htm?id=politics-for-sale" }
                 ]
             },
             {
                 name: "Nana Kwesi Safo",
-                genre: "Poet",
+                genre: "Poet & Traditional Leadership",
                 image: "assets/images/team/author6.webp",
-                bio: "Nana Kwesi Safo’s poetry reflects on leadership, legacy, and the cultural heritage of Africa with deep emotion.",
+                bio: "Nana Kwesi Safo is a celebrated poet and storyteller from Ghana, known for his lyrical explorations of traditional leadership and cultural heritage. Drawing from his deep connection to Ashanti traditions, his works like 'The King’s Dilemma' and 'Echoes of the Ancestors' weave poetry and prose to honor ancestral wisdom while addressing contemporary challenges. Safo’s writing resonates with readers seeking to understand the timeless values that shape African societies.",
                 social: [
                     { platform: "twitter", url: "https://twitter.com/iamnanasafo" }
                 ],
                 books: [
-                    { title: "The King's Dilemma", cover: "assets/images/BOOKS/the_kings_dilemma.webp", link: "book-details.html?title=the-kings-dilemma" },
-                    { title: "Son of a King", cover: "assets/images/BOOKS/son_of_king.webp", link: "book-details.html?title=son-of-a-king" }
-                ]
-            },
-            {
-                name: "Ampem-Daako Kay",
-                genre: "Fiction Writer",
-                image: "assets/images/about_us/kojo_ampem_darko.webp",
-                bio: "Ampem-Daako Kay is the pen name of Kojo Ampem-Darko, used for his fictional works. His stories delve into African heritage, leadership, and cultural narratives, blending tradition with imagination.",
-                social: [
-                    { platform: "twitter", url: "https://twitter.com/kojoampem" }
-                ],
-                books: [
-                    { title: "Killed by Illiteracy", cover: "assets/images/BOOKS/killed_by_illiteracy.webp", link: "book-details.html?title=killed-by-illiteracy" },
-                    { title: "Culture Brewed in an African Pot", cover: "assets/images/BOOKS/culture_brewed_in_an_african_pot.webp", link: "book-details.html?title=culture-brewed-in-an-african-pot" },
-                    { title: "Particles of Wisdom", cover: "assets/images/BOOKS/particles_of_wisdom.webp", link: "book-details.html?title=particles-of-wisdom" },
-                    { title: "Particles of Wisdom 2", cover: "assets/images/BOOKS/particles_of_wisdom2.webp", link: "book-details.html?title=particles-of-wisdom-2" },
+                    { title: "The King's Dilemma", cover: "assets/images/BOOKS/the_kings_dilemma.webp", link: "book-details.htm?id=the-kings-dilemma" },
+                    { title: "Particles of Wisdom", cover: "assets/images/BOOKS/particles_of_wisdom.webp", link: "book-details.htm?id=particles-of-wisdom" },
+                    { title: "Echoes of the Ancestors", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=echoes-of-ancestors" },
+                    { title: "Tears of the Baobab", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=tears-of-baobab" },
+                    { title: "The Chieftain’s Oath", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=the-chieftains-oath" },
+                    { title: "Son of a King", cover: "assets/images/BOOKS/son_of_king.webp", link: "book-details.htm?id=son-of-king" },
+                    { title: "Crown of Courage", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=crown-of-courage" },
+                    { title: "The Elder’s Prophecy", cover: "assets/images/BOOKS/placeholder.webp", link: "book-details.htm?id=the-elders-prophecy" }
                 ]
             }
         ];

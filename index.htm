@@ -9,8 +9,15 @@
     <meta name="author" content="github.com/safoisgod">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <!--SEO Meta Tags-->
+    <meta name="description" content="A-D Kay Publications celebrates African stories, offering publishing services and a collection of impactful books by African authors.">
+    <meta name="keywords" content="African literature, publishing services, African authors, books, A-D Kay Publications">
+    <meta property="og:title" content="A-D Kay Publications - Home">
+    <meta property="og:description" content="Discover African stories and publishing services at A-D Kay Publications.">
+    <meta property="og:image" content="assets/images/logo/A-D KAY-nb1.webp">
+    <meta name="twitter:card" content="summary_large_image">
 
+    
     <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
     <!-- Additional Fonts for Carousel -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -112,7 +119,7 @@
                             <!-- Buy and Read More Buttons -->
                             <div class="links">
                                 <button class="box" onclick="window.location.href='#buy';">Buy</button>
-                                <button class="box" onclick="window.location.href='#read-more';">Read More</button>
+                                <button class="box" onclick="window.location.href='book-details.htm?id=killed-by-illiteracy';">Read More</button>
                             </div>
                         </div>
                     </div>
@@ -289,106 +296,111 @@
         </div>
     </section>
 
-        <!-- Featured Books Section -->
-        <section id="pubco_books_section" aria-labelledby="pubco_section_heading">
-            <div class="container">
-                <!-- Static Section Title at the Top -->
-                <div class="section-header">
-                    <h2 id="pubco_section_heading">Most Popular Books</h2>
+    <!-- Featured Books Section -->
+    <section id="pubco_books_section" aria-labelledby="pubco_section_heading">
+        <div class="container">
+            <!-- Static Section Title at the Top -->
+            <div class="section-header">
+                <h2 id="pubco_section_heading">Most Popular Books</h2>
+            </div>
+            <div class="pubco_content_wrapper">
+                <!-- Description -->
+                <div class="pubco_books_description">
+                    <h3 id="pubco_book_title">Culture Brewed in an African Pot</h3>
+                    <span class="pubco_category" id="pubco_category_text">Cultural Reflections</span>
+                    <span class="pubco_author_display" id="pubco_author_text">by Kojo Ampem Daako</span>
+                    <p class="pubco_description_text" id="pubco_description_text">
+                        Dive into stories that walk with you—through history, heart, and heritage. From stirring traditions to modern awakenings, each book is a companion in your journey through the African narrative.
+                    </p>
+                    <!-- Updated Read More Button -->
+                    <button class="learn-more" id="learn-more-btn" aria-label="Read more about Culture Brewed in an African Pot by Kojo Ampem Daako">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Read More</span>
+                    </button>
                 </div>
-                <div class="pubco_content_wrapper">
-                    <!-- Description -->
-                    <div class="pubco_books_description">
-                        <h3 id="pubco_book_title">Culture Brewed in an African Pot</h3>
-                        <span class="pubco_category" id="pubco_category_text">Cultural Reflections</span>
-                        <span class="pubco_author_display" id="pubco_author_text">by Kojo Ampem Daako</span>
-                        <p class="pubco_description_text" id="pubco_description_text">
-                            Dive into stories that walk with you—through history, heart, and heritage. From stirring traditions to modern awakenings, each book is a companion in your journey through the African narrative.
-                        </p>
-                        <!-- Updated Read More Button -->
-                        <button class="learn-more" id="learn-more-btn" aria-label="Read more about Culture Brewed in an African Pot by Kojo Ampem Daako">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Read More</span>
-                        </button>
-                    </div>
 
-                    <!-- Carousel Wrapper -->
-                    <div class="pubco_books_carousel_wrapper">
-                        <div class="pubco_books_carousel">
-                            <div class="owl-carousel owl-theme" id="pubco_books_carousel" role="region" aria-label="Featured books carousel">
-                                <!-- Book 1 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Cultural Reflections"
-                                    data-pubco-title="Culture Brewed in an African Pot"
-                                    data-pubco-description="An evocative tribute to ancestral wisdom and evolving customs, this book explores identity and transformation through a family’s lived experience.">
-                                    <img src="assets/images/BOOKS/culture_brewed_in_an_african_pot.webp" alt="Cover of Culture Brewed in an African Pot" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">Culture Brewed in an African Pot</div>
-                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
-                                </div>
+                <!-- Carousel Wrapper -->
+                <div class="pubco_books_carousel_wrapper">
+                    <div class="pubco_books_carousel">
+                        <div class="owl-carousel owl-theme" id="pubco_books_carousel" role="region" aria-label="Featured books carousel">
+                            <!-- Book 1 -->
+                            <a href="book-details.htm?id=culture-brewed" class="pubco_item"
+                                data-pubco-id="culture-brewed"
+                                data-pubco-category="Cultural Reflections"
+                                data-pubco-title="Culture Brewed in an African Pot"
+                                data-pubco-description="An evocative tribute to ancestral wisdom and evolving customs, this book explores identity and transformation through a family’s lived experience.">
+                                <img src="assets/images/BOOKS/culture_brewed_in_an_african_pot.webp" alt="Cover of Culture Brewed in an African Pot" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">Culture Brewed in an African Pot</div>
+                                <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
+                            </a>
 
-                                <!-- Book 2 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Social Justice Fiction"
-                                    data-pubco-title="Killed by Illiteracy"
-                                    data-pubco-description="A haunting narrative spotlighting the dire consequences of educational neglect, and one community’s struggle to reclaim its future.">
-                                    <img src="assets/images/BOOKS/killed_by_illiteracy.webp" alt="Cover of Killed by Illiteracy" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">Killed by Illiteracy</div>
-                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
-                                </div>
+                            <!-- Book 2 -->
+                            <a href="book-details.htm?id=killed-by-illiteracy" class="pubco_item"
+                                data-pubco-id="killed-by-illiteracy"
+                                data-pubco-category="Social Justice Fiction"
+                                data-pubco-title="Killed by Illiteracy"
+                                data-pubco-description="A haunting narrative spotlighting the dire consequences of educational neglect, and one community’s struggle to reclaim its future.">
+                                <img src="assets/images/BOOKS/killed_by_illiteracy.webp" alt="Cover of Killed by Illiteracy" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">Killed by Illiteracy</div>
+                                <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
+                            </a>
 
-                                <!-- Book 3 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Traditional Leadership"
-                                    data-pubco-title="The King's Dilemma"
-                                    data-pubco-description="A king must choose between age-old customs and progressive ideals—an intricate tale of power, legacy, and personal conflict.">
-                                    <img src="assets/images/BOOKS/the_kings_dilemma.webp" alt="Cover of The King's Dilemma" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">The King's Dilemma</div>
-                                    <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
-                                </div>
+                            <!-- Book 3 -->
+                            <a href="book-details.htm?id=the-kings-dilemma" class="pubco_item"
+                                data-pubco-id="the-kings-dilemma"
+                                data-pubco-category="Traditional Leadership"
+                                data-pubco-title="The King's Dilemma"
+                                data-pubco-description="A king must choose between age-old customs and progressive ideals—an intricate tale of power, legacy, and personal conflict.">
+                                <img src="assets/images/BOOKS/the_kings_dilemma.webp" alt="Cover of The King's Dilemma" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">The King's Dilemma</div>
+                                <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
+                            </a>
 
-                                <!-- Book 4 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Language Learning"
-                                    data-pubco-title="BECE French Composition"
-                                    data-pubco-description="A resourceful guide for students preparing for exams in French writing—includes sample compositions and guided practice.">
-                                    <img src="assets/images/BOOKS/picture_description_&_guided_composition.webp" alt="Cover of BECE French Composition" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">BECE French Composition</div>
-                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
-                                </div>
+                            <!-- Book 4 -->
+                            <a href="book-details.htm?id=bece-french" class="pubco_item"
+                                data-pubco-id="bece-french"
+                                data-pubco-category="Language Learning"
+                                data-pubco-title="BECE French Composition"
+                                data-pubco-description="A resourceful guide for students preparing for exams in French writing—includes sample compositions and guided practice.">
+                                <img src="assets/images/BOOKS/picture_description_&_guided_composition.webp" alt="Cover of BECE French Composition" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">BECE French Composition</div>
+                                <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
+                            </a>
 
-                                <!-- Book 5 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Political Commentary"
-                                    data-pubco-title="Politics for Sale"
-                                    data-pubco-description="A bold look at the commodification of leadership, where personal ambition clashes with civic duty in modern African politics.">
-                                    <img src="assets/images/BOOKS/politics_for_sale.webp" alt="Cover of Politics for Sale" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">Politics for Sale</div>
-                                    <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
-                                </div>
+                            <!-- Book 5 -->
+                            <a href="book-details.htm?id=politics-for-sale" class="pubco_item"
+                                data-pubco-id="politics-for-sale"
+                                data-pubco-category="Political Commentary"
+                                data-pubco-title="Politics for Sale"
+                                data-pubco-description="A bold look at the commodification of leadership, where personal ambition clashes with civic duty in modern African politics.">
+                                <img src="assets/images/BOOKS/politics_for_sale.webp" alt="Cover of Politics for Sale" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">Politics for Sale</div>
+                                <div class="pubco_author" aria-hidden="true">by Kojo Ampem Daako</div>
+                            </a>
 
-                                <!-- Book 6 -->
-                                <div class="pubco_item"
-                                    data-pubco-category="Emotional Wisdom"
-                                    data-pubco-title="Particles of Wisdom"
-                                    data-pubco-description="Short stories infused with insight, heartache, and beauty—reminders that in every loss, there are lessons waiting to be held.">
-                                    <img src="assets/images/BOOKS/particles_of_wisdom.webp" alt="Cover of Particles of Wisdom" loading="lazy">
-                                    <div class="pubco_book_title" aria-hidden="true">Particles of Wisdom</div>
-                                    <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
-                                </div>
-                            </div>
+                            <!-- Book 6 -->
+                            <a href="book-details.htm?id=particles-of-wisdom" class="pubco_item"
+                                data-pubco-id="particles-of-wisdom"
+                                data-pubco-category="Emotional Wisdom"
+                                data-pubco-title="Particles of Wisdom"
+                                data-pubco-description="Short stories infused with insight, heartache, and beauty—reminders that in every loss, there are lessons waiting to be held.">
+                                <img src="assets/images/BOOKS/particles_of_wisdom.webp" alt="Cover of Particles of Wisdom" loading="lazy">
+                                <div class="pubco_book_title" aria-hidden="true">Particles of Wisdom</div>
+                                <div class="pubco_author" aria-hidden="true">by Nana Kwesi Safo</div>
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Navigation Buttons -->
-                <div class="pubco_carousel_nav">
-                    <div class="owl-nav"></div>
-                </div>
             </div>
-        </section>
 
+            <!-- Navigation Buttons -->
+            <div class="pubco_carousel_nav">
+                <div class="owl-nav"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Blog Section -->
     <section id="blog-section">
@@ -639,7 +651,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
