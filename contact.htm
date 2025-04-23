@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="page-title">Contact Us - A-D Kay Publications</title>
+    <meta name="description" id="meta-description" content="Get in touch with A-D Kay Publications. Reach out for inquiries, author submissions, career opportunities, or partnership opportunities.">
+    <meta name="keywords" id="meta-keywords" content="contact us, author submissions, careers, partnerships, a-d kay publications, african literature">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Contact Page Specific Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #4267b2;
+            background-color: #FFFFFF;
+        }
+
+        .banner-section {
+            position: relative;
+            height: 400px;
+            background-image: url('assets/images/banners/contact-banner.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .banner-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #e7e7e7;
+            margin: 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .form-section {
+            flex: 2;
+            background: #E6F0FA;
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .progress-dots {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #D4C9BE;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background-color: #4267b2;
+        }
+
+        .form-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4267b2;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Floating Label and Input Styling */
+        .form-group label {
+            position: absolute;
+            top: 12px;
+            left: 40px;
+            font-size: 1rem;
+            color: #666;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 80%;
+            padding: 12px 12px 12px 40px;
+            border: none;
+            border-bottom: 2px solid #D4C9BE;
+            border-radius: 0;
+            font-size: 1rem;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            color: #4267b2;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-bottom-color: #4267b2;
+            outline: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group select:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group select:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 40px;
+            font-size: 0.8rem;
+            color: #4267b2;
+        }
+
+        /* Icons Inside Inputs */
+        .form-group::before {
+            content: '';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            color: #D4C9BE;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input:focus::before,
+        .form-group select:focus::before,
+        .form-group textarea:focus::before {
+            color: #4267b2;
+        }
+
+        .form-group:has(input[name="name"])::before,
+        .form-group:has(input[name="lastName"])::before {
+            content: '\f007'; /* User icon */
+        }
+
+        .form-group:has(input[name="email"])::before {
+            content: '\f0e0'; /* Email icon */
+        }
+
+        .form-group:has(input[name="phone"])::before {
+            content: '\f095'; /* Phone icon */
+        }
+
+        .form-group:has(input[name="subject"])::before,
+        .form-group:has(input[name="manuscriptTitle"])::before,
+        .form-group:has(input[name="genre"])::before,
+        .form-group:has(input[name="organization"])::before,
+        .form-group:has(input[name="partnershipType"])::before {
+            content: '\f02b'; /* Tag icon */
+        }
+
+        .form-group:has(select[name="position"])::before {
+            content: '\f0b1'; /* Briefcase icon */
+        }
+
+        .form-group:has(input[name="otherPosition"])::before {
+            content: '\f040'; /* Pencil icon */
+        }
+
+        .form-group:has(textarea[name="message"])::before,
+        .form-group:has(textarea[name="synopsis"])::before,
+        .form-group:has(textarea[name="coverLetter"])::before,
+        .form-group:has(textarea[name="proposal"])::before {
+            content: '\f303'; /* Pen icon */
+        }
+
+        /* Custom File Upload Styling */
+        .form-group:has(input[type="file"]) {
+            position: relative;
+        }
+
+        .form-group input[type="file"] {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .form-group input[type="file"] + label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 2px solid #D4C9BE;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .form-group input[type="file"]:focus + label,
+        .form-group input[type="file"]:not(:placeholder-shown) + label {
+            border-bottom-color: #4267b2;
+   
+        }
+
+        .form-group input[type="file"] + label::before {
+            content: '\f0c6'; /* Paperclip icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #D4C9BE;
+            font-size: 1.2rem;
+        }
+
+        .form-group input[type="file"]:focus + label::before {
+            color: #4267b2;
+        }
+
+        .form-group input[type="file"] + label span {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .form-group input[type="file"] + label span.size-limit {
+            font-weight: 400;
+            color: #666;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #4267b2;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5b7bd6;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4267b2;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 1rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-link:hover {
+            transform: scale(1.05);
+        }
+
+        .sidebar-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #5b7bd6;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar-link:hover::after {
+            width: 100%;
+        }
+
+        .sidebar-link .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #D4C9BE;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4267b2;
+        }
+
+        .sidebar-link p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        #contactFields, #manuscriptFields, #careerFields, #partnershipFields, #otherPositionInput {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .banner-section {
+                height: 300px;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                margin-top: 60px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="A-D Kay Publications Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="contact.htm?type=contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <section class="banner-section">
+        <div class="banner-content">
+            <h1>Contact Us</h1>
+            <p>Reach out for inquiries, submissions, careers, or partnerships.</p>
+        </div>
+    </section>
+
+    <div class="contact-container">
+        <div class="form-section">
+            <div class="progress-dots" id="progress-dots"></div>
+            <form id="dynamicForm" enctype="multipart/form-data" method="post">
+                <div class="form-section" id="section-1">
+                    <h2>01. Tell Us About Yourself</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input name="name" type="text" id="name" placeholder=" " required>
+                            <label for="name">First Name *</label>
+                        </div>
+                        <div class="form-group">
+                            <input name="lastName" type="text" id="lastName" placeholder=" " required>
+                            <label for="lastName">Last Name *</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input name="email" type="email" id="email" placeholder=" " required>
+                            <label for="email">Email Address *</label>
+                        </div>
+                        <div class="form-group">
+                            <input name="phone" type="tel" id="phone" placeholder=" " required>
+                            <label for="phone">Phone Number *</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="section-2">
+                    <h2>02. What Can We Help You With?</h2>
+                    <div id="contactFields">
+                        <div class="form-group">
+                            <input name="subject" type="text" id="subject" placeholder=" " required>
+                            <label for="subject">Subject *</label>
+                        </div>
+                    </div>
+                    <div id="manuscriptFields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input name="manuscriptTitle" type="text" id="manuscriptTitle" placeholder=" " required>
+                                <label for="manuscriptTitle">Manuscript Title *</label>
+                            </div>
+                            <div class="form-group">
+                                <input name="genre" type="text" id="genre" placeholder=" " required>
+                                <label for="genre">Genre *</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="careerFields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select id="position" name="position" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="Editor">Editor</option>
+                                    <option value="Content Writer">Content Writer</option>
+                                    <option value="Graphic Designer">Graphic Designer</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="position">Position *</label>
+                            </div>
+                            <div class="form-group" id="otherPositionInput">
+                                <input type="text" id="otherPosition" name="otherPosition" placeholder=" ">
+                                <label for="otherPosition">Specify Position</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="partnershipFields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input name="organization" type="text" id="organization" placeholder=" " required>
+                                <label for="organization">Organization Name *</label>
+                            </div>
+                            <div class="form-group">
+                                <input name="partnershipType" type="text" id="partnershipType" placeholder=" " required>
+                                <label for="partnershipType">Partnership Type *</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="section-3">
+                    <h2>03. Tell Us About Your Project/Enquiry</h2>
+                    <div id="contactFields">
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder=" " required></textarea>
+                            <label for="message">Project Description *</label>
+                        </div>
+                    </div>
+                    <div id="manuscriptFields">
+                        <div class="form-group">
+                            <textarea name="synopsis" id="synopsis" placeholder=" " required></textarea>
+                            <label for="synopsis">Synopsis *</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="manuscript" name="manuscript" accept=".pdf,.doc,.docx" required>
+                            <label for="manuscript"><span>Attach your file</span> <span class="size-limit">up to 10MB</span></label>
+                        </div>
+                    </div>
+                    <div id="careerFields">
+                        <div class="form-group">
+                            <textarea name="coverLetter" id="coverLetter" placeholder=" " required></textarea>
+                            <label for="coverLetter">Cover Letter *</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="resume" name="resume" accept=".pdf" required>
+                            <label for="resume"><span>Attach your file</span> <span class="size-limit">up to 10MB</span></label>
+                        </div>
+                    </div>
+                    <div id="partnershipFields">
+                        <div class="form-group">
+                            <textarea name="proposal" id="proposal" placeholder=" " required></textarea>
+                            <label for="proposal">Partnership Proposal *</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="form-submit">Submit Enquiry</button>
+            </form>
+        </div>
+
+        <div class="sidebar">
+            <h3>Need Assistance?</h3>
+            <a href="mailto:support@adkaypublications.com" class="sidebar-link">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <div>
+                    <strong>Email Support</strong>
+                    <p>Reach out to our team for any inquiries.</p>
+                </div>
+            </a>
+            <a href="tel:+233543550766" class="sidebar-link">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>
+                    <strong>Phone Support</strong>
+                    <p>Call us for immediate assistance.</p>
+                </div>
+            </a>
+            <a href="faq.htm" class="sidebar-link">
+                <span class="icon"><i class="fas fa-question-circle"></i></span>
+                <div>
+                    <strong>FAQs</strong>
+                    <p>Find answers to common questions.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <div class="footer_content_wrapper">
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm?type=contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="contact.htm?type=submissions">Author Submissions</a></li>
+                        <li><a href="contact.htm?type=careers">Careers</a></li>
+                        <li><a href="contact.htm?type=partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "yImewV5eFHccTOiKe",
+            });
+        })();
+    </script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        const formConfigs = {
+            contact: {
+                title: "Contact Us",
+                metaDescription: "Get in touch with A-D Kay Publications for inquiries.",
+                metaKeywords: "contact us, a-d kay publications, african literature",
+                fields: ['contactFields']
+            },
+            submissions: {
+                title: "Author Submissions",
+                metaDescription: "Submit your manuscript to A-D Kay Publications for review.",
+                metaKeywords: "author submissions, submit manuscript, a-d kay publications, african literature",
+                fields: ['manuscriptFields']
+            },
+            careers: {
+                title: "Careers",
+                metaDescription: "Explore career opportunities at A-D Kay Publications.",
+                metaKeywords: "careers, jobs, a-d kay publications, african literature",
+                fields: ['careerFields']
+            },
+            partnerships: {
+                title: "Partnerships",
+                metaDescription: "Partner with A-D Kay Publications to promote African literature.",
+                metaKeywords: "partnerships, collaboration, a-d kay publications, african literature",
+                fields: ['partnershipFields']
+            }
+        };
+
+        function loadForm() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let type = urlParams.get('type') || 'contact';
+            if (!formConfigs[type]) type = 'contact';
+
+            const config = formConfigs[type];
+            document.getElementById('page-title').textContent = `${config.title} - A-D Kay Publications`;
+            document.getElementById('meta-description').setAttribute('content', config.metaDescription);
+            document.getElementById('meta-keywords').setAttribute('content', config.metaKeywords);
+
+            ['contactFields', 'manuscriptFields', 'careerFields', 'partnershipFields'].forEach(field => {
+                const elements = document.querySelectorAll(`#${field}`);
+                elements.forEach(el => {
+                    el.style.display = config.fields.includes(field) ? 'block' : 'none';
+                });
+            });
+
+            if (type === 'careers') {
+                const positionSelect = document.getElementById('position');
+                positionSelect.addEventListener('change', function() {
+                    toggleOtherPositionInput(this.value);
+                });
+            }
+
+            initializeProgressDots();
+        }
+
+        function toggleOtherPositionInput(selectedValue) {
+            const otherPositionInput = document.getElementById('otherPositionInput');
+            if (selectedValue === 'Other') {
+                otherPositionInput.style.display = 'block';
+                document.getElementById('otherPosition').setAttribute('required', 'required');
+            } else {
+                otherPositionInput.style.display = 'none';
+                document.getElementById('otherPosition').removeAttribute('required');
+            }
+        }
+
+        function initializeProgressDots() {
+            const sections = document.querySelectorAll('.form-section');
+            const progressDots = document.getElementById('progress-dots');
+            sections.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot';
+                if (index === 0) dot.classList.add('active');
+                progressDots.appendChild(dot);
+            });
+
+            window.addEventListener('scroll', () => {
+                const dots = document.querySelectorAll('.progress-dot');
+                sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+                        dots.forEach(dot => dot.classList.remove('active'));
+                        dots[index].classList.add('active');
+                    }
+                });
+            });
+        }
+
+        document.getElementById('dynamicForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type') || 'contact';
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value instanceof File ? value.name : value;
+            });
+
+            emailjs.send('default_service', 'template_contact', {
+                form_type: type,
+                ...data
+            }).then(
+                () => {
+                    alert('Your submission has been sent successfully!');
+                    this.reset();
+                },
+                (error) => {
+                    alert('Failed to send your submission. Please try again.');
+                    console.error('EmailJS Error:', error);
+                }
+            );
+        });
+
+        window.onload = loadForm;
+    </script>
+</body>
+</html>

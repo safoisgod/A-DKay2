@@ -270,7 +270,7 @@ section .section-header p {
     }
 
     #our-story .timeline-item .timeline-content {
-        max-width: 100%;
+        max-width: 85%;
     }
 
     #our-story .timeline-item .timeline-image {

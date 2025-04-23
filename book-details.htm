@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blog Details - A-D Kay Publications</title>
+    <title id="page-title">Book Details - A-D Kay Publications</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="description" content="Read the full details of blog posts from A-D Kay Publications, featuring insights into African literature, events, and more.">
-    <meta name="keywords" content="African literature, blog details, A-D Kay Publications">
+    <meta name="description" id="meta-description" content="Discover detailed information about our books, including summaries, themes, and more at A-D Kay Publications.">
+    <meta name="keywords" id="meta-keywords" content="African literature, book details, A-D Kay Publications">
     <meta name="author" content="github.com/safoisgod">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,182 +15,10 @@
 
     <!-- External Styles (Assumed to include header/footer styles) -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/books.css">
 
-    <!-- Blog Details Specific Styles -->
-    <style>
-        /* Banner Section */
-        .banner-section {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background-image: url('assets/images/background/book-section-background1.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #FFFFFF;
-        }
+    <!-- Book Details Specific Styles -->
 
-        .banner-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(66, 103, 178, 0.7);
-            z-index: 1;
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .banner-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .banner-content p {
-            font-size: 1.2rem;
-            font-family: 'Roboto', sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .banner-section {
-                height: 300px;
-            }
-
-            .banner-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .banner-content p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .banner-section {
-                height: 250px;
-            }
-
-            .banner-content h1 {
-                font-size: 2rem;
-            }
-
-            .banner-content p {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Blog Details Section */
-        .blog-details-section {
-            padding: 60px 0;
-            background-color: #F9FBFD;
-        }
-
-        .blog-details-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .blog-details-header {
-            margin-bottom: 30px;
-        }
-
-        .blog-details-header h1 {
-            font-size: 2.5rem;
-            color: #4267b2;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .blog-details-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .blog-details-meta .blog-date {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .blog-details-meta .blog-author {
-            font-size: 1rem;
-            color: #4267b2;
-            font-weight: 700;
-            text-transform: capitalize;
-        }
-
-        .blog-details-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .blog-details-content {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.8;
-        }
-
-        .blog-details-content p {
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .blog-details-header h1 {
-                font-size: 2rem;
-            }
-
-            .blog-details-meta .blog-date,
-            .blog-details-meta .blog-author {
-                font-size: 0.9rem;
-            }
-
-            .blog-details-image img {
-                height: 300px;
-            }
-
-            .blog-details-content {
-                font-size: 0.95rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .blog-details-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .blog-details-meta .blog-date,
-            .blog-details-meta .blog-author {
-                font-size: 0.85rem;
-            }
-
-            .blog-details-image img {
-                height: 250px;
-            }
-
-            .blog-details-content {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section (Styles in style.css) -->
@@ -216,8 +44,8 @@
                             <li><a href="authors.htm">Authors</a></li>
                         </ul>
                     </li>
-                    <li><a href="blogs.htm" aria-current="page" class="active">Blog</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="contact.htm?type=contact">Contact Us</a></li>
                 </ul>
                 <label class="hamburger-icon" aria-label="Toggle mobile menu">
                     <input type="checkbox" id="hamburger-checkbox">
@@ -233,26 +61,56 @@
     <!-- Banner Section -->
     <section class="banner-section">
         <div class="banner-content">
-            <h1>Blog Details</h1>
-            <p>Read the full story behind our latest updates and insights.</p>
+            <h1>Book Details</h1>
+            <p>Discover the stories that shape African heritage and culture.</p>
         </div>
     </section>
 
-    <!-- Blog Details Section -->
-    <section class="blog-details-section">
-        <div class="blog-details-container">
-            <div class="blog-details-header">
-                <h1 id="blog-title">Loading...</h1>
-                <div class="blog-details-meta">
-                    <span class="blog-date" id="blog-date">Loading...</span>
-                    <span class="blog-author" id="blog-author">Loading...</span>
+    <!-- Book Details Section -->
+    <section class="book-details-section">
+        <div class="book-details-container">
+            <div class="book-details-header">
+                <div class="book-details-image">
+                    <img id="book-image" src="" alt="Book Cover">
+                </div>
+                <div class="book-details-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Title:</span>
+                        <span class="meta-value" id="book-title">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Author:</span>
+                        <span class="meta-value" id="book-author">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category:</span>
+                        <span class="meta-value" id="book-category">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Pages:</span>
+                        <span class="meta-value" id="book-pages">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Published:</span>
+                        <span class="meta-value" id="book-date">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <a href="#" class="buy-button" id="buy-link">Buy Now</a>
+                    </div>
                 </div>
             </div>
-            <div class="blog-details-image">
-                <img id="blog-image" src="" alt="Blog Image">
+            <div class="book-details-content" id="book-content">
+                <p>Loading book details...</p>
             </div>
-            <div class="blog-details-content" id="blog-content">
-                <p>Loading blog content...</p>
+        </div>
+    </section>
+
+    <!-- Other Books by the Same Author Section -->
+    <section class="other-books-section">
+        <div class="other-books-container">
+            <h2>More by This Author</h2>
+            <div class="other-books-carousel" id="other-books-carousel">
+                <!-- Books will be dynamically inserted here -->
             </div>
         </div>
     </section>
@@ -315,137 +173,423 @@
         </div>
     </footer>
 
+    <script src="assets/js/custom.js"></script>
+
     <!-- JavaScript for Dynamic Content Loading -->
     <script>
-        // Blog Data
-        const blogs = [
+        // Book Data
+        const books = [
             {
-                id: "exciting-new-release-killed-by-illiteracy",
-                title: "Exciting New Release - Killed by Illiteracy",
-                date: "10 Apr, 2025",
-                author: "Nana Kwesi",
-                image: "assets/images/blog/killed_by_illiteracy_book_spotlight.webp",
+                id: "culture-brewed",
+                title: "Culture Brewed in an African Pot",
+                author: "Kojo Ampem Daako",
+                category: "Cultural Reflections",
+                pages: 280,
+                publicationDate: "15 Jan, 2021",
+                image: "assets/images/BOOKS/culture_brewed_in_an_african_pot.webp",
+                buyLink: "https://www.amazon.com/culture-brewed-african-pot",
                 content: `
-                    <p>We are thrilled to announce the release of our latest book, <em>Killed by Illiteracy</em>, a powerful narrative that delves into the challenges of education and its impact on society. This book explores the struggles of its protagonists as they navigate a world where knowledge is both a weapon and a shield.</p>
-                    <p>The story follows a young scholar who uncovers hidden truths about their community, facing danger at every turn. With rich characters and a gripping plot, <em>Killed by Illiteracy</em> sheds light on the importance of literacy in shaping a better future.</p>
-                    <p>You can purchase or pre-order your copy today at major bookstores or directly from our website. Join us in celebrating this new addition to our collection!</p>
+                    <p><em>Culture Brewed in an African Pot</em> is a vibrant anthology that captures the essence of African traditions through a collection of short stories. Set in various rural and urban landscapes across Ghana, the book explores themes of community, heritage, and the intergenerational transmission of values.</p>
+                    <p>The stories weave together the lives of characters like Adwoa, a young girl learning the art of storytelling from her grandmother, and Kofi, a farmer whose connection to the land teaches him resilience. Each tale is steeped in cultural rituals, from naming ceremonies to communal harvests, offering readers a window into the rich tapestry of African life.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book delves into the tension between modernity and tradition, examining how globalization impacts cultural identity. Critics have praised its vivid descriptions and authentic portrayal of Ghanaian life, with the <em>African Literary Review</em> calling it “a love letter to African heritage that resonates universally.” It has become a staple in cultural studies, often used in educational settings to teach about African traditions.</p>
+                    <p>Kojo Ampem Daako’s narrative style is both lyrical and grounded, drawing heavily from oral storytelling traditions. The book has been celebrated for its ability to transport readers to the bustling markets of Accra and the quiet villages of the Volta Region, making it a must-read for those interested in cultural preservation.</p>
                 `
             },
             {
-                id: "join-our-monthly-book-club-ampem-daako-book-club",
-                title: "Join Our Monthly Book Club: Ampem-Daako Book Club",
-                date: "05 Apr, 2025",
-                author: "Thomas Kumah",
-                image: "assets/images/blog/ampem_daako_book_club.webp",
+                id: "killed-by-illiteracy",
+                title: "Killed by Illiteracy",
+                author: "Kojo Ampem Daako",
+                category: "Social Justice Fiction",
+                pages: 320,
+                publicationDate: "10 Apr, 2025",
+                image: "assets/images/BOOKS/killed_by_illiteracy.webp",
+                buyLink: "https://www.amazon.com/killed-by-illiteracy",
                 content: `
-                    <p>Love books? Love great discussions? Join the Ampem-Daako Book Club! We meet monthly, both online and in-person, to dive into the latest reads, share insights, and connect with fellow book lovers.</p>
-                    <p>This month, we're discussing a contemporary African novel that has taken the literary world by storm. Our meetings include author Q&As, themed discussions, and recommendations for your next read. Whether you're a seasoned reader or just starting, there's a place for you in our community.</p>
-                    <p>Sign up on our website to get the schedule and join our next session. We can't wait to read with you!</p>
+                    <p><em>Killed by Illiteracy</em> is a gripping novel that tackles the systemic barriers to education in rural African communities. Set in a fictional Ghanaian village, the story follows Kofi, a young scholar who uncovers hidden truths about his community’s past, only to face resistance from those who profit from ignorance.</p>
+                    <p>Kofi’s journey takes him through dusty schoolrooms, corrupt local councils, and the oral histories of his grandmother, revealing a web of exploitation that keeps his people in the dark. The novel’s emotional core lies in Kofi’s determination to bring literacy to his village, even as he risks his life to do so.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of education as empowerment, the impact of corruption, and the resilience of community spirit. It has been lauded for its unflinching look at social issues, earning the 2025 Pan-African Literary Award for its contribution to social justice literature. Readers have noted its powerful character development, particularly Kofi’s grandmother, whose wisdom anchors the narrative.</p>
+                    <p>Kojo Ampem Daako draws from real-life experiences of educational disparities in Ghana, making the story both a call to action and a tribute to those fighting for change. The novel’s stark realism and hopeful undertones have made it a favorite in book clubs, sparking discussions on global literacy challenges.</p>
                 `
             },
             {
-                id: "upcoming-event-memorial-service",
-                title: "Upcoming Event: Memorial Service",
-                date: "01 Apr, 2025",
-                author: "Kwame Yeboah",
-                image: "assets/images/blog/memorial_poster.webp",
+                id: "bece-french",
+                title: "BECE French Composition",
+                author: "Kojo Ampem Daako",
+                category: "Language Learning",
+                pages: 150,
+                publicationDate: "20 Aug, 2022",
+                image: "assets/images/BOOKS/picture_description_&_guided_composition.webp",
+                buyLink: "https://www.amazon.com/bece-french-composition",
                 content: `
-                    <p>We invite you to join us for a special memorial service honoring the life and legacy of Kojo Ampem-Darko, the visionary founder of A-D Kay Publications. This event will celebrate his contributions to African literature and his passion for storytelling.</p>
-                    <p>The service will feature readings from his favorite works, tributes from family and friends, and a moment of reflection on his impact. It will be held at the Grand Hall in Accra, and we welcome all who knew him or were touched by his work.</p>
-                    <p>Please RSVP on our website for more details. We look forward to commemorating this remarkable man together.</p>
+                    <p><em>BECE French Composition</em> is an essential guide for students preparing for the Basic Education Certificate Examination (BECE) in Ghana. This book provides a structured approach to mastering French composition, with a focus on picture description and guided writing exercises tailored to the BECE syllabus.</p>
+                    <p>The book includes step-by-step lessons on vocabulary, grammar, and sentence structure, alongside practice prompts that mirror exam scenarios. From describing a market scene to writing a letter in French, students are equipped with the tools to excel in their exams while gaining a deeper appreciation for the French language.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book emphasizes practical language skills and cultural immersion, introducing students to Francophone African culture through its exercises. It has been widely adopted in Ghanaian schools, with teachers praising its clear explanations and exam-focused approach. The <em>Ghana Education Journal</em> highlighted its role in improving French literacy among junior high students.</p>
+                    <p>Kojo Ampem Daako, a seasoned educator, brings his expertise to this guide, ensuring that it meets the needs of both students and teachers. The book also includes tips for effective exam preparation, making it an indispensable resource for BECE candidates aiming to succeed in French composition.</p>
                 `
             },
             {
-                id: "the-impact-of-african-literature-on-global-narratives",
-                title: "The Impact of African Literature on Global Narratives",
-                date: "15 Mar, 2025",
-                author: "Efua Asantewaa",
-                image: "assets/images/blog/african_literature_impact.webp",
+                id: "politics-for-sale",
+                title: "Politics for Sale",
+                author: "Kojo Ampem Daako",
+                category: "Political Commentary",
+                pages: 250,
+                publicationDate: "05 Nov, 2023",
+                image: "assets/images/BOOKS/politics_for_sale.webp",
+                buyLink: "https://www.amazon.com/politics-for-sale",
                 content: `
-                    <p>African literature has long been a powerful force in shaping global narratives, offering unique perspectives that challenge stereotypes and broaden understanding. From the works of Chinua Achebe to contemporary voices, African stories have transcended borders.</p>
-                    <p>These narratives highlight the richness of African cultures, the complexity of its histories, and the resilience of its people. They foster cross-cultural dialogue, encouraging readers worldwide to engage with themes of identity, struggle, and triumph.</p>
-                    <p>At A-D Kay Publications, we are proud to contribute to this legacy by amplifying African voices. Explore our collection to discover stories that inspire and educate.</p>
+                    <p><em>Politics for Sale</em> is a hard-hitting commentary on the state of political leadership in Africa, focusing on the pervasive issue of corruption. Set against the backdrop of a fictional African nation, the book follows a young journalist who exposes a network of bribery and electoral fraud, risking everything to hold leaders accountable.</p>
+                    <p>The narrative takes readers through bustling capital cities and remote villages, highlighting the stark contrast between the elite and the marginalized. Through the journalist’s eyes, we see how political power is bought and sold, often at the expense of the people it claims to serve.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book tackles themes of governance, accountability, and the role of the media in democracy. It has been praised for its sharp critique of systemic corruption, earning a nomination for the 2024 African Political Literature Prize. Readers have noted its relevance to real-world issues, with many calling it a wake-up call for African governance.</p>
+                    <p>Kojo Ampem Daako’s background in political activism informs the book’s authenticity, blending fictional storytelling with real-world insights. The novel has sparked debates on electoral reform and has been used in university courses on African politics, cementing its place as a vital piece of political commentary.</p>
                 `
             },
             {
-                id: "spotlight-on-our-authors",
-                title: "Spotlight on Our Authors",
-                date: "05 Mar, 2025",
-                author: "Nana Kwesi",
-                image: "assets/images/authors/Ampem-Daako Kay -nb.png",
+                id: "word-of-god",
+                title: "Word of God",
+                author: "Kojo Ampem Daako",
+                category: "Cultural Reflections",
+                pages: 200,
+                publicationDate: "12 Mar, 2022",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/word-of-god",
                 content: `
-                    <p>This month, we're shining a spotlight on one of our talented authors, whose journey in writing has inspired many. From humble beginnings to becoming a celebrated storyteller, their path is a testament to perseverance.</p>
-                    <p>Their latest book explores themes of family, tradition, and modernity, drawing from personal experiences and cultural heritage. In this spotlight, we delve into their creative process, influences, and the stories behind their stories.</p>
-                    <p>Learn more about this author and their works on our Authors page, and pick up their book to experience their unique voice.</p>
+                    <p><em>Word of God</em> is a reflective collection of essays that explore the role of spirituality in African culture. Drawing from traditional beliefs and Christian influences, Kojo Ampem Daako examines how faith shapes community life, moral values, and personal identity in Ghana.</p>
+                    <p>Each essay delves into a different aspect of spiritual life, from the significance of communal worship to the oral traditions that pass down sacred stories. The book also addresses the challenges of maintaining spiritual heritage in the face of modern influences, offering a nuanced perspective on faith in contemporary Africa.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of faith, cultural identity, and the intersection of tradition and modernity. It has been well-received by religious scholars and cultural historians, with the <em>Journal of African Spirituality</em> commending its thoughtful analysis. Readers have appreciated its accessible prose and deep insights into Ghanaian spirituality.</p>
+                    <p>Kojo Ampem Daako’s personal experiences with both traditional and Christian practices lend authenticity to the essays. The book has been used in interfaith dialogues, fostering discussions on the role of spirituality in African societies, and remains a significant contribution to cultural literature.</p>
                 `
             },
             {
-                id: "tips-for-aspiring-authors-crafting-a-compelling-story",
-                title: "Tips for Aspiring Authors: Crafting a Compelling Story",
-                date: "01 Mar, 2025",
-                author: "Thomas Kumah",
-                image: "assets/images/blog/crafting_story.webp",
+                id: "the-young-shall-grow",
+                title: "The Young Shall Grow",
+                author: "Kojo Ampem Daako",
+                category: "Social Justice Fiction",
+                pages: 290,
+                publicationDate: "18 Jun, 2023",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/the-young-shall-grow",
                 content: `
-                    <p>Writing a compelling story is both an art and a craft. For aspiring authors, the journey can be daunting, but with the right tools, you can bring your ideas to life. Here are some tips to get started.</p>
-                    <p>First, focus on building authentic characters—readers connect with people, not plots. Next, create conflict that drives the narrative forward, keeping your audience engaged. Finally, find your unique voice; authenticity resonates more than imitation.</p>
-                    <p>At A-D Kay Publications, we support new writers through our submission program. Check out our Submission Guide for more advice and opportunities to share your work.</p>
+                    <p><em>The Young Shall Grow</em> is a coming-of-age novel that follows the lives of three teenagers in a rural Ghanaian village as they navigate poverty, education, and societal expectations. The story centers on Ama, a brilliant girl denied schooling due to her gender, and her friends who dream of a better future.</p>
+                    <p>The novel takes readers through the challenges of adolescence in a community where tradition often clashes with ambition. From secret study sessions under a baobab tree to confrontations with village elders, the characters’ journeys highlight the power of youth to drive change despite systemic barriers.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book addresses themes of gender equality, the right to education, and the resilience of youth. It has been celebrated for its heartfelt storytelling, winning the 2023 Young Readers’ Choice Award in Ghana. Parents and educators have praised its ability to inspire young readers to value education and advocate for their rights.</p>
+                    <p>Kojo Ampem Daako’s vivid portrayal of rural life and his focus on youth empowerment make this novel a standout. It has been incorporated into school curricula, encouraging discussions on social justice and the importance of supporting the next generation.</p>
                 `
             },
             {
-                id: "how-to-submit-your-manuscript",
-                title: "How to Submit Your Manuscript",
-                date: "25 Feb, 2025",
-                author: "Kwame Yeboah",
-                image: "assets/images/blog/submit-book.jpg",
+                id: "the-teacher-and-his-pupils",
+                title: "The Teacher and His Pupils",
+                author: "Kojo Ampem Daako",
+                category: "Language Learning",
+                pages: 180,
+                publicationDate: "25 Sep, 2021",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/the-teacher-and-his-pupils",
                 content: `
-                    <p>Ready to share your story with the world? Submitting your manuscript to A-D Kay Publications is a straightforward process, but there are key steps to ensure success. Here's a guide to get you started.</p>
-                    <p>First, ensure your manuscript is polished—edit for clarity, grammar, and flow. Next, prepare a compelling query letter that highlights your story's unique angle. Finally, follow our submission guidelines on the website, including format and word count requirements.</p>
-                    <p>We’re always looking for fresh voices in African literature. Submit your work today and take the first step toward becoming a published author!</p>
+                    <p><em>The Teacher and His Pupils</em> is an educational resource designed to teach French through storytelling, aimed at young learners in Ghana. The book follows a teacher, Monsieur Kwame, and his students as they embark on adventures that introduce French vocabulary and grammar in a fun, engaging way.</p>
+                    <p>Each chapter features a short story—such as a trip to a Francophone market or a cultural festival—followed by exercises that reinforce language skills. The book also includes dialogues, pronunciation guides, and cultural notes that highlight the influence of French in West Africa.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book emphasizes interactive learning, cultural appreciation, and language acquisition. It has been a popular choice in Ghanaian classrooms, with teachers noting its ability to make French accessible and enjoyable for beginners. The <em>West African Education Review</em> called it “a creative bridge to bilingualism for young learners.”</p>
+                    <p>Kojo Ampem Daako’s experience as an educator shines through in the book’s practical approach. It has been praised for fostering a love of language learning among students, and its storytelling method has inspired similar educational tools in the region.</p>
                 `
             },
             {
-                id: "celebrating-5-years-of-a-d-kay-publications",
-                title: "Celebrating 5 Years of A-D Kay Publications",
-                date: "20 Feb, 2025",
-                author: "Efua Asantewaa",
-                image: "assets/images/blog/5_years_celebration.webp",
+                id: "the-chronicles-of-addo-yobo",
+                title: "The Chronicles of Addo-Yobo",
+                author: "Kojo Ampem Daako",
+                category: "Political Commentary",
+                pages: 270,
+                publicationDate: "30 Jan, 2024",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/the-chronicles-of-addo-yobo",
                 content: `
-                    <p>We’re proud to celebrate five incredible years of A-D Kay Publications! Since our founding, we’ve been dedicated to amplifying African voices and sharing stories that matter.</p>
-                    <p>Over the years, we’ve published numerous works, hosted events, and built a community of readers and writers who share our passion for literature. From our first book to our latest release, each milestone has been a step toward our mission of changing history, one story at a time.</p>
-                    <p>Join us in this celebration by exploring our collection and sharing your favorite A-D Kay moments on social media. Here’s to many more years of storytelling!</p>
+                    <p><em>The Chronicles of Addo-Yobo</em> is a satirical novel that examines the rise and fall of a fictional African politician, Addo-Yobo, whose ambition leads to both comedic and tragic consequences. Set in a bustling capital city, the book uses humor to critique political opportunism and the quest for power.</p>
+                    <p>Through Addo-Yobo’s misadventures—from bribing his way into office to facing a public scandal—the novel exposes the absurdities of political life. The story also highlights the resilience of ordinary citizens who hold their leaders accountable, often with unexpected wit and courage.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of political satire, accountability, and the power of community. It has been a hit among readers for its sharp humor, earning the 2024 African Satire Award. Critics have noted its ability to balance entertainment with a serious critique of governance, making it a favorite in political discussion circles.</p>
+                    <p>Kojo Ampem Daako’s clever use of satire makes this novel a standout in political literature. It has been featured in literary festivals across Africa, where its humor and insights have sparked lively debates on leadership and civic responsibility.</p>
+                `
+            },
+            {
+                id: "the-kings-dilemma",
+                title: "The King's Dilemma",
+                author: "Nana Kwesi Safo",
+                category: "Traditional Leadership",
+                pages: 310,
+                publicationDate: "22 Feb, 2022",
+                image: "assets/images/BOOKS/the_kings_dilemma.webp",
+                buyLink: "https://www.amazon.com/the-kings-dilemma",
+                content: `
+                    <p><em>The King’s Dilemma</em> is a historical novel that transports readers to the Ashanti Kingdom during the 18th century. The story centers on a young king, Nana Osei, who must navigate a crisis threatening his throne—balancing the demands of tradition with the need for reform to save his people from famine.</p>
+                    <p>The novel vividly recreates the royal court, with its intricate rituals, council meetings, and the looming presence of ancestral spirits. Nana Osei’s journey tests his leadership as he confronts betrayal, external threats, and the weight of his lineage, ultimately redefining what it means to be a king.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of leadership, tradition versus progress, and the burden of legacy. It has been critically acclaimed for its historical accuracy and immersive storytelling, winning the 2022 Ashanti Literary Prize. Historians have praised its detailed depiction of Ashanti governance and culture, making it a valuable resource for cultural studies.</p>
+                    <p>Nana Kwesi Safo’s meticulous research and evocative prose bring the past to life. The novel has been adapted into a stage play in Ghana, further cementing its impact on preserving and sharing African history through literature.</p>
+                `
+            },
+            {
+                id: "particles-of-wisdom",
+                title: "Particles of Wisdom",
+                author: "Nana Kwesi Safo",
+                category: "Emotional Wisdom",
+                pages: 240,
+                publicationDate: "10 Oct, 2020",
+                image: "assets/images/BOOKS/particles_of_wisdom.webp",
+                buyLink: "https://www.amazon.com/particles-of-wisdom",
+                content: `
+                    <p><em>Particles of Wisdom</em> is a collection of short stories that explore the emotional and philosophical lives of Africa’s youth. Set in various regions of Ghana, the stories capture moments of joy, sorrow, and growth, offering pearls of wisdom through the experiences of young protagonists.</p>
+                    <p>From a boy learning the value of forgiveness after a village dispute to a girl discovering her strength during a family crisis, each story is a lesson in resilience and empathy. The settings range from coastal fishing villages to urban Accra, reflecting the diversity of Ghanaian life.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book delves into themes of emotional growth, community bonds, and the wisdom passed down through generations. It has been widely celebrated for its poignant storytelling, earning the 2021 Ghanaian Literary Award for Short Fiction. Readers have noted its universal appeal, with many stories resonating across cultures.</p>
+                    <p>Nana Kwesi Safo’s lyrical prose and deep understanding of human emotions make this collection a timeless read. It has been used in youth programs to teach emotional intelligence, and its stories continue to inspire readers to find wisdom in everyday life.</p>
+                `
+            },
+            {
+                id: "echoes-of-the-ancestors",
+                title: "Echoes of the Ancestors",
+                author: "Kwame Osei Tutu",
+                category: "Traditional Leadership",
+                pages: 260,
+                publicationDate: "15 May, 2023",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/echoes-of-the-ancestors",
+                content: `
+                    <p><em>Echoes of the Ancestors</em> is a novel that delves into the spiritual traditions of the Akan people, focusing on a young chief who must heed the voices of his ancestors to save his village from disaster. Set in a lush Ghanaian forest, the story blends mysticism with leadership challenges.</p>
+                    <p>The chief, Kwabena, receives visions from his ancestors warning of an impending drought. His quest to interpret these messages takes him on a journey through sacred groves and ancient rituals, testing his ability to unite his people and honor the past while facing modern threats.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of spirituality, leadership, and the connection between the living and the dead. It has been praised for its respectful portrayal of Akan traditions, earning a commendation from the Akan Cultural Institute. Readers have appreciated its blend of mysticism and practical leadership lessons.</p>
+                    <p>Kwame Osei Tutu’s deep knowledge of Akan culture shines through in this novel. It has been used in cultural education programs, helping younger generations connect with their ancestral heritage, and remains a beloved work in African spiritual literature.</p>
+                `
+            },
+            {
+                id: "tears-of-the-baobab",
+                title: "Tears of the Baobab",
+                author: "Nana Kwesi Safo",
+                category: "Emotional Wisdom",
+                pages: 220,
+                publicationDate: "08 Dec, 2022",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/tears-of-the-baobab",
+                content: `
+                    <p><em>Tears of the Baobab</em> is a poignant novel about grief, healing, and the enduring strength of family. Set in a small Ghanaian village, the story follows Efua, a mother who loses her child to illness and must find a way to rebuild her life under the shade of the village’s ancient baobab tree.</p>
+                    <p>Efua’s journey takes her through the stages of grief, supported by her community’s traditions and the wisdom of the elders. The baobab tree, a symbol of resilience, becomes a place of solace where she confronts her pain and discovers hope through shared stories and rituals.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book addresses themes of loss, community support, and emotional healing. It has been lauded for its sensitive portrayal of grief, winning the 2023 African Emotional Literature Award. Readers have found its depiction of communal healing particularly moving, often citing it as a source of comfort.</p>
+                    <p>Nana Kwesi Safo’s tender prose and focus on emotional depth make this novel a standout. It has been recommended by therapists for its therapeutic insights and has been featured in book clubs focused on emotional well-being.</p>
+                `
+            },
+            {
+                id: "the-chieftains-oath",
+                title: "The Chieftain’s Oath",
+                author: "Nana Kwesi Safo",
+                category: "Traditional Leadership",
+                pages: 280,
+                publicationDate: "17 Apr, 2024",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/the-chieftains-oath",
+                content: `
+                    <p><em>The Chieftain’s Oath</em> is a gripping tale of duty and honor, set in a 19th-century Ewe village in Ghana. The story follows a newly appointed chieftain, Atsu, who must fulfill an ancient oath to protect his people from an encroaching enemy, even at the cost of his own life.</p>
+                    <p>Atsu’s leadership is tested as he rallies his warriors, navigates alliances, and confronts internal dissent. The novel vividly depicts Ewe traditions, from the swearing-in ceremony to the war dances that prepare the village for battle, highlighting the chieftain’s role as both leader and protector.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of sacrifice, leadership, and the preservation of cultural values. It has been praised for its historical detail, earning a nomination for the 2024 Ewe Heritage Literary Award. Readers have noted its thrilling pace and authentic portrayal of Ewe warfare traditions.</p>
+                    <p>Nana Kwesi Safo’s research into Ewe history and his dynamic storytelling make this novel a compelling read. It has been used in cultural festivals to educate audiences about Ewe leadership traditions, reinforcing its cultural significance.</p>
+                `
+            },
+            {
+                id: "moonlight-and-melodies",
+                title: "Moonlight & Melodies",
+                author: "Necr0seWrites",
+                category: "Emotional Wisdom",
+                pages: 200,
+                publicationDate: "14 Jul, 2023",
+                image: "assets/images/BOOKS/moonlight_&_melodies.webp",
+                buyLink: "https://www.amazon.com/moonlight-and-melodies",
+                content: `
+                    <p><em>Moonlight & Melodies</em> is a lyrical novel that explores the healing power of music and love. Set in a coastal Ghanaian town, the story follows Yaa, a young woman who finds solace in her late father’s drum under the moonlight, using its rhythms to mend her broken heart.</p>
+                    <p>Yaa’s journey intertwines with that of a traveling musician, Kwesi, whose melodies awaken her to new possibilities. Together, they create music that echoes through the town, bringing the community together and helping Yaa heal from her grief while rediscovering her passion for life.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book delves into themes of grief, the transformative power of art, and the strength of community. It has been celebrated for its poetic prose, earning the 2023 Coastal Literary Prize. Readers have praised its vivid imagery, often describing the novel as a “song in written form.”</p>
+                    <p>Necr0seWrites’ unique voice and focus on emotional resonance make this novel a standout. It has been featured in music and literature festivals, where its blend of rhythm and storytelling has captivated audiences, making it a beloved work of emotional literature.</p>
+                `
+            },
+            {
+                id: "whispers-of-the-savanna",
+                title: "Whispers of the Savanna",
+                author: "Necr0seWrites",
+                category: "Emotional Wisdom",
+                pages: 230,
+                publicationDate: "09 Feb, 2024",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/whispers-of-the-savanna",
+                content: `
+                    <p><em>Whispers of the Savanna</em> is a meditative novel that follows a young herder, Nsia, as she listens to the stories carried by the wind across the Ghanaian savanna. Each whisper reveals a lesson about life, love, and survival, drawn from the lives of her ancestors.</p>
+                    <p>Nsia’s journey takes her through the vast grasslands, where she encounters wildlife, ancient spirits, and the echoes of her family’s past. The novel’s serene pace mirrors the rhythm of the savanna, offering readers a reflective space to explore their own emotional landscapes.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of ancestral wisdom, environmental connection, and emotional introspection. It has been praised for its meditative tone, earning a spot on the 2024 African Nature Literature List. Readers have appreciated its calming effect, often describing it as a “journey of the soul.”</p>
+                    <p>Necr0seWrites’ poetic style and deep reverence for nature make this novel a unique addition to emotional literature. It has been used in mindfulness workshops, where its reflective passages help readers connect with their inner selves and the natural world.</p>
+                `
+            },
+            {
+                id: "daughters-of-the-sun",
+                title: "Daughters of the Sun",
+                author: "Necr0seWrites",
+                category: "Cultural Reflections",
+                pages: 260,
+                publicationDate: "20 Nov, 2023",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/daughters-of-the-sun",
+                content: `
+                    <p><em>Daughters of the Sun</em> is a vibrant novel that celebrates the strength of women in a Ga community in Ghana. The story follows three sisters who, after their mother’s passing, must uphold her legacy as the village’s chief healer while facing challenges from modernity and internal rivalries.</p>
+                    <p>The sisters’ journey takes them through Ga rituals, herbal medicine practices, and communal festivals, showcasing the vital role of women in preserving culture. Their bond is tested but ultimately strengthened as they rediscover their mother’s teachings and their own resilience.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of sisterhood, cultural preservation, and the empowerment of women. It has been celebrated for its empowering narrative, earning the 2024 Ga Women’s Literary Award. Readers have praised its vivid depiction of Ga traditions and its focus on female strength.</p>
+                    <p>Necr0seWrites’ lyrical prose and deep respect for Ga culture make this novel a standout. It has been featured in women’s empowerment events, inspiring discussions on the role of women in cultural continuity, and remains a cherished work in African literature.</p>
+                `
+            },
+            {
+                id: "son-of-king",
+                title: "Son of King",
+                author: "Nana Kwesi Safo",
+                category: "Traditional Leadership",
+                pages: 300,
+                publicationDate: "05 Jun, 2021",
+                image: "assets/images/BOOKS/son_of_king.webp",
+                buyLink: "https://www.amazon.com/son-of-king",
+                content: `
+                    <p><em>Son of King</em> is a historical epic set in the 17th-century Akan Kingdom, following the journey of a prince, Kofi Asare, who must prove his worthiness to inherit the throne. Facing sibling rivalry and external threats, Kofi’s path to leadership is fraught with trials.</p>
+                    <p>The novel immerses readers in Akan royal life, from the grandeur of the king’s court to the sacred rituals of the forest. Kofi’s growth from a reluctant prince to a wise leader highlights the qualities of courage, wisdom, and humility required to govern.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of leadership, family dynamics, and the weight of tradition. It has been acclaimed for its historical depth, winning the 2021 Akan Heritage Award. Historians have noted its accurate portrayal of Akan governance, making it a valuable resource for cultural education.</p>
+                    <p>Nana Kwesi Safo’s rich storytelling and attention to historical detail make this novel a captivating read. It has been adapted into a radio drama in Ghana, bringing Akan history to a wider audience, and continues to be a celebrated work in traditional literature.</p>
+                `
+            },
+            {
+                id: "crown-of-courage",
+                title: "Crown of Courage",
+                author: "Kwame Osei Tutu",
+                category: "Traditional Leadership",
+                pages: 270,
+                publicationDate: "12 Aug, 2024",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/crown-of-courage",
+                content: `
+                    <p><em>Crown of Courage</em> is a novel that follows a young queen, Abena, who inherits the throne of her Fante kingdom during a time of crisis. With her people facing colonial encroachment, Abena must summon the courage to lead her warriors and preserve her culture.</p>
+                    <p>The story takes readers through Fante traditions, from the queen’s coronation to the battlefields where Abena proves her mettle. Her leadership is tested by both external forces and internal doubts, but her resolve strengthens as she draws on the wisdom of her ancestors.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of female leadership, resistance to colonialism, and cultural pride. It has been praised for its empowering narrative, earning a nomination for the 2024 Fante Literary Prize. Readers have admired Abena’s character, often citing her as an inspiring figure for young women.</p>
+                    <p>Kwame Osei Tutu’s focus on Fante history and his dynamic portrayal of a female leader make this novel a significant contribution to African literature. It has been used in history classes to teach about Fante resistance, highlighting its educational value.</p>
+                `
+            },
+            {
+                id: "the-elders-prophecy",
+                title: "The Elder’s Prophecy",
+                author: "Kwame Osei Tutu",
+                category: "Cultural Reflections",
+                pages: 240,
+                publicationDate: "03 Mar, 2024",
+                image: "assets/images/BOOKS/placeholder.webp",
+                buyLink: "https://www.amazon.com/the-elders-prophecy",
+                content: `
+                    <p><em>The Elder’s Prophecy</em> is a mystical novel set in a Dagomba village in northern Ghana, where an elder’s prophecy foretells a great change. The story follows a young drummer, Issah, who must decipher the prophecy to save his village from an unknown fate.</p>
+                    <p>Issah’s journey takes him through Dagomba cultural practices, from the rhythms of the talking drum to the wisdom of the elders’ council. The novel blends mysticism with cultural exploration, as Issah uncovers the prophecy’s meaning through ancient stories and spiritual encounters.</p>
+                    <h3>Themes and Reception</h3>
+                    <p>The book explores themes of cultural heritage, the power of prophecy, and the role of youth in preserving tradition. It has been well-received for its mystical elements, earning a spot on the 2024 Dagomba Cultural Reading List. Readers have noted its immersive depiction of Dagomba life.</p>
+                    <p>Kwame Osei Tutu’s blend of spirituality and cultural detail makes this novel a captivating read. It has been featured in cultural festivals in northern Ghana, where its focus on Dagomba traditions has resonated deeply with audiences.</p>
                 `
             }
         ];
 
-        // Function to Load Blog Details
-        function loadBlogDetails() {
-            // Get the blog ID (slug) from the URL query parameter
+        // Function to Update Meta Tags and Title
+        function updateMetaTags(book) {
+            // Update page title
+            document.getElementById('page-title').textContent = `${book.title} - A-D Kay Publications`;
+
+            // Update meta description
+            const description = `Explore "${book.title}" by ${book.author} at A-D Kay Publications. Dive into its themes of ${book.category.toLowerCase()} and discover African heritage.`;
+            document.getElementById('meta-description').setAttribute('content', description);
+
+            // Update meta keywords
+            const keywords = `${book.title.toLowerCase()}, ${book.author.toLowerCase()}, ${book.category.toLowerCase()}, african literature, a-d kay publications, ghanaian books`;
+            document.getElementById('meta-keywords').setAttribute('content', keywords);
+        }
+
+        // Function to Load Book Details
+        function loadBookDetails() {
+            // Get the book ID from the URL query parameter
             const urlParams = new URLSearchParams(window.location.search);
-            const blogId = urlParams.get('id');
+            const bookId = urlParams.get('id');
 
-            // Find the blog with the matching ID
-            const blog = blogs.find(b => b.id === blogId);
+            // Find the book with the matching ID
+            const book = books.find(b => b.id === bookId);
 
-            // If blog is found, update the page content
-            if (blog) {
-                document.getElementById('blog-title').textContent = blog.title;
-                document.getElementById('blog-date').textContent = blog.date;
-                document.getElementById('blog-author').textContent = blog.author;
-                document.getElementById('blog-image').src = blog.image;
-                document.getElementById('blog-image').alt = blog.title;
-                document.getElementById('blog-content').innerHTML = blog.content;
+            // If book is found, update the page content
+            if (book) {
+                // Update meta tags and title
+                updateMetaTags(book);
+
+                // Update book details
+                document.getElementById('book-title').textContent = book.title;
+                document.getElementById('book-author').innerHTML = `<a href="authors.htm">${book.author}</a>`;
+                document.getElementById('book-category').textContent = book.category;
+                document.getElementById('book-pages').textContent = book.pages;
+                document.getElementById('book-date').textContent = book.publicationDate;
+                document.getElementById('book-image').src = book.image;
+                document.getElementById('book-image').alt = book.title;
+                document.getElementById('book-content').innerHTML = book.content;
+                document.getElementById('buy-link').href = book.buyLink;
+
+                // Load other books by the same author
+                loadOtherBooks(book.author, book.id);
             } else {
-                // If no blog is found, display a fallback message
-                document.getElementById('blog-title').textContent = "Blog Not Found";
-                document.getElementById('blog-date').textContent = "";
-                document.getElementById('blog-author').textContent = "";
-                document.getElementById('blog-image').style.display = "none";
-                document.getElementById('blog-content').innerHTML = "<p>Sorry, the blog post you're looking for does not exist.</p>";
+                // If no book is found, display a fallback message
+                document.getElementById('page-title').textContent = "Book Not Found - A-D Kay Publications";
+                document.getElementById('meta-description').setAttribute('content', 'Book not found at A-D Kay Publications. Explore other African literature and stories.');
+                document.getElementById('meta-keywords').setAttribute('content', 'african literature, a-d kay publications, book not found');
+
+                document.getElementById('book-title').textContent = "Book Not Found";
+                document.getElementById('book-author').textContent = "";
+                document.getElementById('book-category').textContent = "";
+                document.getElementById('book-pages').textContent = "";
+                document.getElementById('book-date').textContent = "";
+                document.getElementById('book-image').style.display = "none";
+                document.getElementById('book-content').innerHTML = "<p>Sorry, the book you're looking for does not exist.</p>";
+                document.getElementById('buy-link').style.display = "none";
+                document.querySelector('.other-books-section').style.display = "none";
             }
         }
 
-        // Load the blog details when the page loads
-        window.onload = loadBlogDetails;
+        // Function to Load Other Books by the Same Author
+        function loadOtherBooks(author, currentBookId) {
+            const otherBooks = books.filter(book => book.author === author && book.id !== currentBookId);
+            const carousel = document.getElementById('other-books-carousel');
+
+            if (otherBooks.length === 0) {
+                document.querySelector('.other-books-section').style.display = "none";
+                return;
+            }
+
+            otherBooks.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'other-book-card';
+                card.innerHTML = `
+                    <a href="book-details.htm?id=${book.id}">
+                        <img src="${book.image}" alt="${book.title}">
+                        <div class="book-title-overlay">
+                            <h3>${book.title}</h3>
+                        </div>
+                    </a>
+                `;
+                carousel.appendChild(card);
+            });
+        }
+
+        // Load the book details when the page loads
+        window.onload = loadBookDetails;
     </script>
 </body>
 </html>

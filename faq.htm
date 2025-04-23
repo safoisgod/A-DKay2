@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ - A-D Kay Publications</title>
+    <meta name="description" content="Find answers to frequently asked questions about A-D Kay Publications, including author submissions, careers, partnerships, and more.">
+    <meta name="keywords" content="faq, frequently asked questions, a-d kay publications, african literature, author submissions, careers, partnerships">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- FAQ Page Specific Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #4267b2;
+            background-color: #FFFFFF;
+        }
+
+        /* Banner Section (consistent with contact page) */
+        .banner-section {
+            position: relative;
+            height: 400px;
+            background-image: url('assets/images/banners/faq-banner.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .banner-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #e7e7e7;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4267b2;
+        }
+
+        .faq-search {
+            position: relative;
+            width: 300px;
+        }
+
+        .faq-search input {
+            width: 80%;
+            padding: 12px 40px 12px 20px;
+            border: 2px solid #D4C9BE;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            border-color: #4267b2;
+            box-shadow: 0 0 8px rgba(66, 103, 178, 0.2);
+            outline: none;
+        }
+
+        .faq-search button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #D4C9BE;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-search button:hover {
+            color: #4267b2;
+        }
+
+        .faq-category {
+            margin-bottom: 30px;
+        }
+
+        .faq-category h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #4267b2;
+            margin-bottom: 20px;
+            border-left: 4px solid #4267b2;
+            padding-left: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #E6F0FA;
+            border: none;
+            text-align: left;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4267b2;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #d5e3f6;
+        }
+
+        .faq-question:focus {
+            outline: none;
+            background-color: #d5e3f6;
+        }
+
+        .faq-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 20px;
+            background-color: #FFFFFF;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .faq-answer a {
+            color: #4267b2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .faq-footer p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .faq-footer a {
+            color: #4267b2;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .faq-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Reach Out Section */
+        .reach-out-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            
+            gap: 40px;
+            align-items: center;
+            background-color: #F9FAFB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .reach-out-image {
+            flex: 1;
+            height: 400px;
+            background-image: url('assets/images/contact/quections.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reach-out-form {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .reach-out-form h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4267b2;
+            margin-bottom: 20px;
+        }
+
+        .reach-out-form .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .reach-out-form .form-group label {
+            position: absolute;
+            top: 12px;
+            left: 40px;
+            font-size: 1rem;
+            color: #666;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .reach-out-form .form-group input,
+        .reach-out-form .form-group textarea {
+            width: 80%;
+            padding: 12px 12px 12px 40px;
+            border: none;
+            border-bottom: 2px solid #D4C9BE;
+            border-radius: 0;
+            font-size: 1rem;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            color: #4267b2;
+        }
+
+        .reach-out-form .form-group input:focus,
+        .reach-out-form .form-group textarea:focus {
+            border-bottom-color: #4267b2;
+            outline: none;
+        }
+
+        .reach-out-form .form-group input:focus + label,
+        .reach-out-form .form-group textarea:focus + label,
+        .reach-out-form .form-group input:not(:placeholder-shown) + label,
+        .reach-out-form .form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 40px;
+            font-size: 0.8rem;
+            color: #4267b2;
+        }
+
+        .reach-out-form .form-group::before {
+            content: '';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            color: #D4C9BE;
+            transition: color 0.3s ease;
+        }
+
+        .reach-out-form .form-group input:focus::before,
+        .reach-out-form .form-group textarea:focus::before {
+            color: #4267b2;
+        }
+
+        .reach-out-form .form-group:has(input[name="name"])::before {
+            content: '\f007'; /* User icon */
+        }
+
+        .reach-out-form .form-group:has(input[name="email"])::before {
+            content: '\f0e0'; /* Email icon */
+        }
+
+        .reach-out-form .form-group:has(textarea[name="question"])::before {
+            content: '\f303'; /* Pen icon */
+        }
+
+        .reach-out-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .reach-out-form button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #4267b2;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reach-out-form button[type="submit"]:hover {
+            background-color: #5b7bd6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-section {
+                height: 300px;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+
+            .faq-section {
+                margin-top: 60px;
+            }
+
+            .faq-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .faq-search {
+                width: 100%;
+            }
+
+            .reach-out-section {
+                flex-direction: column;
+            }
+
+            .reach-out-image {
+                height: 200px;
+                width: 100%;
+            }
+
+            .reach-out-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="A-D Kay Publications Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="contact.htm?type=contact">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-content">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about A-D Kay Publications.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>FAQs</h2>
+                <div class="faq-search">
+                    <input type="text" id="faq-search" placeholder="Search FAQs..." aria-label="Search FAQs">
+                    <button type="button" id="faq-search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="faq-list" id="faq-list">
+                <!-- General Questions -->
+                <div class="faq-category">
+                    <h3>General</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            What is A-D Kay Publications?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1">
+                            <p>A-D Kay Publications is a publishing house dedicated to promoting African literature, sharing stories that inspire and educate.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            How can I contact A-D Kay Publications?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2">
+                            <p>You can reach us via email at <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> or by phone at <a href="tel:+233543550766">+233 (54) 355-0766</a>. Alternatively, use our <a href="contact.htm?type=contact">contact form</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Author Submissions -->
+                <div class="faq-category">
+                    <h3>Author Submissions</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                            How do I submit my manuscript?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3">
+                            <p>You can submit your manuscript through our <a href="contact.htm?type=submissions">author submissions form</a>. Ensure your manuscript is in PDF or DOC format and includes a synopsis.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                            What genres do you accept?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4">
+                            <p>We accept a wide range of genres, with a focus on African literature, including fiction, non-fiction, poetry, and children’s books.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Careers -->
+                <div class="faq-category">
+                    <h3>Careers</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                            Are there any open positions at A-D Kay Publications?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5">
+                            <p>Check our <a href="contact.htm?type=careers">careers page</a> for current openings. You can also submit your resume for future opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partnerships -->
+                <div class="faq-category">
+                    <h3>Partnerships</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                            How can my organization partner with A-D Kay Publications?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-6">
+                            <p>We welcome partnerships with organizations that share our vision. Please fill out our <a href="contact.htm?type=partnerships">partnership form</a> to start the conversation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-footer">
+                <p>Didn't find what you're looking for? Reach out to us below!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reach Out Section -->
+    <section class="reach-out-section">
+        <div class="reach-out-image"></div>
+        <div class="reach-out-form">
+            <h2>Ask a Question</h2>
+            <form id="reach-out-form" method="post">
+                <div class="form-group">
+                    <input name="name" type="text" id="reach-out-name" placeholder=" " required>
+                    <label for="reach-out-name">Your Name *</label>
+                </div>
+                <div class="form-group">
+                    <input name="email" type="email" id="reach-out-email" placeholder=" " required>
+                    <label for="reach-out-email">Email Address *</label>
+                </div>
+                <div class="form-group">
+                    <textarea name="question" id="reach-out-question" placeholder=" " required></textarea>
+                    <label for="reach-out-question">Your Question *</label>
+                </div>
+                <button type="submit">Submit Question</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <div class="footer_content_wrapper">
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm?type=contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="contact.htm?type=submissions">Author Submissions</a></li>
+                        <li><a href="contact.htm?type=careers">Careers</a></li>
+                        <li><a href="contact.htm?type=partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "yImewV5eFHccTOiKe",
+            });
+        })();
+    </script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- FAQ and Form Functionality -->
+    <script>
+        // Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                button.setAttribute('aria-expanded', !isExpanded);
+                answer.style.display = isExpanded ? 'none' : 'block';
+                const icon = button.querySelector('.faq-toggle-icon i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Reach Out Form Submission
+        document.getElementById('reach-out-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            emailjs.send('default_service', 'template_contact', {
+                form_type: 'faq_question',
+                ...data
+            }).then(
+                () => {
+                    alert('Your question has been sent successfully!');
+                    this.reset();
+                },
+                (error) => {
+                    alert('Failed to send your question. Please try again.');
+                    console.error('EmailJS Error:', error);
+                }
+            );
+        });
+    </script>
+</body>
+</html>

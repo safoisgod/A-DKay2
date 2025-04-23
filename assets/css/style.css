@@ -2142,7 +2142,7 @@ header.fixed + .hero-section {
 /* Responsive Adjustments */
 @media (max-width: 1000px) {
     #platforms_section {
-        padding: 50px 0;
+        padding: 30px 0;
     }
 
     #platforms_section .section-header h2 {
@@ -2154,14 +2154,11 @@ header.fixed + .hero-section {
     }
 
     #platforms_carousel .platform_item img {
-        width: 130px;
+        width: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    #platforms_section {
-        padding: 40px 0;
-    }
 
     #platforms_section .section-header h2 {
         font-size: 2rem;
@@ -2172,14 +2169,11 @@ header.fixed + .hero-section {
     }
 
     #platforms_carousel .platform_item img {
-        width: 120px;
+        width: 220px;
     }
 }
 
 @media (max-width: 480px) {
-    #platforms_section {
-        padding: 30px 0;
-    }
 
     #platforms_section .section-header h2 {
         font-size: 1.8rem;
@@ -2190,7 +2184,7 @@ header.fixed + .hero-section {
     }
 
     #platforms_carousel .platform_item img {
-        width: 100px;
+        width: 200px;
     }
 }
 

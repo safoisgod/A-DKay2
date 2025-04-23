@@ -23,7 +23,7 @@
             position: relative;
             width: 100%;
             height: 400px;
-            background-image: url('assets/images/banner/blog-banner.webp');
+            background-image: url('assets/images/background/book-section-background1.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -153,6 +153,16 @@
             margin-bottom: 20px;
         }
 
+        /* Style for images within blog content */
+        .blog-details-content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
         @media (max-width: 768px) {
             .blog-details-header h1 {
                 font-size: 2rem;
@@ -169,6 +179,10 @@
 
             .blog-details-content {
                 font-size: 0.95rem;
+            }
+
+            .blog-details-content img {
+                max-width: 100%;
             }
         }
 
@@ -188,6 +202,10 @@
 
             .blog-details-content {
                 font-size: 0.9rem;
+            }
+
+            .blog-details-content img {
+                max-width: 100%;
             }
         }
     </style>
@@ -217,7 +235,7 @@
                         </ul>
                     </li>
                     <li><a href="blogs.htm" aria-current="page" class="active">Blog</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="contact.htm?type=contact">Contact Us</a></li>
                 </ul>
                 <label class="hamburger-icon" aria-label="Toggle mobile menu">
                     <input type="checkbox" id="hamburger-checkbox">
@@ -315,6 +333,8 @@
         </div>
     </footer>
 
+    <script src="assets/js/custom.js"></script>
+    
     <!-- JavaScript for Dynamic Content Loading -->
     <script>
         // Blog Data
@@ -326,9 +346,12 @@
                 author: "Nana Kwesi",
                 image: "assets/images/blog/killed_by_illiteracy_book_spotlight.webp",
                 content: `
-                    <p>We are thrilled to announce the release of our latest book, <em>Killed by Illiteracy</em>, a powerful narrative that delves into the challenges of education and its impact on society. This book explores the struggles of its protagonists as they navigate a world where knowledge is both a weapon and a shield.</p>
-                    <p>The story follows a young scholar who uncovers hidden truths about their community, facing danger at every turn. With rich characters and a gripping plot, <em>Killed by Illiteracy</em> sheds light on the importance of literacy in shaping a better future.</p>
-                    <p>You can purchase or pre-order your copy today at major bookstores or directly from our website. Join us in celebrating this new addition to our collection!</p>
+                    <p>We are thrilled to announce the release of our latest book, <em>Killed by Illiteracy</em>, a powerful narrative that delves into the challenges of education and its profound impact on society. This book explores the struggles of its protagonists as they navigate a world where knowledge is both a weapon and a shield, set against the backdrop of a rural African community facing systemic barriers to education.</p>
+                    <p>The story follows Kofi, a young scholar with a burning desire to learn, who uncovers hidden truths about his community's past. As Kofi digs deeper, he faces resistance from those who profit from the ignorance of others, putting his life and the lives of his loved ones in danger. The narrative weaves together themes of resilience, hope, and the transformative power of education, showing how one person's determination can inspire a movement.</p>
+                    <img src="assets/images/about_us/child_reading_book.webp" alt="Cover of Killed by Illiteracy">
+                    <p>Throughout the book, readers are introduced to a cast of richly developed characters, from Kofi’s wise grandmother, who shares oral traditions that spark his curiosity, to the corrupt local officials who will stop at nothing to maintain the status quo. The vivid descriptions of the village life—its bustling markets, communal storytelling nights, and the stark contrast between the educated few and the illiterate majority—bring the setting to life, immersing readers in a world that feels both distant and deeply relatable.</p>
+                    <p>We believe <em>Killed by Illiteracy</em> is a timely addition to the canon of African literature, shedding light on the importance of literacy in shaping a better future for communities across the continent. To learn more about the book and its author, visit our <a href="books.htm">Book Collection</a> page, where you can also find other titles that explore similar themes of education and empowerment.</p>
+                    <p>You can purchase or pre-order your copy today at major bookstores or directly from our website. We’re also hosting a virtual launch event next month, where the author will discuss the inspiration behind the book and answer questions from readers. Check out the event details on our <a href="events.htm">Events</a> page and join us in celebrating this new addition to our collection!</p>
                 `
             },
             {
@@ -338,9 +361,12 @@
                 author: "Thomas Kumah",
                 image: "assets/images/blog/ampem_daako_book_club.webp",
                 content: `
-                    <p>Love books? Love great discussions? Join the Ampem-Daako Book Club! We meet monthly, both online and in-person, to dive into the latest reads, share insights, and connect with fellow book lovers.</p>
-                    <p>This month, we're discussing a contemporary African novel that has taken the literary world by storm. Our meetings include author Q&As, themed discussions, and recommendations for your next read. Whether you're a seasoned reader or just starting, there's a place for you in our community.</p>
-                    <p>Sign up on our website to get the schedule and join our next session. We can't wait to read with you!</p>
+                    <p>Love books? Love great discussions? Then the Ampem-Daako Book Club is the perfect place for you! At A-D Kay Publications, we’re passionate about bringing readers together to share their love of literature, and our monthly book club is the heart of that mission. We meet both online and in-person to dive into the latest reads, share insights, and connect with fellow book lovers from across the globe.</p>
+                    <p>This month, we’re discussing a contemporary African novel that has taken the literary world by storm: <em>The Sunlit Path</em> by Ama Serwah. The book follows the journey of a young woman navigating the complexities of modernity and tradition in a rapidly changing Ghanaian society. It’s a story filled with emotional depth, cultural richness, and thought-provoking themes that spark lively discussions among our members.</p>
+                    <img src="assets/images/blog/book_club_readers2.webp" alt="Ampem-Daako Book Club members discussing a book">
+                    <p>Our meetings are designed to be inclusive and engaging for all. Each session includes a moderated discussion where we explore the book’s themes, characters, and cultural context. We also host author Q&As, giving members the chance to hear directly from the writers behind the stories. For example, last month, we had a virtual session with the author of <em>Killed by Illiteracy</em>, who shared fascinating insights into their research process. You can find that book in our <a href="books.htm">Book Collection</a>.</p>
+                    <p>In addition to discussions, we offer themed activities—like creating playlists inspired by the book’s setting—and provide recommendations for your next read. Whether you’re a seasoned reader who devours a book a week or someone just starting to explore African literature, there’s a place for you in our community. Our members range from students and professionals to retirees, all united by a shared love of stories that reflect the African experience.</p>
+                    <p>Sign up on our website to get the full schedule and join our next session. We also encourage members to suggest books for future meetings—perhaps a title from our <a href="books.htm">collection</a> or a classic you’ve always wanted to revisit. We can’t wait to read with you and build a community that celebrates the power of storytelling!</p>
                 `
             },
             {
@@ -350,9 +376,12 @@
                 author: "Kwame Yeboah",
                 image: "assets/images/blog/memorial_poster.webp",
                 content: `
-                    <p>We invite you to join us for a special memorial service honoring the life and legacy of Kojo Ampem-Darko, the visionary founder of A-D Kay Publications. This event will celebrate his contributions to African literature and his passion for storytelling.</p>
-                    <p>The service will feature readings from his favorite works, tributes from family and friends, and a moment of reflection on his impact. It will be held at the Grand Hall in Accra, and we welcome all who knew him or were touched by his work.</p>
-                    <p>Please RSVP on our website for more details. We look forward to commemorating this remarkable man together.</p>
+                    <p>We invite you to join us for a special memorial service honoring the life and legacy of Kojo Ampem-Darko, the visionary founder of A-D Kay Publications. This event will take place on April 15, 2025, at the Grand Hall in Accra, and it will be a heartfelt celebration of a man whose passion for storytelling left an indelible mark on African literature.</p>
+                    <p>Kojo Ampem-Darko founded A-D Kay Publications with a mission to amplify African voices and share stories that resonate across generations. Under his leadership, the company published works that tackled pressing social issues—like education and cultural heritage—while also celebrating the beauty of African traditions. His favorite book, <em>Particles of Wisdom</em>, remains one of our most cherished titles, and you can explore it in our <a href="books.htm">Book Collection</a>.</p>
+                    <img src="assets/images/about_us/kojo_ampem_darko.webp" alt="Portrait of Kojo Ampem-Darko">
+                    <p>The memorial service will feature readings from Kojo’s favorite works, including excerpts from <em>Particles of Wisdom</em> and other books he championed during his tenure. Family members, friends, and colleagues will share tributes, reflecting on his impact as a publisher, mentor, and advocate for literacy. We’ll also have a moment of silence to honor his memory, followed by a performance of traditional music that Kojo loved—a fitting tribute to his deep connection to African culture.</p>
+                    <p>We welcome all who knew Kojo or were touched by his work to join us. The event will also be live-streamed for those who cannot attend in person, ensuring that his global community of readers and admirers can participate. After the service, there will be a reception where attendees can share memories and connect over their shared appreciation for his legacy.</p>
+                    <p>Please RSVP on our <a href="events.htm">Events</a> page for more details, including the schedule and live-stream link. We look forward to commemorating this remarkable man together and continuing his mission to change history, one story at a time.</p>
                 `
             },
             {
@@ -360,23 +389,30 @@
                 title: "The Impact of African Literature on Global Narratives",
                 date: "15 Mar, 2025",
                 author: "Efua Asantewaa",
-                image: "assets/images/blog/african_literature_impact.webp",
+                image: "assets/images/blog/killed_by_illiteracy_on_desk.webp",
                 content: `
-                    <p>African literature has long been a powerful force in shaping global narratives, offering unique perspectives that challenge stereotypes and broaden understanding. From the works of Chinua Achebe to contemporary voices, African stories have transcended borders.</p>
-                    <p>These narratives highlight the richness of African cultures, the complexity of its histories, and the resilience of its people. They foster cross-cultural dialogue, encouraging readers worldwide to engage with themes of identity, struggle, and triumph.</p>
-                    <p>At A-D Kay Publications, we are proud to contribute to this legacy by amplifying African voices. Explore our collection to discover stories that inspire and educate.</p>
+                    <p>African literature has long been a powerful force in shaping global narratives, offering unique perspectives that challenge stereotypes and broaden understanding. From the pioneering works of Chinua Achebe, whose <em>Things Fall Apart</em> gave the world an authentic glimpse into pre-colonial Igbo society, to contemporary voices like Chimamanda Ngozi Adichie, African stories have transcended borders and reshaped how the world sees the continent.</p>
+                    <p>These narratives highlight the richness of African cultures, the complexity of its histories, and the resilience of its people. They tackle universal themes—love, loss, identity, and struggle—while grounding them in distinctly African contexts. For example, Achebe’s portrayal of Okonkwo’s conflict with colonial forces in <em>Things Fall Apart</em> not only educated readers about the impact of colonialism but also humanized the African experience, countering the one-dimensional portrayals often seen in Western literature at the time.</p>
+                    <img src="assets/images/blog/african_storytelling_culture.webp" alt="Traditional African storytelling scene">
+                    <p>Today, African literature continues to influence global conversations. Writers like Ngũgĩ wa Thiong’o advocate for the use of indigenous languages in literature, preserving cultural heritage while making powerful political statements. At A-D Kay Publications, we’re proud to contribute to this legacy by publishing works that explore these themes. Our title <em>Killed by Illiteracy</em>, for instance, addresses the societal impact of education—or the lack thereof—in rural African communities, a topic that resonates with readers worldwide. You can find it in our <a href="books.htm">Book Collection</a>.</p>
+                    <p>Beyond individual stories, African literature fosters cross-cultural dialogue, encouraging readers to engage with perspectives they might not otherwise encounter. Book clubs, literary festivals, and academic courses around the world now include African works as essential reading, ensuring that these narratives shape the next generation of thinkers and storytellers. Our Ampem-Daako Book Club is a great way to dive into these discussions—learn more and join us on our <a href="blogs.htm?id=join-our-monthly-book-club-ampem-daako-book-club">Blog</a>.</p>
+                    <p>We believe that African literature will continue to play a vital role in global storytelling. By amplifying African voices, we hope to inspire readers to see the world through a more inclusive lens. Explore our collection to discover stories that educate, inspire, and connect us all.</p>
                 `
             },
             {
                 id: "spotlight-on-our-authors",
-                title: "Spotlight on Our Authors",
+                title: "Spotlight on Our Authors - Kojo Ampem-Darko",
                 date: "05 Mar, 2025",
                 author: "Nana Kwesi",
-                image: "assets/images/authors/Ampem-Daako Kay -nb.png",
+                image: "assets/images/about_us/kojo_ampem_darko.webp",
                 content: `
-                    <p>This month, we're shining a spotlight on one of our talented authors, whose journey in writing has inspired many. From humble beginnings to becoming a celebrated storyteller, their path is a testament to perseverance.</p>
-                    <p>Their latest book explores themes of family, tradition, and modernity, drawing from personal experiences and cultural heritage. In this spotlight, we delve into their creative process, influences, and the stories behind their stories.</p>
-                    <p>Learn more about this author and their works on our Authors page, and pick up their book to experience their unique voice.</p>
+                    <p>This month, we’re honored to shine a spotlight on a truly remarkable figure in African literature: Kojo Ampem-Darko, the visionary founder of A-D Kay Publications and a passionate author whose work continues to inspire readers across the globe. Kojo’s journey as a writer and publisher reflects his lifelong commitment to preserving African stories and amplifying the voices of the continent.</p>
+                    <p>Kojo Ampem-Darko is best known for his seminal work, <em>Particles of Wisdom</em>, a collection of short stories that captures the dreams, struggles, and resilience of Africa’s youth. Published as the inaugural title of A-D Kay Publications, this book set the tone for the company’s mission to tell authentic African stories. Each story in the collection reflects Kojo’s deep connection to his cultural roots, blending oral traditions with modern narratives to create a timeless tapestry of wisdom and hope. Readers have praised the book for its vivid imagery and emotional depth, making it a cornerstone of our <a href="books.htm">Book Collection</a>.</p>
+                    <img src="assets/images/blog/kojo_ampem_darko_speaking_in_conference.webp" alt="Kojo Ampem-Darko speaking at a literary event">
+                    <p>In a recent conversation with our team, Kojo shared insights into his creative process. “I’ve always believed that stories are the heartbeat of a culture,” he said. “Growing up in Ghana, I was surrounded by the rhythms of oral storytelling—tales told under the stars that carried the weight of our history. My goal with <em>Particles of Wisdom</em> was to bring that same magic to the page, to make readers feel the pulse of Africa.” His approach has resonated deeply, earning him a dedicated following among readers and aspiring writers alike.</p>
+                    <p>Beyond his work as an author, Kojo’s legacy as the founder of A-D Kay Publications has had a profound impact on the literary landscape. Since launching the company in 2020, he has nurtured countless African authors, providing a platform for stories that might otherwise go untold. His vision of “changing history, one story at a time” is evident in every title we publish, from <em>Killed by Illiteracy</em> to more recent works. Aspiring writers inspired by Kojo’s journey can explore opportunities to join our roster on our <a href="submissions.htm">Author Submissions</a> page.</p>
+                    <img src="assets/images/BOOKS/particles_of_wisdom.webp" alt="Cover of Particles of Wisdom by Kojo Ampem-Darko" style="max-width: 150px; margin: 20px auto;">
+                    <p>We’re excited to continue celebrating Kojo’s contributions through our upcoming events, including a special reading session featuring excerpts from <em>Particles of Wisdom</em>. Join us to experience his unique voice, and dive deeper into his influence by exploring our <a href="authors.htm">Authors</a> page. You can also join our Ampem-Daako Book Club this month to discuss his work with other readers—details are on our <a href="blogs.htm?id=join-our-monthly-book-club-ampem-daako-book-club">Blog</a>.</p>
                 `
             },
             {
@@ -384,11 +420,14 @@
                 title: "Tips for Aspiring Authors: Crafting a Compelling Story",
                 date: "01 Mar, 2025",
                 author: "Thomas Kumah",
-                image: "assets/images/blog/crafting_story.webp",
+                image: "assets/images/blog/typewriter.webp",
                 content: `
-                    <p>Writing a compelling story is both an art and a craft. For aspiring authors, the journey can be daunting, but with the right tools, you can bring your ideas to life. Here are some tips to get started.</p>
-                    <p>First, focus on building authentic characters—readers connect with people, not plots. Next, create conflict that drives the narrative forward, keeping your audience engaged. Finally, find your unique voice; authenticity resonates more than imitation.</p>
-                    <p>At A-D Kay Publications, we support new writers through our submission program. Check out our Submission Guide for more advice and opportunities to share your work.</p>
+                    <p>Writing a compelling story is both an art and a craft, requiring creativity, discipline, and a deep understanding of what makes narratives resonate with readers. For aspiring authors, the journey can be daunting—staring at a blank page, wondering how to turn your ideas into a book that captivates an audience. But with the right tools and mindset, you can bring your stories to life. Here are some tips to help you get started on your writing journey.</p>
+                    <p>First, focus on building authentic characters. Readers connect with people, not plots, so spend time developing characters who feel real—give them flaws, dreams, and contradictions. Think about what motivates them, what they fear, and how they grow over the course of your story. For inspiration, look at characters in books like <em>Killed by Illiteracy</em>, where the protagonist’s determination to overcome adversity drives the entire narrative. You can find that book in our <a href="books.htm">Book Collection</a>.</p>
+                    <img src="assets/images/blog/writing_a_story.webp" alt="A writer’s desk with a notebook and pen">
+                    <p>Next, create conflict that drives the narrative forward. Conflict is the heartbeat of any story—it’s what keeps readers turning the page. Whether it’s an external struggle (like a character fighting against societal norms) or an internal one (like grappling with self-doubt), make sure the stakes are high and the resolution isn’t easy. A good exercise is to ask yourself: What does my character want, and what’s standing in their way? This tension will keep your audience engaged from beginning to end.</p>
+                    <p>Another key tip is to find your unique voice. Authenticity resonates more than imitation, so don’t try to mimic other writers. Instead, draw from your own experiences, culture, and perspective. If you’re an African writer, for example, weave in elements of your heritage—whether it’s the rhythm of your language, the traditions of your community, or the landscapes that shaped you. At A-D Kay Publications, we celebrate stories that reflect the African experience, like those by our author Ama Serwah, whose work you can explore on our <a href="authors.htm">Authors</a> page.</p>
+                    <p>Finally, don’t underestimate the power of revision. Your first draft is just the beginning—it’s in the editing process that your story truly takes shape. Read your work aloud to catch awkward phrasing, seek feedback from trusted readers, and be willing to cut scenes that don’t serve the narrative. If you’re ready to take the next step, A-D Kay Publications supports new writers through our submission program. Check out our <a href="submissions.htm">Submission Guide</a> for detailed advice on how to polish and submit your manuscript.</p>
                 `
             },
             {
@@ -396,11 +435,14 @@
                 title: "How to Submit Your Manuscript",
                 date: "25 Feb, 2025",
                 author: "Kwame Yeboah",
-                image: "assets/images/blog/submit-book.jpg",
+                image: "assets/images/blog/packaging_box.webp",
                 content: `
-                    <p>Ready to share your story with the world? Submitting your manuscript to A-D Kay Publications is a straightforward process, but there are key steps to ensure success. Here's a guide to get you started.</p>
-                    <p>First, ensure your manuscript is polished—edit for clarity, grammar, and flow. Next, prepare a compelling query letter that highlights your story's unique angle. Finally, follow our submission guidelines on the website, including format and word count requirements.</p>
-                    <p>We’re always looking for fresh voices in African literature. Submit your work today and take the first step toward becoming a published author!</p>
+                    <p>Ready to share your story with the world? At A-D Kay Publications, we’re always on the lookout for fresh voices in African literature, and submitting your manuscript to us is a straightforward process. However, to increase your chances of success, there are key steps you should follow to ensure your submission stands out. Here’s a detailed guide to help you navigate the process and take the first step toward becoming a published author.</p>
+                    <p>First, ensure your manuscript is polished to perfection. This means editing for clarity, grammar, and flow—small errors can distract from the quality of your story. Consider working with a beta reader or professional editor to catch issues you might have missed. A well-polished manuscript shows that you’re serious about your craft, which is especially important for first-time authors. For example, our author Ama Serwah spent months refining her manuscript for <em>The Sunlit Path</em> before submitting it, and the effort paid off. You can read more about her journey on our <a href="authors.htm">Authors</a> page.</p>
+                    <img src="assets/images/blog/letter_package.webp" alt="A manuscript being prepared for submission">
+                    <p>Next, prepare a compelling query letter that highlights your story’s unique angle. Your query letter is your first impression, so make it count. Start with a brief introduction about yourself, then provide a concise summary of your book—think of it as the blurb on the back cover. Highlight what makes your story special: Does it explore an underrepresented theme? Does it feature a unique setting or perspective? Finally, include your word count, genre, and any relevant writing credentials. Keep it professional but let your passion for your story shine through.</p>
+                    <p>Finally, follow our submission guidelines to the letter. At A-D Kay Publications, we have specific requirements for format, word count, and submission method, all of which are outlined on our <a href="submissions.htm">Author Submissions</a> page. For example, we typically ask for manuscripts to be submitted in a standard format (double-spaced, 12-point font) and within a certain word count range (usually 50,000 to 100,000 words for novels). We also prefer submissions via email, with the manuscript and query letter attached as separate documents. Following these guidelines shows that you respect our process and increases the likelihood that your work will be reviewed.</p>
+                    <p>We’re passionate about discovering new talent, and many of our published authors—like the writer of <em>Killed by Illiteracy</em>—started their journey by submitting through our program. If you’re ready to take the leap, visit our <a href="submissions.htm">Submission Guide</a> for all the details, and join the ranks of African authors who are changing history, one story at a time.</p>
                 `
             },
             {
@@ -408,11 +450,14 @@
                 title: "Celebrating 5 Years of A-D Kay Publications",
                 date: "20 Feb, 2025",
                 author: "Efua Asantewaa",
-                image: "assets/images/blog/5_years_celebration.webp",
+                image: "assets/images/blog/5years_anniversary.webp",
                 content: `
-                    <p>We’re proud to celebrate five incredible years of A-D Kay Publications! Since our founding, we’ve been dedicated to amplifying African voices and sharing stories that matter.</p>
-                    <p>Over the years, we’ve published numerous works, hosted events, and built a community of readers and writers who share our passion for literature. From our first book to our latest release, each milestone has been a step toward our mission of changing history, one story at a time.</p>
-                    <p>Join us in this celebration by exploring our collection and sharing your favorite A-D Kay moments on social media. Here’s to many more years of storytelling!</p>
+                    <p>We’re proud to celebrate five incredible years of A-D Kay Publications! Since our founding in 2020, we’ve been dedicated to amplifying African voices and sharing stories that matter, and this milestone marks a moment to reflect on our journey, celebrate our achievements, and look forward to the future.</p>
+                    <p>Our story began with a simple mission: to change history, one story at a time. Founded by Kojo Ampem-Darko, A-D Kay Publications set out to create a platform for African writers to share their narratives with the world. Our first book, <em>Particles of Wisdom</em>, was a collection of short stories that captured the dreams and struggles of Africa’s youth, and it set the tone for the kind of impactful storytelling we wanted to champion. You can still find that book in our <a href="books.htm">Book Collection</a>.</p>
+                    <img src="assets/images/blog/celebrating_5_years.webp" alt="A-D Kay Publications 5th anniversary celebration event">
+                    <p>Over the past five years, we’ve published dozens of works across genres, from novels and short stories to poetry and memoirs. Each book has been a labor of love, reflecting the diversity and richness of African experiences. We’ve also hosted numerous events, including book launches, literary festivals, and our monthly Ampem-Daako Book Club meetings, building a community of readers and writers who share our passion for literature. Learn more about our book club on our <a href="blogs.htm?id=join-our-monthly-book-club-ampem-daako-book-club">Blog</a>.</p>
+                    <p>One of our proudest moments was the release of <em>Killed by Illiteracy</em>, a book that sparked important conversations about education and its role in transforming communities. The book’s success led to partnerships with literacy organizations across Africa, allowing us to give back in meaningful ways. We’ve also been honored to work with incredible authors like Ama Serwah, whose stories continue to inspire readers worldwide. Meet her and other writers on our <a href="authors.htm">Authors</a> page.</p>
+                    <p>As we celebrate this milestone, we’re hosting a series of events to mark the occasion, including a virtual panel discussion with our authors and a special giveaway of signed books. Join us in this celebration by exploring our collection, sharing your favorite A-D Kay moments on social media with the hashtag #ADKay5Years, and checking out our upcoming events on our <a href="events.htm">Events</a> page. Here’s to many more years of storytelling!</p>
                 `
             }
         ];
