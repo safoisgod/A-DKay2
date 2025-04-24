@@ -909,4 +909,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
+
+    // Function to handle the form submission and redirect
+    function redirectToPage(event) {
+        event.preventDefault(); // Prevent form submission completely
+        window.location.href = '/contact.htm'; // Redirect to contact.htm
+    }
+
+    // Ensure that the form exists and attach the event listener
+    const newsletterForm = document.getElementById('newsletter_form');
+    
+    if (newsletterForm) {
+        // Attach the redirect function to the form's submit event
+        newsletterForm.addEventListener('submit', redirectToPage);
+    }
 });

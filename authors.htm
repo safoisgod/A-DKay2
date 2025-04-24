@@ -127,7 +127,7 @@
             <div class="container">
                 <h2 id="cta-heading">Join Our Journey</h2>
                 <p>Are you an author with a story to tell? We’re open to manuscript submissions! Or, join our upcoming book club to celebrate African literature.</p>
-                <a href="contact.htm" class="btn">Get Involved</a>
+                <a href="contact.htm?type=careers" class="btn">Get Involved</a>
             </div>
         </section>
     </main>
@@ -159,7 +159,7 @@
             <!-- Newsletter Subscription -->
             <div class="footer_newsletter_wrapper">
                 <h3>Stay in the Story</h3>
-                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form" onsubmit="redirectToPage(event)">
                     <label for="email_input" class="visually_hidden">Email Address</label>
                     <input type="email" id="email_input" name="email" placeholder="Your email address" required>
                     <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
@@ -193,9 +193,9 @@
                 <div class="footer_column join_us">
                     <h3>Join Us</h3>
                     <ul>
-                        <li><a href="submissions.htm">Author Submissions</a></li>
-                        <li><a href="careers.htm">Careers</a></li>
-                        <li><a href="partnerships.htm">Partnerships</a></li>
+                        <li><a href="contact.htm?type=submissions">Author Submissions</a></li>
+                        <li><a href="contact.htm?type=careers">Careers</a></li>
+                        <li><a href="contact.htm?type=partnerships">Partnerships</a></li>
                     </ul>
                 </div>
                 <!-- Social Links -->
@@ -236,15 +236,6 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- EmailJS -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+    <script src="assets/js/custom.js"></script>
 </body>
 </html>

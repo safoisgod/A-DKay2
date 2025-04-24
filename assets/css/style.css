@@ -120,8 +120,8 @@ header.scrolled {
     color: #000000; /* Black for non-active links */
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 18px;
-    padding: 8px 12px;
+    font-size: 16px;
+    padding: 8px 8px;
     position: relative;
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block;
@@ -2010,6 +2010,7 @@ header.fixed + .hero-section {
 
 #blog-section .blog-content h3 {
     font-size: 1.25rem;
+    height: 60px;
     color: #030303; /* Dark for readability */
     font-weight: 600;
     margin-bottom: 10px;
@@ -2561,9 +2562,9 @@ header.fixed + .hero-section {
 .footer_column h3::before {
     content: '';
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: url('assets/images/icons/book-icon.webp') no-repeat center;
+    width: 20px;
+    height: 20px;
+    background: url('../images/icons/book-black.webp') no-repeat center;
     background-size: contain;
     margin-right: 10px;
     vertical-align: middle;

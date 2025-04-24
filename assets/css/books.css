@@ -181,7 +181,8 @@
 
 .book-image img {
     width: 100%;
-    object-fit: contain; /* Show full image without cropping */
+    height: 100%;
+    object-fit: cover; /* Show full image without cropping */
     object-position: center;
     display: block;
     border-top-left-radius: 10px;
@@ -221,7 +222,7 @@
     }
 
     .book-image {
-        height: 350px;
+        height: 300px;
     }
 
     #book-banner-section {
@@ -264,7 +265,7 @@
     }
 
     .book-image {
-        height: 320px;
+        height: 280px;
     }
 
     #book-banner-section {
@@ -286,7 +287,7 @@
     }
 
     .book-image {
-        height: 280px;
+        height: 220px;
     }
 
     #book-banner-section {

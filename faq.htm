@@ -14,386 +14,7 @@
 
     <!-- External Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- FAQ Page Specific Styles -->
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            color: #4267b2;
-            background-color: #FFFFFF;
-        }
-
-        /* Banner Section (consistent with contact page) */
-        .banner-section {
-            position: relative;
-            height: 400px;
-            background-image: url('assets/images/banners/faq-banner.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .banner-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .banner-content h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 10px;
-        }
-
-        .banner-content p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.2rem;
-            color: #e7e7e7;
-            margin: 0;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            margin-top: 80px;
-        }
-
-        .faq-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .faq-header h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #4267b2;
-        }
-
-        .faq-search {
-            position: relative;
-            width: 300px;
-        }
-
-        .faq-search input {
-            width: 80%;
-            padding: 12px 40px 12px 20px;
-            border: 2px solid #D4C9BE;
-            border-radius: 25px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-search input:focus {
-            border-color: #4267b2;
-            box-shadow: 0 0 8px rgba(66, 103, 178, 0.2);
-            outline: none;
-        }
-
-        .faq-search button {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #D4C9BE;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .faq-search button:hover {
-            color: #4267b2;
-        }
-
-        .faq-category {
-            margin-bottom: 30px;
-        }
-
-        .faq-category h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #4267b2;
-            margin-bottom: 20px;
-            border-left: 4px solid #4267b2;
-            padding-left: 10px;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 15px 20px;
-            background-color: #E6F0FA;
-            border: none;
-            text-align: left;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #4267b2;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background-color: #d5e3f6;
-        }
-
-        .faq-question:focus {
-            outline: none;
-            background-color: #d5e3f6;
-        }
-
-        .faq-toggle-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question[aria-expanded="true"] .faq-toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 20px;
-            background-color: #FFFFFF;
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .faq-answer p {
-            margin: 0;
-        }
-
-        .faq-answer a {
-            color: #4267b2;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .faq-answer a:hover {
-            text-decoration: underline;
-        }
-
-        .faq-footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .faq-footer p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .faq-footer a {
-            color: #4267b2;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .faq-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Reach Out Section */
-        .reach-out-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: flex;
-            
-            gap: 40px;
-            align-items: center;
-            background-color: #F9FAFB;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .reach-out-image {
-            flex: 1;
-            height: 400px;
-            background-image: url('assets/images/contact/quections.webp');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .reach-out-form {
-            flex: 1;
-            padding: 40px;
-        }
-
-        .reach-out-form h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #4267b2;
-            margin-bottom: 20px;
-        }
-
-        .reach-out-form .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .reach-out-form .form-group label {
-            position: absolute;
-            top: 12px;
-            left: 40px;
-            font-size: 1rem;
-            color: #666;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .reach-out-form .form-group input,
-        .reach-out-form .form-group textarea {
-            width: 80%;
-            padding: 12px 12px 12px 40px;
-            border: none;
-            border-bottom: 2px solid #D4C9BE;
-            border-radius: 0;
-            font-size: 1rem;
-            background-color: transparent;
-            transition: all 0.3s ease;
-            color: #4267b2;
-        }
-
-        .reach-out-form .form-group input:focus,
-        .reach-out-form .form-group textarea:focus {
-            border-bottom-color: #4267b2;
-            outline: none;
-        }
-
-        .reach-out-form .form-group input:focus + label,
-        .reach-out-form .form-group textarea:focus + label,
-        .reach-out-form .form-group input:not(:placeholder-shown) + label,
-        .reach-out-form .form-group textarea:not(:placeholder-shown) + label {
-            top: -10px;
-            left: 40px;
-            font-size: 0.8rem;
-            color: #4267b2;
-        }
-
-        .reach-out-form .form-group::before {
-            content: '';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 10px;
-            top: 12px;
-            color: #D4C9BE;
-            transition: color 0.3s ease;
-        }
-
-        .reach-out-form .form-group input:focus::before,
-        .reach-out-form .form-group textarea:focus::before {
-            color: #4267b2;
-        }
-
-        .reach-out-form .form-group:has(input[name="name"])::before {
-            content: '\f007'; /* User icon */
-        }
-
-        .reach-out-form .form-group:has(input[name="email"])::before {
-            content: '\f0e0'; /* Email icon */
-        }
-
-        .reach-out-form .form-group:has(textarea[name="question"])::before {
-            content: '\f303'; /* Pen icon */
-        }
-
-        .reach-out-form textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .reach-out-form button[type="submit"] {
-            padding: 12px 24px;
-            background-color: #4267b2;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .reach-out-form button[type="submit"]:hover {
-            background-color: #5b7bd6;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .banner-section {
-                height: 300px;
-            }
-
-            .banner-content h1 {
-                font-size: 2rem;
-            }
-
-            .banner-content p {
-                font-size: 1rem;
-            }
-
-            .faq-section {
-                margin-top: 60px;
-            }
-
-            .faq-header {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .faq-search {
-                width: 100%;
-            }
-
-            .reach-out-section {
-                flex-direction: column;
-            }
-
-            .reach-out-image {
-                height: 200px;
-                width: 100%;
-            }
-
-            .reach-out-form {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
     <header class="header-space">
@@ -433,7 +54,7 @@
     </header>
 
     <!-- Banner Section -->
-    <section class="banner-section">
+    <section class="banner-section" style="background-image: url('assets/images/background/faq_banner.webp');">
         <div class="banner-content">
             <h1>Frequently Asked Questions</h1>
             <p>Find answers to common questions about A-D Kay Publications.</p>
@@ -462,7 +83,7 @@
                             <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-1">
-                            <p>A-D Kay Publications is a publishing house dedicated to promoting African literature, sharing stories that inspire and educate.</p>
+                            <p>A-D Kay Publications is a publishing house dedicated to promoting African literature, sharing stories that inspire and educate, with a focus on socio-economic, religious, and political themes from an African perspective. Learn more on our <a href="about-us.htm">About Us</a> page.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -472,6 +93,65 @@
                         </button>
                         <div class="faq-answer" id="faq-answer-2">
                             <p>You can reach us via email at <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> or by phone at <a href="tel:+233543550766">+233 (54) 355-0766</a>. Alternatively, use our <a href="contact.htm?type=contact">contact form</a>.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-g1">
+                            What is the mission of A-D Kay Publications?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-g1">
+                            <p>Our mission is to use writing as a tool for transformation, increasing awareness, promoting literacy, and encouraging education, particularly within African communities. Visit our <a href="about-us.htm">About Us</a> page for details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Books and Purchasing -->
+                <div class="faq-category">
+                    <h3>Books and Purchasing</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-b1">
+                            How can I find a specific book?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-b1">
+                            <p>Use our <a href="books.htm">Book Collection</a> page to browse or search for titles. You can filter by genre, author, or keyword to find exactly what you’re looking for.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-b2">
+                            What formats are your books available in?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-b2">
+                            <p>Our books are available in hardcover, paperback, and eBook formats. Check each book’s page on our <a href="books.htm">Book Collection</a> for specific availability.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-b3">
+                            Do you ship internationally?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-b3">
+                            <p>Yes, we ship to many countries worldwide. Shipping costs and times vary by location—contact us via our <a href="contact.htm?type=contact">contact form</a> for details.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-b4">
+                            Can I request a signed copy?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-b4">
+                            <p>We occasionally offer signed copies during special events. Sign up for our newsletter via our <a href="contact.htm?type=contact">contact form</a> to stay updated on these opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-b5">
+                            Where can I purchase Killed by Illiteracy?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-b5">
+                            <p>The second edition of <em>Killed by Illiteracy</em> will be available internationally on Amazon starting March 2025. Check our <a href="books.htm">Book Collection</a> or follow us on <a href="https://facebook.com">Facebook</a> for updates.</p>
                         </div>
                     </div>
                 </div>
@@ -494,7 +174,16 @@
                             <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-4">
-                            <p>We accept a wide range of genres, with a focus on African literature, including fiction, non-fiction, poetry, and children’s books.</p>
+                            <p>We accept a wide range of genres, with a focus on African literature, including fiction, non-fiction, poetry, and children’s books. Learn more about our publishing process on our <a href="contact.htm?type=submissions">submissions page</a>.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-a1">
+                            Do you offer editing and publishing services?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-a1">
+                            <p>Yes, we provide comprehensive publishing services, including <a href="#manuscript-editing">editing</a>, <a href="#book-design">book design</a>, <a href="#marketing">marketing</a>, <a href="#global-distribution">distribution</a>, and <a href="#author-support">author support</a>. Explore our services on our <a href="index.htm#services">homepage</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -508,7 +197,7 @@
                             <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-5">
-                            <p>Check our <a href="contact.htm?type=careers">careers page</a> for current openings. You can also submit your resume for future opportunities.</p>
+                            <p>Check our <a href="contact.htm?type=careers">careers page</a> for current openings. You can also submit your resume for future opportunities via our <a href="contact.htm?type=careers">contact form</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -525,10 +214,42 @@
                             <p>We welcome partnerships with organizations that share our vision. Please fill out our <a href="contact.htm?type=partnerships">partnership form</a> to start the conversation.</p>
                         </div>
                     </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-p1">
+                            Do you collaborate with educational institutions?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-p1">
+                            <p>Yes, we partner with schools like Bertrace School Complex and Bediako Memorial School to integrate our books into curricula and promote literacy. Learn more about our partnerships on our <a href="about-us.htm">About Us</a> page.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community and Literacy -->
+                <div class="faq-category">
+                    <h3>Community and Literacy</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-c1">
+                            How does A-D Kay Publications promote literacy?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-c1">
+                            <p>We promote literacy by publishing educational literature, donating books to underserved schools, and supporting initiatives like the Ghana Library Authority’s Year of Literacy in 2021. Read about our mission on our <a href="about-us.htm">About Us</a> page.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-c2">
+                            Can I get involved with your literacy initiatives?
+                            <span class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-c2">
+                            <p>Yes, we welcome volunteers and partners to support our literacy programs. Contact us via our <a href="contact.htm?type=contact">contact form</a> to learn how you can get involved.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="faq-footer">
-                <p>Didn't find what you're looking for? Reach out to us below!</p>
+                <p>Didn't find what you're looking for? Reach out to us via our <a href="contact.htm?type=contact">contact form</a>!</p>
             </div>
         </div>
     </section>
@@ -538,7 +259,9 @@
         <div class="reach-out-image"></div>
         <div class="reach-out-form">
             <h2>Ask a Question</h2>
-            <form id="reach-out-form" method="post">
+            <form id="reach-out-form" action="https://getform.io/f/aqokpgwa" enctype="multipart/form-data" method="post">
+                <!-- Honeypot field to reduce spam -->
+                <input type="text" name="_gotcha" style="display:none" />
                 <div class="form-group">
                     <input name="name" type="text" id="reach-out-name" placeholder=" " required>
                     <label for="reach-out-name">Your Name *</label>
@@ -551,7 +274,10 @@
                     <textarea name="question" id="reach-out-question" placeholder=" " required></textarea>
                     <label for="reach-out-question">Your Question *</label>
                 </div>
-                <button type="submit">Submit Question</button>
+                <div class="submit-container">
+                    <button type="submit">Submit Question</button>
+                    <i class="fas fa-spinner fa-spin loading-icon" id="loadingIcon" style="display: none;"></i>
+                </div>
             </form>
         </div>
     </section>
@@ -560,7 +286,7 @@
         <div class="footer_container">
             <div class="footer_newsletter_wrapper">
                 <h3>Stay in the Story</h3>
-                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form" onsubmit="redirectToPage(event)">
                     <label for="email_input" class="visually_hidden">Email Address</label>
                     <input type="email" id="email_input" name="email" placeholder="Your email address" required>
                     <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
@@ -613,21 +339,14 @@
         </div>
     </footer>
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init({
-                publicKey: "yImewV5eFHccTOiKe",
-            });
-        })();
-    </script>
-
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 
     <!-- FAQ and Form Functionality -->
     <script>
+        // Log to confirm script is running
+        console.log('FAQ script loaded');
+
         // Accordion Functionality
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
@@ -661,30 +380,78 @@
             });
         });
 
-        // Reach Out Form Submission
-        document.getElementById('reach-out-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Reach Out Form Submission to GetForm
+        const form = document.getElementById('reach-out-form');
+        const loadingIcon = document.getElementById('loadingIcon');
+        if (form) {
+            console.log('Form element found, attaching submit listener');
+            if (loadingIcon) {
+                console.log('Loading icon element found');
+            } else {
+                console.error('Loading icon element not found');
+            }
+            form.addEventListener('submit', async function(e) {
+                console.log('Submit button clicked');
+                e.preventDefault();
 
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-
-            emailjs.send('default_service', 'template_contact', {
-                form_type: 'faq_question',
-                ...data
-            }).then(
-                () => {
-                    alert('Your question has been sent successfully!');
-                    this.reset();
-                },
-                (error) => {
-                    alert('Failed to send your question. Please try again.');
-                    console.error('EmailJS Error:', error);
+                // Show loading icon immediately
+                if (loadingIcon) {
+                    console.log('Showing loading icon');
+                    loadingIcon.style.display = 'inline-block';
+                } else {
+                    console.warn('Cannot show loading icon: element not found');
                 }
-            );
-        });
+
+                // Validate form
+                if (!form.checkValidity()) {
+                    console.log('Form validation failed');
+                    // Delay hiding icon for visibility
+                    setTimeout(() => {
+                        if (loadingIcon) {
+                            console.log('Hiding loading icon due to validation failure');
+                            loadingIcon.style.display = 'none';
+                        }
+                        alert('Please fill in all required fields.');
+                        form.reportValidity();
+                    }, 500); // 500ms delay to ensure icon is noticeable
+                    return;
+                }
+
+                const formData = new FormData(this);
+                formData.append('form_type', 'faq_question');
+                console.log('Form data prepared:', Array.from(formData.entries()));
+
+                try {
+                    const response = await fetch('https://getform.io/f/aqokpgwa', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    console.log('Fetch response status:', response.status);
+                    if (response.ok) {
+                        console.log('Submission successful');
+                        if (loadingIcon) {
+                            console.log('Hiding loading icon after success');
+                            loadingIcon.style.display = 'none';
+                        }
+                        alert('Your question has been sent successfully!');
+                        this.reset();
+                    } else {
+                        const errorText = await response.text();
+                        console.error('Submission failed with status:', response.status, 'Error:', errorText);
+                        throw new Error('Submission failed: ' + errorText);
+                    }
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    if (loadingIcon) {
+                        console.log('Hiding loading icon after error');
+                        loadingIcon.style.display = 'none';
+                    }
+                    alert('Failed to send your question. Please try again.');
+                }
+            });
+        } else {
+            console.error('Form element not found');
+        }
     </script>
 </body>
 </html>

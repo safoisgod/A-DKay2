@@ -40,7 +40,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(66, 103, 178, 0.7);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
             z-index: 1;
         }
 
@@ -280,7 +280,7 @@
         <div class="footer_container">
             <div class="footer_newsletter_wrapper">
                 <h3>Stay in the Story</h3>
-                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form" onsubmit="redirectToPage(event)">
                     <label for="email_input" class="visually_hidden">Email Address</label>
                     <input type="email" id="email_input" name="email" placeholder="Your email address" required>
                     <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
@@ -309,9 +309,9 @@
                 <div class="footer_column join_us">
                     <h3>Join Us</h3>
                     <ul>
-                        <li><a href="submissions.htm">Author Submissions</a></li>
-                        <li><a href="careers.htm">Careers</a></li>
-                        <li><a href="partnerships.htm">Partnerships</a></li>
+                        <li><a href="contact.htm?type=submissions">Author Submissions</a></li>
+                        <li><a href="contact.htm?type=careers">Careers</a></li>
+                        <li><a href="contact.htm?type=partnerships">Partnerships</a></li>
                     </ul>
                 </div>
                 <div class="footer_column social_links">

@@ -41,6 +41,7 @@
                 <ul class="menu-space">
                     <li><a href="index.htm">Home</a></li>
                     <li><a href="books.htm">Book Collection</a></li>
+                    <li><a href="services.htm">Services</a></li>
                     <li class="dropdown">
                         <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                             About Us
@@ -568,7 +569,7 @@
             <!-- Newsletter Subscription -->
             <div class="footer_newsletter_wrapper">
                 <h3>Stay in the Story</h3>
-                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form">
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form" onsubmit="redirectToPage(event)">
                     <label for="email_input" class="visually_hidden">Email Address</label>
                     <input type="email" id="email_input" name="email" placeholder="Your email address" required>
                     <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
@@ -661,6 +662,8 @@
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <!-- Font Awesome for icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <script src="assets/js/custom.js"></script>
         
 </body>
 </html>
