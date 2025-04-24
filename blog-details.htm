@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blog Details - A-D Kay Publications</title>
+    <title>Blog Details - A-D Kay Publications</title> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="description" content="Read the full details of blog posts from A-D Kay Publications, featuring insights into African literature, events, and more.">
@@ -16,201 +16,29 @@
     <!-- External Styles (Assumed to include header/footer styles) -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Blog Details Specific Styles -->
-    <style>
-        /* Banner Section */
-        .banner-section {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background-image: url('assets/images/background/book-section-background1.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #FFFFFF;
-        }
+    <link rel="stylesheet" href="assets/css/blogs.css">
 
-        .banner-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-            z-index: 1;
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .banner-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .banner-content p {
-            font-size: 1.2rem;
-            font-family: 'Roboto', sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .banner-section {
-                height: 300px;
-            }
-
-            .banner-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .banner-content p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .banner-section {
-                height: 250px;
-            }
-
-            .banner-content h1 {
-                font-size: 2rem;
-            }
-
-            .banner-content p {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Blog Details Section */
-        .blog-details-section {
-            padding: 60px 0;
-            background-color: #F9FBFD;
-        }
-
-        .blog-details-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .blog-details-header {
-            margin-bottom: 30px;
-        }
-
-        .blog-details-header h1 {
-            font-size: 2.5rem;
-            color: #4267b2;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .blog-details-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .blog-details-meta .blog-date {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .blog-details-meta .blog-author {
-            font-size: 1rem;
-            color: #4267b2;
-            font-weight: 700;
-            text-transform: capitalize;
-        }
-
-        .blog-details-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .blog-details-content {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.8;
-        }
-
-        .blog-details-content p {
-            margin-bottom: 20px;
-        }
-
-        /* Style for images within blog content */
-        .blog-details-content img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .blog-details-header h1 {
-                font-size: 2rem;
-            }
-
-            .blog-details-meta .blog-date,
-            .blog-details-meta .blog-author {
-                font-size: 0.9rem;
-            }
-
-            .blog-details-image img {
-                height: 300px;
-            }
-
-            .blog-details-content {
-                font-size: 0.95rem;
-            }
-
-            .blog-details-content img {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .blog-details-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .blog-details-meta .blog-date,
-            .blog-details-meta .blog-author {
-                font-size: 0.85rem;
-            }
-
-            .blog-details-image img {
-                height: 250px;
-            }
-
-            .blog-details-content {
-                font-size: 0.9rem;
-            }
-
-            .blog-details-content img {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
+
+    <!-- Loader Overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="typewriter-container">
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper">
+                    <span class="quote-text" id="quote-text"></span>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Loading... 0%</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Header Section (Styles in style.css) -->
     <header class="header-space">
         <nav class="navigation-space">
@@ -221,6 +49,7 @@
                 <ul class="menu-space">
                     <li><a href="index.htm">Home</a></li>
                     <li><a href="books.htm">Book Collection</a></li>
+                    <li><a href="services.htm">Services</a></li>
                     <li class="dropdown">
                         <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                             About Us
@@ -333,6 +162,27 @@
         </div>
     </footer>
 
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP Fallback (Local Copy) -->
+    <script>
+        // If GSAP didn't load from CDN, load the local copy
+        if (typeof gsap === 'undefined') {
+            document.write('<script src="assets/js/gsap.min.js"><\/script>');
+        }
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom JavaScript -->
     <script src="assets/js/custom.js"></script>
     
     <!-- JavaScript for Dynamic Content Loading -->

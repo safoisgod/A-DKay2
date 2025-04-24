@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore innovative publishing services at A-D Kay Publications, empowering African authors with expert editing, design, publishing, coaching, distribution, and audiobook production.">
+    <meta name="keywords" content="publishing services, book editing, book design, author coaching, African literature, book distribution, audiobook production">
+    <meta name="author" content="A-D Kay Publications">
+    <title>Our Services - A-D Kay Publications</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- MAIN CSS (for header and footer) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Embedded CSS for Services and Get in Touch Sections -->
+    <style>
+
+        /* Call to Action Section */
+        #cta {
+            background: linear-gradient(135deg, #4267b2, #35508a);
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta .container {
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+        }
+
+        #cta::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+            border-radius: 50%;
+        }
+
+        #cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #081c43;
+        }
+
+        #cta p {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #cta .btn {
+            display: inline-block;
+            padding: 10px 35px;
+            background: linear-gradient(135deg, #D4C9BE, #FFFFFF);
+            color: #4267b2;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        #cta .btn:hover {
+            background: linear-gradient(135deg, #FFFFFF, #D4C9BE);
+            color: #030303;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            #cta .container {
+                padding: 40px 15px;
+            }
+
+            #cta p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #cta .btn {
+                padding: 8px 30px;
+                font-size: 0.9rem;
+            }
+        }
+        /* Services Section */
+        #services {
+            padding: 60px 20px;
+            background: #f9f9f9;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Services Intro */
+        .services-intro {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .services-intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .services-intro-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a2a44;
+            margin-bottom: 15px;
+        }
+        .services-intro-text h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .services-intro-text p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .services-intro-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .services-intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Service Tabs */
+        .service-tabs {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            display: flex !important;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .service-tab {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #4267b2;
+            color: #4267b2;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-flex !important;
+            align-items: center;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .service-tab i {
+            margin-right: 8px;
+        }
+        .service-tab:hover,
+        .service-tab.active {
+            background: #4267b2;
+            color: white;
+        }
+
+        /* Service Details */
+        .service-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease;
+        }
+        .service-details.active {
+            opacity: 1;
+        }
+        .service-details h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a2a44;
+            margin-bottom: 15px;
+        }
+        .service-details p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .service-details ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        .service-details ul li {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .service-details ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #4267b2;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .service-details a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4267b2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .service-details a:hover {
+            background: #35548a;
+        }
+
+        /* Get in Touch Section */
+        #get-in-touch {
+            padding: 60px 20px;
+            background: #1a2a44;
+            color: white;
+            text-align: center;
+        }
+        #get-in-touch h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        #get-in-touch p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+        #get-in-touch form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #get-in-touch input,
+        #get-in-touch textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #333;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #get-in-touch textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        #get-in-touch button {
+            padding: 12px;
+            background: #4267b2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #get-in-touch button:hover {
+            background: #35548a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader Overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="typewriter-container">
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper">
+                    <span class="quote-text" id="quote-text"></span>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Loading... 0%</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header-space">
+        <nav class="navigation-space">
+            <div class="left-side">
+                <a href="index.htm"><img class="logo" src="assets/images/logo/A-D KAY-nb1.webp" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <ul class="menu-space">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="books.htm">Book Collection</a></li>
+                    <li><a href="services.htm">Services</a></li>
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="#000000" d="M8 11L3 6h10z"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="About Us submenu">
+                            <li><a href="about-us.htm">About Us</a></li>
+                            <li><a href="team.htm">Team</a></li>
+                            <li><a href="authors.htm">Authors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blogs.htm">Blog</a></li>
+                    <li><a href="contact.htm">Contact Us</a></li>
+                </ul>
+                <label class="hamburger-icon" aria-label="Toggle mobile menu">
+                    <input type="checkbox" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services-page">
+        <!-- Services Intro -->
+        <div class="services-intro">
+            <div class="services-intro-text">
+                <h1>Our Publishing Services</h1>
+                <h2>Empowering African Stories Globally</h2>
+                <p>At A-D Kay Publications, we are passionate about bringing African narratives to the world stage. Our innovative publishing services combine expertise, creativity, and technology to transform your manuscript into a globally celebrated book.</p>
+                <p>From meticulous editing to strategic distribution, we offer comprehensive support to ensure your story shines with authenticity, quality, and impact, reaching readers far and wide.</p>
+            </div>
+            <div class="services-intro-image">
+                <img src="assets/images/blog/typewriter.webp" alt="Publishing Graphic">
+            </div>
+        </div>
+
+        <!-- Service Tabs -->
+        <div class="service-tabs">
+            <button class="service-tab active" data-service-id="editing"><i class="fas fa-book-open"></i> Manuscript Editing</button>
+            <button class="service-tab" data-service-id="design"><i class="fas fa-paint-brush"></i> Book Cover Design</button>
+            <button class="service-tab" data-service-id="publishing"><i class="fas fa-print"></i> Publishing Services</button>
+            <button class="service-tab" data-service-id="coaching"><i class="fas fa-chalkboard-teacher"></i> Author Coaching</button>
+            <button class="service-tab" data-service-id="distribution"><i class="fas fa-globe"></i> Book Distribution</button>
+            <button class="service-tab" data-service-id="audiobook"><i class="fas fa-headphones"></i> Audiobook Production</button>
+        </div>
+
+        <!-- Service Details -->
+        <div class="service-details active" id="service-details">
+            <h3>Manuscript Editing</h3>
+            <p>Our expert editors collaborate with you to refine your manuscript, ensuring it captivates readers with clarity, coherence, and emotional resonance. We enhance narrative structure, polish language, and eliminate errors, all while preserving your unique voice to deliver a professional, publication-ready book.</p>
+            <ul>
+                <li>Developmental editing to strengthen plot, characters, and pacing for maximum impact.</li>
+                <li>Copyediting to ensure grammar, style, and consistency align with industry standards.</li>
+                <li>Proofreading for a final, error-free polish before publication.</li>
+                <li>Adherence to style guides (e.g., Chicago, APA) tailored to your genre and audience.</li>
+            </ul>
+            <a href="contact.htm" aria-label="Contact us about Manuscript Editing">Contact Us About This Service</a>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" aria-labelledby="cta-heading">
+        <div class="container">
+            <h2 id="cta-heading">Join Our Journey</h2>
+            <p>Are you an author with a story to tell? We’re open to manuscript submissions! Or, join our upcoming book club to celebrate African literature.</p>
+            <a href="contact.htm?type=careers" class="btn">Get Involved</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer_section" aria-labelledby="footer_heading">
+        <div class="footer_container">
+            <div class="footer_newsletter_wrapper">
+                <h3>Stay in the Story</h3>
+                <form id="newsletter_form" action="/subscribe" method="POST" aria-label="Newsletter subscription form" onsubmit="redirectToPage(event)">
+                    <label for="email_input" class="visually_hidden">Email Address</label>
+                    <input type="email" id="email_input" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">
+                        <span class="button-text">Subscribe Now</span>
+                    </button>
+                </form>
+            </div>
+            <div class="footer_divider">
+                <span class="book-icon"></span>
+            </div>
+            <div class="footer_branding">
+                <img src="assets/images/logo/A-D KAY black bg.webp" alt="A-D Kay Publications Logo" id="footer_heading" class="footer_logo">
+                <p>Changing history, one story at a time.</p>
+            </div>
+            <div class="footer_content_wrapper">
+                <div class="footer_column quick_links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="about-us.htm">About Us</a></li>
+                        <li><a href="blogs.htm">Blog</a></li>
+                        <li><a href="contact.htm?type=contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column join_us">
+                    <h3>Join Us</h3>
+                    <ul>
+                        <li><a href="contact.htm?type=submissions">Author Submissions</a></li>
+                        <li><a href="contact.htm?type=careers">Careers</a></li>
+                        <li><a href="contact.htm?type=partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column social_links">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icons">
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_contact">
+                <p>Contact Us: <a href="mailto:support@adkaypublications.com">support@adkaypublications.com</a> | <a href="tel:+233543550766">+233 (54) 355-0766</a></p>
+            </div>
+            <div class="footer_copyright">
+                <p>By A-D Kay Publications. © 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/custom.js"></script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP Fallback (Local Copy) -->
+    <script>
+        // If GSAP didn't load from CDN, load the local copy
+        if (typeof gsap === 'undefined') {
+            document.write('<script src="assets/js/gsap.min.js"><\/script>');
+        }
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Embedded JavaScript for Services Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                const serviceTabs = document.querySelectorAll('.service-tab');
+                const serviceDetails = document.getElementById('service-details');
+
+                // Debugging: Log to ensure elements are found
+                console.log('Service Tabs Found:', serviceTabs.length);
+                if (serviceTabs.length === 0) {
+                    console.error('No service tabs found. Check HTML structure.');
+                }
+
+                // Force visibility of tabs
+                serviceTabs.forEach(tab => {
+                    tab.style.display = 'inline-flex';
+                    tab.style.visibility = 'visible';
+                    tab.style.opacity = '1';
+                    console.log('Tab:', tab.textContent, 'is visible:', tab.style.visibility);
+                });
+
+                // Service Data with Enhanced Descriptions
+                const serviceData = {
+                    editing: {
+                        title: 'Manuscript Editing',
+                        description: 'Our expert editors collaborate with you to refine your manuscript, ensuring it captivates readers with clarity, coherence, and emotional resonance. We enhance narrative structure, polish language, and eliminate errors, all while preserving your unique voice to deliver a professional, publication-ready book.',
+                        details: '<ul><li>Developmental editing to strengthen plot, characters, and pacing for maximum impact.</li><li>Copyediting to ensure grammar, style, and consistency align with industry standards.</li><li>Proofreading for a final, error-free polish before publication.</li><li>Adherence to style guides (e.g., Chicago, APA) tailored to your genre and audience.</li></ul>'
+                    },
+                    design: {
+                        title: 'Book Cover Design',
+                        description: 'We create visually striking book covers that capture your story’s essence and attract readers. Our designers work closely with you to craft genre-specific artwork, combining stunning visuals and professional typography to ensure your book stands out in print and digital formats.',
+                        details: '<ul><li>Custom illustrations and artwork reflecting your book’s themes.</li><li>Professional typography for impactful titles and cover text.</li><li>Genre-specific designs to appeal to your target readership.</li><li>Optimized formats for print, e-books, and promotional materials.</li></ul>'
+                    },
+                    publishing: {
+                        title: 'Publishing Services',
+                        description: 'We guide your book from manuscript to market with a seamless publishing process. Our comprehensive services cover print and digital formats, ensuring high-quality production and global accessibility, so your story reaches readers with ease and professionalism.',
+                        details: '<ul><li>ISBN registration and barcode generation for professional publishing.</li><li>E-book conversion for compatibility with Kindle, Apple Books, and more.</li><li>Print-on-demand setup for cost-effective, eco-friendly production.</li><li>Global distribution to online retailers, bookstores, and libraries.</li></ul>'
+                    },
+                    coaching: {
+                        title: 'Author Coaching',
+                        description: 'Our personalized coaching empowers you to write, refine, and publish with confidence. Through one-on-one mentoring, workshops, and strategic guidance, we help you develop your craft, navigate the publishing industry, and build a lasting author career.',
+                        details: '<ul><li>Interactive writing workshops to enhance your storytelling skills.</li><li>One-on-one mentoring tailored to your creative and professional goals.</li><li>Strategic advice on publishing options and market positioning.</li><li>Marketing tips to grow your author brand and engage readers.</li></ul>'
+                    },
+                    distribution: {
+                        title: 'Book Distribution',
+                        description: 'Reach readers worldwide with our extensive distribution network. We ensure your book is available on major online platforms, in bookstores, and through library systems, with streamlined logistics to maximize accessibility and sales opportunities for your story.',
+                        details: '<ul><li>Distribution to Amazon, Kindle, and other leading e-book platforms.</li><li>Partnerships with local and international bookstores for physical copies.</li><li>Access to global markets, including emerging African readerships.</li><li>Library distribution to expand your book’s reach and impact.</li></ul>'
+                    },
+                    audiobook: {
+                        title: 'Audiobook Production',
+                        description: 'Transform your book into an immersive audiobook with professional narration and high-quality production. We manage every step, from voice casting to distribution, creating an engaging audio experience that brings your story to life for listeners worldwide.',
+                        details: '<ul><li>Voice casting to find the perfect narrator for your story’s tone.</li><li>Studio-quality recording for clear, professional audio output.</li><li>Expert audio editing to deliver a polished, seamless final product.</li><li>Distribution on Audible, Apple Books, and other audiobook platforms.</li></ul>'
+                    }
+                };
+
+                // Update Service Details
+                function updateServiceDetails(serviceId) {
+                    const service = serviceData[serviceId];
+                    serviceDetails.innerHTML = `
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                        ${service.details}
+                        <a href="contact.htm" aria-label="Contact us about ${service.title}">Contact Us About This Service</a>
+                    `;
+                    serviceDetails.classList.remove('active');
+                    setTimeout(() => {
+                        serviceDetails.classList.add('active');
+                    }, 50);
+                }
+
+                // Service Tab Click Handler
+                serviceTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        console.log('Tab clicked:', tab.textContent);
+                        serviceTabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        const serviceId = tab.getAttribute('data-service-id');
+                        updateServiceDetails(serviceId);
+                    });
+                });
+
+                // Initialize with First Service
+                updateServiceDetails('editing');
+            } else {
+                console.error('Services section not found.');
+            }
+        });
+    </script>
+</body>
+</html>

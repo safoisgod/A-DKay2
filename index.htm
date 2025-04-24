@@ -31,6 +31,24 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <!-- Loader Overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="typewriter-container">
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper">
+                    <span class="quote-text" id="quote-text"></span>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Loading... 0%</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header class="header-space">
         <nav class="navigation-space">
@@ -119,7 +137,7 @@
                             <p>Author of "Killed by Illiteracy"</p>
                             <!-- Buy and Read More Buttons -->
                             <div class="links">
-                                <button class="box" onclick="window.location.href='#buy';">Buy</button>
+                                <button class="box" onclick="window.location.href='book-details.htm?id=killed-by-illiteracy';">Buy</button>
                                 <button class="box" onclick="window.location.href='book-details.htm?id=killed-by-illiteracy';">Read More</button>
                             </div>
                         </div>
@@ -412,7 +430,7 @@
             </div>
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
-                <a href="blog-post1.html" class="blog-card">
+                <a href="blog-details.htm?id=exciting-new-release-killed-by-illiteracy" class="blog-card">
                     <div class="blog-image">
                         <img src="assets/images/blog/killed_by_illiteracy_book_spotlight.webp" alt="Killed by Illiteracy Book Cover">
                     </div>
@@ -423,7 +441,7 @@
                     </div>
                 </a>
                 <!-- Blog Post 2 -->
-                <a href="blog-post2.html" class="blog-card">
+                <a href="blog-details.htm?id=join-our-monthly-book-club-ampem-daako-book-club" class="blog-card">
                     <div class="blog-image">
                         <img src="assets/images/blog/ampem_daako_book_club.webp" alt="Ampem-Daako Book Club">
                     </div>
@@ -434,7 +452,7 @@
                     </div>
                 </a>
                 <!-- Blog Post 3 -->
-                <a href="blog-post3.html" class="blog-card">
+                <a href="blog-details.htm?id=upcoming-event-memorial-service" class="blog-card">
                     <div class="blog-image">
                         <img src="assets/images/blog/memorial_poster.webp" alt="Memorial Service for Ampem-Daako Kay">
                     </div>
@@ -652,6 +670,16 @@
             </div>
         </div>
     </footer>
+
+        <!-- Back to Top Button --><!-- GSAP CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <!-- GSAP Fallback (Local Copy) -->
+        <script>
+            // If GSAP didn't load from CDN, load the local copy
+            if (typeof gsap === 'undefined') {
+                document.write('<script src="assets/js/gsap.min.js"><\/script>');
+            }
+        </script>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

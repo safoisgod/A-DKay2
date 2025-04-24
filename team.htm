@@ -6,7 +6,7 @@
     <meta name="description" content="Meet the team behind A-D Kay Publications, dedicated to amplifying African voices through diverse storytelling.">
     <title>Team - A-D Kay Publications</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
@@ -17,6 +17,24 @@
     <link rel="stylesheet" href="assets/css/about-us.css">
 </head>
 <body>
+
+    <!-- Loader Overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="typewriter-container">
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper">
+                    <span class="quote-text" id="quote-text"></span>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Loading... 0%</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header class="header-space">
         <nav class="navigation-space">
@@ -27,6 +45,7 @@
                 <ul class="menu-space">
                     <li><a href="index.htm">Home</a></li>
                     <li><a href="books.htm">Book Collection</a></li>
+                    <li><a href="services.htm">Services</a></li>
                     <li class="dropdown">
                         <a href="#about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                             About Us
@@ -245,6 +264,17 @@
     </footer>
 
     <script src="assets/js/custom.js"></script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP Fallback (Local Copy) -->
+    <script>
+        // If GSAP didn't load from CDN, load the local copy
+        if (typeof gsap === 'undefined') {
+            document.write('<script src="assets/js/gsap.min.js"><\/script>');
+        }
+    </script>
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

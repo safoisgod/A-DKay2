@@ -1,4 +1,134 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Array of quotes to display
+    const quotes = [
+        "Write\nFrom\nYour\nHeart",
+        "Stories\nWeave\nPast\nFuture",
+        "Books\nUnfold\nHidden\nJourneys",
+        "Words\nTrace\nAncestors'\nSteps"
+    ];
+
+    let currentQuoteIndex = 0;
+    let typingTimeout;
+
+    // Function to simulate typing effect
+    function typeQuote(quote, callback) {
+        const quoteText = document.getElementById('quote-text');
+        quoteText.textContent = '';
+        quoteText.classList.add('typing');
+
+        let charIndex = 0;
+        const typeChar = () => {
+            if (charIndex < quote.length) {
+                quoteText.textContent += quote.charAt(charIndex);
+                charIndex++;
+                typingTimeout = setTimeout(typeChar, 50);
+            } else {
+                quoteText.classList.remove('typing');
+                if (callback) callback();
+            }
+        };
+        typeChar();
+    }
+
+    // Function to cycle through quotes
+    function cycleQuotes() {
+        clearTimeout(typingTimeout);
+        const quote = quotes[currentQuoteIndex];
+        typeQuote(quote, () => {
+            setTimeout(() => {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                cycleQuotes();
+            }, 2000); // Pause before typing the next quote
+        });
+    }
+
+    // Start the typing animation
+    cycleQuotes();
+
+    // Function to track loading progress
+    function trackLoadingProgress() {
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const loader = document.getElementById('loader');
+        const mainContent = document.getElementById('main-content');
+
+        // Collect all assets to track (images, scripts, etc.)
+        const images = document.querySelectorAll('img');
+        const totalAssets = images.length || 1; // At least 1 to avoid division by zero
+        let loadedAssets = 0;
+
+        // Simulate other assets (e.g., scripts, API calls)
+        let simulatedAssets = 5; // Simulate additional assets like API calls
+        let loadedSimulated = 0;
+
+        // Function to update progress
+        function updateProgress() {
+            loadedSimulated = Math.min(loadedSimulated + 1, simulatedAssets);
+            const totalLoaded = loadedAssets + loadedSimulated;
+            const total = totalAssets + simulatedAssets;
+            const progress = Math.min((totalLoaded / total) * 100, 100);
+
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `Loading... ${Math.round(progress)}%`;
+
+            if (progress >= 100) {
+                clearTimeout(typingTimeout);
+                // Fade out loader and show main content
+                gsap.to(loader, {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        loader.style.display = 'none';
+                        mainContent.style.display = 'block';
+                        gsap.fromTo(mainContent, 
+                            { opacity: 0, y: 20 },
+                            { opacity: 1, y: 0, duration: 0.5 }
+                        );
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        }
+
+        // Track image loading
+        images.forEach(img => {
+            if (img.complete) {
+                loadedAssets++;
+                updateProgress();
+            } else {
+                img.onload = () => {
+                    loadedAssets++;
+                    updateProgress();
+                };
+                img.onerror = () => {
+                    loadedAssets++;
+                    updateProgress();
+                };
+            }
+        });
+
+        // Simulate additional loading (e.g., API calls, scripts)
+        const simulateLoading = setInterval(() => {
+            loadedSimulated++;
+            updateProgress();
+            if (loadedSimulated >= simulatedAssets) {
+                clearInterval(simulateLoading);
+            }
+        }, 500);
+
+        // Ensure loader completes after a maximum time (e.g., 10 seconds)
+        setTimeout(() => {
+            loadedAssets = totalAssets;
+            loadedSimulated = simulatedAssets;
+            updateProgress();
+        }, 10000);
+    }
+
+    // Start tracking loading progress
+    trackLoadingProgress();
+
+
+
     // Debug: Log when script starts
     console.log('Main script loaded');
 

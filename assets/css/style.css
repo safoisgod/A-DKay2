@@ -56,6 +56,523 @@ h6 {
     color: #D4C9BE; /* Beige */
 }
 
+/*==================================
+    LOADER
+===================================*/
+
+/* Loader Overlay */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #4267b2, #000000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Typewriter Container */
+.typewriter-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Uiverse.io Typewriter Styles */
+.typewriter {
+    --blue: #5cbbff;
+    --blue-dark: #162d72;
+    --key: #fff;
+    --paper: #eef0fd;
+    --text: #00000049;
+    --tool: #ffbb00;
+    --duration: 3s;
+    position: relative;
+    -webkit-animation: bounce05 var(--duration) linear infinite;
+    animation: bounce05 var(--duration) linear infinite;
+}
+
+.typewriter .slide {
+    width: 92px;
+    height: 20px;
+    border-radius: 3px;
+    margin-left: 14px;
+    transform: translateX(14px);
+    background: linear-gradient(var(--blue), var(--blue-dark));
+    -webkit-animation: slide05 var(--duration) ease infinite;
+    animation: slide05 var(--duration) ease infinite;
+}
+
+.typewriter .slide:before,
+.typewriter .slide:after,
+.typewriter .slide i:before {
+    content: "";
+    position: absolute;
+    background: var(--tool);
+}
+
+.typewriter .slide:before {
+    width: 2px;
+    height: 8px;
+    top: 6px;
+    left: 100%;
+}
+
+.typewriter .slide:after {
+    left: 94px;
+    top: 3px;
+    height: 14px;
+    width: 6px;
+    border-radius: 3px;
+}
+
+.typewriter .slide i {
+    display: block;
+    position: absolute;
+    right: 100%;
+    width: 6px;
+    height: 4px;
+    top: 4px;
+    background: var(--tool);
+}
+
+.typewriter .slide i:before {
+    right: 100%;
+    top: -2px;
+    width: 4px;
+    border-radius: 2px;
+    height: 14px;
+}
+
+.typewriter .paper {
+    position: absolute;
+    left: 24px;
+    top: -26px;
+    width: 40px;
+    height: 46px;
+    border-radius: 5px;
+    background: var(--paper);
+    transform: translateY(46px);
+    -webkit-animation: paper05 var(--duration) linear infinite;
+    animation: paper05 var(--duration) linear infinite;
+    overflow: hidden;
+}
+
+.typewriter .paper:before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 7px;
+    border-radius: 2px;
+    height: 4px;
+    transform: scaleY(0.8);
+    background: var(--text);
+    box-shadow: 0 12px 0 var(--text), 0 24px 0 var(--text), 0 36px 0 var(--text);
+}
+
+.typewriter .keyboard {
+    width: 120px;
+    height: 56px;
+    margin-top: -10px;
+    z-index: 1;
+    position: relative;
+}
+
+.typewriter .keyboard:before,
+.typewriter .keyboard:after {
+    content: "";
+    position: absolute;
+}
+
+.typewriter .keyboard:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    transform: perspective(10px) rotateX(2deg);
+    transform-origin: 50% 100%;
+}
+
+.typewriter .keyboard:after {
+    left: 2px;
+    top: 25px;
+    width: 11px;
+    height: 4px;
+    border-radius: 2px;
+    box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    -webkit-animation: keyboard05 var(--duration) linear infinite;
+    animation: keyboard05 var(--duration) linear infinite;
+}
+
+@keyframes bounce05 {
+    85%, 92%, 100% {
+        transform: translateY(0);
+    }
+    89% {
+        transform: translateY(-4px);
+    }
+    95% {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes slide05 {
+    5% {
+        transform: translateX(14px);
+    }
+    15%, 30% {
+        transform: translateX(6px);
+    }
+    40%, 55% {
+        transform: translateX(0);
+    }
+    65%, 70% {
+        transform: translateX(-4px);
+    }
+    80%, 89% {
+        transform: translateX(-12px);
+    }
+    100% {
+        transform: translateX(14px);
+    }
+}
+
+@keyframes paper05 {
+    5% {
+        transform: translateY(46px);
+    }
+    20%, 30% {
+        transform: translateY(34px);
+    }
+    40%, 55% {
+        transform: translateY(22px);
+    }
+    65%, 70% {
+        transform: translateY(10px);
+    }
+    80%, 85% {
+        transform: translateY(0);
+    }
+    92%, 100% {
+        transform: translateY(46px);
+    }
+}
+
+@keyframes keyboard05 {
+    5%, 12%, 21%, 30%, 39%, 48%, 57%, 66%, 75%, 84% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    9% {
+        box-shadow: 15px 2px 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    18% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 2px 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    27% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 12px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    36% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 12px 0 var(--key),
+            60px 12px 0 var(--key), 68px 12px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    45% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 2px 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    54% {
+        box-shadow: 15px 0 0 var(--key), 30px 2px 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    63% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 12px 0 var(--key);
+    }
+    72% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 2px 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+    81% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
+            60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
+            22    22px 10px 0 var(--key), 37px 12px 0 var(--key), 52px 10px 0 var(--key),
+            60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+}
+
+/* Quote Text on Paper */
+.quote-text {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    font-family: 'Special Elite', courier, monospace;
+    font-size: 6px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+/* Typing Animation */
+.typing {
+    border-right: 1px solid #333;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Progress Bar (Styled as Paper Scroll) */
+.progress-container {
+    position: absolute;
+    bottom: 30px;
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #eef0fd;
+    transition: width 0.3s ease;
+    position: relative;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 10px;
+    height: 16px;
+    background: #eef0fd;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    border-right: 1px solid #D2B48C;
+}
+
+.progress-text {
+    position: absolute;
+    bottom: 50px;
+    width: 200px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main Content (Hidden Initially) */
+.main-content {
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2.5rem;
+    color: #4267b2;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .typewriter-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .typewriter .slide {
+        width: 70px;
+        height: 15px;
+        margin-left: 10px;
+        transform: translateX(10px);
+    }
+
+    .typewriter .slide:after {
+        left: 72px;
+        top: 2px;
+        height: 11px;
+        width: 5px;
+    }
+
+    .typewriter .slide i {
+        width: 5px;
+        height: 3px;
+        top: 3px;
+    }
+
+    .typewriter .slide i:before {
+        width: 3px;
+        height: 11px;
+    }
+
+    .typewriter .paper {
+        left: 18px;
+        top: -20px;
+        width: 30px;
+        height: 35px;
+    }
+
+    .typewriter .paper:before {
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        height: 3px;
+        box-shadow: 0 9px 0 var(--text), 0 18px 0 var(--text), 0 27px 0 var(--text);
+    }
+
+    .typewriter .keyboard {
+        width: 90px;
+        height: 42px;
+        margin-top: -8px;
+    }
+
+    .typewriter .keyboard:after {
+        left: 1px;
+        top: 19px;
+        width: 8px;
+        height: 3px;
+        box-shadow: 11px 0 0 var(--key), 22px 0 0 var(--key), 33px 0 0 var(--key),
+            44px 0 0 var(--key), 55px 0 0 var(--key), 66px 0 0 var(--key),
+            16px 8px 0 var(--key), 27px 8px 0 var(--key), 38px 8px 0 var(--key),
+            44px 8px 0 var(--key), 50px 8px 0 var(--key), 61px 8px 0 var(--key);
+    }
+
+    .quote-text {
+        font-size: 5px;
+    }
+
+    .progress-container,
+    .progress-text {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .typewriter .slide {
+        width: 56px;
+        height: 12px;
+        margin-left: 8px;
+        transform: translateX(8px);
+    }
+
+    .typewriter .slide:after {
+        left: 58px;
+        top: 1px;
+        height: 9px;
+        width: 4px;
+    }
+
+    .typewriter .slide i {
+        width: 4px;
+        height: 2px;
+        top: 2px;
+    }
+
+    .typewriter .slide i:before {
+        width: 2px;
+        height: 9px;
+    }
+
+    .typewriter .paper {
+        left: 14px;
+        top: -16px;
+        width: 24px;
+        height: 28px;
+    }
+
+    .typewriter .paper:before {
+        left: 4px;
+        right: 4px;
+        top: 4px;
+        height: 2px;
+        box-shadow: 0 7px 0 var(--text), 0 14px 0 var(--text), 0 21px 0 var(--text);
+    }
+
+    .typewriter .keyboard {
+        width: 72px;
+        height: 34px;
+        margin-top: -6px;
+    }
+
+    .typewriter .keyboard:after {
+        left: 1px;
+        top: 15px;
+        width: 6px;
+        height: 2px;
+        box-shadow: 9px 0 0 var(--key), 18px 0 0 var(--key), 27px 0 0 var(--key),
+            36px 0 0 var(--key), 45px 0 0 var(--key), 54px 0 0 var(--key),
+            13px 6px 0 var(--key), 22px 6px 0 var(--key), 31px 6px 0 var(--key),
+            36px 6px 0 var(--key), 41px 6px 0 var(--key), 50px 6px 0 var(--key);
+    }
+
+    .quote-text {
+        font-size: 4px;
+    }
+
+    .progress-container,
+    .progress-text {
+        width: 120px;
+    }
+
+    .progress-text {
+        font-size: 0.8rem;
+    }
+}
+
+
 /* ================================
    HEADER STYLES
    ================================ */

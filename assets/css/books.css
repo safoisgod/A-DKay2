@@ -1,36 +1,6 @@
 /* Banner Section */
-#book-banner-section {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background: url('../images/background/book-section-background.webp') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 40px;
-}
 
-#book-banner-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-    z-index: 1;
-}
-
-.book-banner-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.book-banner-content h1 {
+.banner-content h1 {
     font-size: 2.5rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -38,7 +8,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.book-banner-content p {
+.banner-content p {
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
@@ -225,15 +195,15 @@
         height: 300px;
     }
 
-    #book-banner-section {
+    #banner-section {
         height: 250px;
     }
 
-    .book-banner-content h1 {
+    .banner-content h1 {
         font-size: 2rem;
     }
 
-    .book-banner-content p {
+    .banner-content p {
         font-size: 1rem;
     }
 }
@@ -268,15 +238,15 @@
         height: 280px;
     }
 
-    #book-banner-section {
+    #banner-section {
         height: 200px;
     }
 
-    .book-banner-content h1 {
+    .banner-content h1 {
         font-size: 1.5rem;
     }
 
-    .book-banner-content p {
+    .banner-content p {
         font-size: 0.9rem;
     }
 }
@@ -290,15 +260,15 @@
         height: 220px;
     }
 
-    #book-banner-section {
+    #banner-section {
         height: 180px;
     }
 
-    .book-banner-content h1 {
+    .banner-content h1 {
         font-size: 1.2rem;
     }
 
-    .book-banner-content p {
+    .banner-content p {
         font-size: 0.8rem;
     }
 }
@@ -311,7 +281,7 @@
     position: relative;
     width: 100%;
     height: 400px;
-    background-image: url('assets/images/background/book-section-background1.webp');
+    background-image: url('../images/background/book-section-background.webp');
     background-size: cover;
     background-position: center;
     display: flex;
