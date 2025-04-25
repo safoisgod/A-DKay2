@@ -535,6 +535,7 @@
 
     .book-details-image img {
         max-height: 300px;
+        width: 20%;
     }
 
     .book-details-content {

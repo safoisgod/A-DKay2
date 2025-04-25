@@ -21,6 +21,81 @@
     <!-- Embedded CSS for Services and Get in Touch Sections -->
     <style>
 
+
+.top-banner-section {
+    position: relative;
+    height: 600px;
+    color: #FFFFFF;
+}
+
+.top-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay for readability */
+}
+
+.top-banner-section .banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-banner-section .banner-content .breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.top-banner-section .banner-content .breadcrumb a,
+.top-banner-section .breadcrumb span {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.top-banner-section .banner-content .breadcrumb a:hover {
+    color: #4267b2;
+}
+
+.top-banner-section .banner-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .top-banner-section {
+        height: 500px;
+    }
+
+    .top-banner-section .banner-content {
+        padding: 0 20px;
+    }
+
+    .top-banner-section .banner-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-banner-section {
+        height: 400px;
+    }
+
+    .top-banner-section .banner-content h1 {
+        font-size: 2rem;
+    }
+}
+
         /* Call to Action Section */
         #cta {
             background: linear-gradient(135deg, #4267b2, #35508a);
@@ -168,7 +243,7 @@
             opacity: 1 !important;
         }
         .service-tab {
-            padding: 12px 24px;
+            padding: 12px 8px;
             background: white;
             border: 2px solid #4267b2;
             color: #4267b2;
@@ -361,6 +436,16 @@
         </nav>
     </header>
 
+    <!-- Top Banner Section -->
+    <section class="top-banner-section" style="background: url(assets/images/background/service-page-banner.webp) no-repeat center center/cover;">
+        <div class="banner-content">
+            <div class="breadcrumb">
+                <a href="index.htm">Home</a> <span>></span> <span>Services</span>
+            </div>
+            <h1>Our Services</h1>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services-page">
         <!-- Services Intro -->
@@ -435,6 +520,7 @@
                     <ul>
                         <li><a href="index.htm">Home</a></li>
                         <li><a href="books.htm">Book Collection</a></li>
+                        <li><a href="services.htm">Book Collection</a></li>
                         <li><a href="about-us.htm">About Us</a></li>
                         <li><a href="blogs.htm">Blog</a></li>
                         <li><a href="contact.htm?type=contact">Contact Us</a></li>

@@ -109,7 +109,7 @@ body {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 80%;
+    width: 100%;
     padding: 12px 12px 12px 40px;
     border: none;
     border-bottom: 2px solid #D4C9BE;
@@ -118,6 +118,13 @@ body {
     background-color: transparent;
     transition: all 0.3s ease;
     color: #4267b2;
+}
+
+.form-row .form-group #name, 
+.form-row .form-group #lastName, 
+.form-row .form-group #email, 
+.form-row .form-group #phone {
+    width: 80%;
 }
 
 .form-group input:focus,
@@ -367,6 +374,16 @@ button[type="submit"]:hover {
     .form-row {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .form-row .form-group #name, 
+    .form-row .form-group #lastName, 
+    .form-row .form-group #email, 
+    .form-row .form-group #phone {
+        width: 100%;
     }
 }
 

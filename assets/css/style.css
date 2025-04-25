@@ -2581,6 +2581,21 @@ header.fixed + .hero-section {
     }
 }
 
+/* Read More Link inside the Blog Card */
+#blog-section .read-more {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4267b2; /* Main color */
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#blog-section .read-more:hover {
+    color: #0356a1; /* Slightly darker blue for hover effect */
+}
 
 /*==================================
    PLATFORMS SECTION
