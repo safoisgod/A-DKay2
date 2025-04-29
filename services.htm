@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore innovative publishing services at A-D Kay Publications, empowering African authors with expert editing, design, publishing, coaching, distribution, and audiobook production.">
-    <meta name="keywords" content="publishing services, book editing, book design, author coaching, African literature, book distribution, audiobook production">
+    <meta name="description" content="Explore innovative publishing services at A-D Kay Publications, empowering African authors with expert editing, design, publishing, coaching, distribution, speech writing, marketing support, and ghostwriting.">
+    <meta name="keywords" content="publishing services, book editing, book design, author coaching, African literature, book distribution, speech writing, book marketing, ghostwriting">
     <meta name="author" content="A-D Kay Publications">
     <title>Our Services - A-D Kay Publications</title>
 
@@ -20,8 +20,6 @@
 
     <!-- Embedded CSS for Services and Get in Touch Sections -->
     <style>
-
-
 .top-banner-section {
     position: relative;
     height: 600px;
@@ -205,17 +203,20 @@
             min-width: 300px;
         }
         .services-intro-text h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a2a44;
+            color: #4267b2;
             margin-bottom: 15px;
         }
         .services-intro-text h2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             color: #333;
             margin-bottom: 20px;
         }
         .services-intro-text p {
+            font-family: 'Open Sans', sans-serif;
             font-size: 1.1rem;
             color: #666;
             line-height: 1.6;
@@ -237,71 +238,97 @@
             margin: 0 auto 30px;
             display: flex !important;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
             justify-content: center;
             visibility: visible !important;
             opacity: 1 !important;
         }
         .service-tab {
-            padding: 12px 8px;
-            background: white;
+            width: 180px;
+            padding: 12px 16px;
+            background: #ffffff;
             border: 2px solid #4267b2;
             color: #4267b2;
-            font-size: 1rem;
-            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: all 0.3s ease;
             display: inline-flex !important;
             align-items: center;
+            justify-content: center;
             visibility: visible !important;
             opacity: 1 !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         .service-tab i {
             margin-right: 8px;
         }
-        .service-tab:hover,
-        .service-tab.active {
-            background: #4267b2;
+        .service-tab:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #4267b2, #4267b2);
             color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .service-tab.active {
+            background: linear-gradient(135deg, #4267b2, #4267b2);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: scale(1.02);
         }
 
         /* Service Details */
         .service-details {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
             transition: opacity 0.5s ease;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            border-left: 4px solid #4267b2;
         }
         .service-details.active {
             opacity: 1;
         }
+        .service-details-content {
+            flex: 1;
+        }
         .service-details h3 {
-            font-size: 1.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
             font-weight: 700;
-            color: #1a2a44;
+            color: #4267b2;
             margin-bottom: 15px;
+            line-height: 1.3;
         }
         .service-details p {
+            font-family: 'Open Sans', sans-serif;
             font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         .service-details ul {
             list-style: none;
             padding: 0;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
         .service-details ul li {
-            font-size: 1.1rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
+            line-height: 1.6;
         }
         .service-details ul li::before {
             content: '\f058';
@@ -311,24 +338,75 @@
             position: absolute;
             left: 0;
             top: 2px;
+            font-size: 1.2rem;
         }
         .service-details a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background: #4267b2;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
         .service-details a:hover {
-            background: #35548a;
+            background: #4267b2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-details-image {
+            flex: 0 0 300px;
+            max-width: 300px;
+        }
+        .service-details-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-details-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .service-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .service-details-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .service-details-image img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-details h3 {
+                font-size: 1.8rem;
+            }
+            .service-details p {
+                font-size: 1rem;
+            }
+            .service-details ul li {
+                font-size: 0.95rem;
+            }
+            .service-details a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
 
         /* Get in Touch Section */
         #get-in-touch {
             padding: 60px 20px;
-            background: #1a2a44;
+            background: #4267b2;
             color: white;
             text-align: center;
         }
@@ -453,8 +531,8 @@
             <div class="services-intro-text">
                 <h1>Our Publishing Services</h1>
                 <h2>Empowering African Stories Globally</h2>
-                <p>At A-D Kay Publications, we are passionate about bringing African narratives to the world stage. Our innovative publishing services combine expertise, creativity, and technology to transform your manuscript into a globally celebrated book.</p>
-                <p>From meticulous editing to strategic distribution, we offer comprehensive support to ensure your story shines with authenticity, quality, and impact, reaching readers far and wide.</p>
+                <p>A-D Kay Publications is dedicated to amplifying African narratives on a global stage. Our comprehensive suite of professional services integrates expertise, creativity, and advanced technology to transform your manuscript into a globally recognized publication.</p>
+                <p>From meticulous editing to strategic marketing, we provide end-to-end support to ensure your work resonates with authenticity, quality, and impact, reaching diverse audiences worldwide.</p>
             </div>
             <div class="services-intro-image">
                 <img src="assets/images/blog/typewriter.webp" alt="Publishing Graphic">
@@ -468,20 +546,27 @@
             <button class="service-tab" data-service-id="publishing"><i class="fas fa-print"></i> Publishing Services</button>
             <button class="service-tab" data-service-id="coaching"><i class="fas fa-chalkboard-teacher"></i> Author Coaching</button>
             <button class="service-tab" data-service-id="distribution"><i class="fas fa-globe"></i> Book Distribution</button>
-            <button class="service-tab" data-service-id="audiobook"><i class="fas fa-headphones"></i> Audiobook Production</button>
+            <button class="service-tab" data-service-id="speechwriting"><i class="fas fa-microphone"></i> Speech Writing</button>
+            <button class="service-tab" data-service-id="marketing"><i class="fas fa-bullhorn"></i> Marketing & Promotion</button>
+            <button class="service-tab" data-service-id="ghostwriting"><i class="fas fa-pen-nib"></i> Ghostwriting</button>
         </div>
 
         <!-- Service Details -->
         <div class="service-details active" id="service-details">
-            <h3>Manuscript Editing</h3>
-            <p>Our expert editors collaborate with you to refine your manuscript, ensuring it captivates readers with clarity, coherence, and emotional resonance. We enhance narrative structure, polish language, and eliminate errors, all while preserving your unique voice to deliver a professional, publication-ready book.</p>
-            <ul>
-                <li>Developmental editing to strengthen plot, characters, and pacing for maximum impact.</li>
-                <li>Copyediting to ensure grammar, style, and consistency align with industry standards.</li>
-                <li>Proofreading for a final, error-free polish before publication.</li>
-                <li>Adherence to style guides (e.g., Chicago, APA) tailored to your genre and audience.</li>
-            </ul>
-            <a href="contact.htm" aria-label="Contact us about Manuscript Editing">Contact Us About This Service</a>
+            <div class="service-details-content">
+                <h3>Manuscript Editing</h3>
+                <p>Our team of seasoned editors partners with you to elevate your manuscript to its highest potential. We focus on refining narrative structure, enhancing clarity, and ensuring linguistic precision while preserving the authenticity of your voice, resulting in a polished, publication-ready manuscript.</p>
+                <ul>
+                    <li>Developmental editing to enhance plot, character development, and narrative flow.</li>
+                    <li>Copyediting to ensure grammatical accuracy, stylistic consistency, and adherence to industry standards.</li>
+                    <li>Proofreading for a meticulous final review, eliminating errors prior to publication.</li>
+                    <li>Compliance with recognized style guides (e.g., Chicago, APA) tailored to your genre and target audience.</li>
+                </ul>
+                <a href="contact.htm" aria-label="Contact us about Manuscript Editing">Contact Us About This Service</a>
+            </div>
+            <div class="service-details-image">
+                <img src="assets/images/services/manuscript_editing.webp" alt="Manuscript Editing">
+            </div>
         </div>
     </section>
 
@@ -565,7 +650,6 @@
         }
     </script>
 
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Owl Carousel -->
@@ -598,68 +682,118 @@
                     console.log('Tab:', tab.textContent, 'is visible:', tab.style.visibility);
                 });
 
-                // Service Data with Enhanced Descriptions
+                // Service Data with Enhanced Descriptions and Images
                 const serviceData = {
                     editing: {
                         title: 'Manuscript Editing',
-                        description: 'Our expert editors collaborate with you to refine your manuscript, ensuring it captivates readers with clarity, coherence, and emotional resonance. We enhance narrative structure, polish language, and eliminate errors, all while preserving your unique voice to deliver a professional, publication-ready book.',
-                        details: '<ul><li>Developmental editing to strengthen plot, characters, and pacing for maximum impact.</li><li>Copyediting to ensure grammar, style, and consistency align with industry standards.</li><li>Proofreading for a final, error-free polish before publication.</li><li>Adherence to style guides (e.g., Chicago, APA) tailored to your genre and audience.</li></ul>'
+                        description: 'Our team of seasoned editors partners with you to elevate your manuscript to its highest potential. We focus on refining narrative structure, enhancing clarity, and ensuring linguistic precision while preserving the authenticity of your voice, resulting in a polished, publication-ready manuscript.',
+                        details: '<ul><li>Developmental editing to enhance plot, character development, and narrative flow.</li><li>Copyediting to ensure grammatical accuracy, stylistic consistency, and adherence to industry standards.</li><li>Proofreading for a meticulous final review, eliminating errors prior to publication.</li><li>Compliance with recognized style guides (e.g., Chicago, APA) tailored to your genre and target audience.</li></ul>',
+                        image: 'assets/images/services/manuscript_editing.webp'
                     },
                     design: {
                         title: 'Book Cover Design',
-                        description: 'We create visually striking book covers that capture your story’s essence and attract readers. Our designers work closely with you to craft genre-specific artwork, combining stunning visuals and professional typography to ensure your book stands out in print and digital formats.',
-                        details: '<ul><li>Custom illustrations and artwork reflecting your book’s themes.</li><li>Professional typography for impactful titles and cover text.</li><li>Genre-specific designs to appeal to your target readership.</li><li>Optimized formats for print, e-books, and promotional materials.</li></ul>'
+                        description: 'Our skilled design team creates visually compelling book covers that encapsulate the essence of your narrative and captivate your target audience. We blend genre-specific artistry with professional typography to ensure your book stands out in both print and digital marketplaces.',
+                        details: '<ul><li>Custom illustrations and artwork reflecting the thematic elements of your book.</li><li>Professional typography to create impactful titles and cover text.</li><li>Genre-specific designs tailored to resonate with your intended readership.</li><li>Formats optimized for print, e-books, and promotional materials.</li></ul>',
+                        image: 'assets/images/services/book_design.webp'
                     },
                     publishing: {
                         title: 'Publishing Services',
-                        description: 'We guide your book from manuscript to market with a seamless publishing process. Our comprehensive services cover print and digital formats, ensuring high-quality production and global accessibility, so your story reaches readers with ease and professionalism.',
-                        details: '<ul><li>ISBN registration and barcode generation for professional publishing.</li><li>E-book conversion for compatibility with Kindle, Apple Books, and more.</li><li>Print-on-demand setup for cost-effective, eco-friendly production.</li><li>Global distribution to online retailers, bookstores, and libraries.</li></ul>'
+                        description: 'We manage the entire publishing process, guiding your manuscript from concept to market with precision and professionalism. Our comprehensive services ensure high-quality production and global accessibility, enabling your work to reach readers seamlessly across multiple platforms.',
+                        details: '<ul><li>ISBN registration and barcode generation to meet professional publishing standards.</li><li>E-book conversion for compatibility with platforms such as Kindle and Apple Books.</li><li>Print-on-demand solutions for cost-effective and sustainable production.</li><li>Global distribution to online retailers, bookstores, and library networks.</li></ul>',
+                        image: 'assets/images/services/publishing.webp'
                     },
                     coaching: {
                         title: 'Author Coaching',
-                        description: 'Our personalized coaching empowers you to write, refine, and publish with confidence. Through one-on-one mentoring, workshops, and strategic guidance, we help you develop your craft, navigate the publishing industry, and build a lasting author career.',
-                        details: '<ul><li>Interactive writing workshops to enhance your storytelling skills.</li><li>One-on-one mentoring tailored to your creative and professional goals.</li><li>Strategic advice on publishing options and market positioning.</li><li>Marketing tips to grow your author brand and engage readers.</li></ul>'
+                        description: 'Our tailored coaching programs empower authors to refine their craft and navigate the publishing industry with confidence. Through personalized mentoring and strategic guidance, we support you in developing your skills and achieving a sustainable career in writing.',
+                        details: '<ul><li>Interactive workshops to enhance storytelling techniques and writing proficiency.</li><li>One-on-one mentoring customized to your creative and professional aspirations.</li><li>Strategic guidance on publishing options and market positioning.</li><li>Marketing strategies to build your author brand and engage with readers.</li></ul>',
+                        image: 'assets/images/services/author_coaching.webp'
                     },
                     distribution: {
                         title: 'Book Distribution',
-                        description: 'Reach readers worldwide with our extensive distribution network. We ensure your book is available on major online platforms, in bookstores, and through library systems, with streamlined logistics to maximize accessibility and sales opportunities for your story.',
-                        details: '<ul><li>Distribution to Amazon, Kindle, and other leading e-book platforms.</li><li>Partnerships with local and international bookstores for physical copies.</li><li>Access to global markets, including emerging African readerships.</li><li>Library distribution to expand your book’s reach and impact.</li></ul>'
+                        description: 'Our robust distribution network ensures your book reaches a global audience with efficiency and precision. We facilitate availability across major online platforms, bookstores, and library systems, optimizing accessibility and maximizing your work’s impact in diverse markets.',
+                        details: '<ul><li>Distribution to leading e-book platforms, including Amazon and Kindle.</li><li>Partnerships with local and international bookstores for physical distribution.</li><li>Access to global markets, with a focus on expanding African readership.</li><li>Library distribution to enhance visibility and community engagement.</li></ul>',
+                        image: 'assets/images/services/distribution.webp'
                     },
-                    audiobook: {
-                        title: 'Audiobook Production',
-                        description: 'Transform your book into an immersive audiobook with professional narration and high-quality production. We manage every step, from voice casting to distribution, creating an engaging audio experience that brings your story to life for listeners worldwide.',
-                        details: '<ul><li>Voice casting to find the perfect narrator for your story’s tone.</li><li>Studio-quality recording for clear, professional audio output.</li><li>Expert audio editing to deliver a polished, seamless final product.</li><li>Distribution on Audible, Apple Books, and other audiobook platforms.</li></ul>'
+                    speechwriting: {
+                        title: 'Speech Writing',
+                        description: 'Our expert writers craft compelling and impactful speeches tailored to your voice and audience. We ensure each speech is meticulously structured, engaging, and aligned with your objectives, enabling you to deliver your message with confidence and clarity.',
+                        details: '<ul><li>Customized speech writing for events, presentations, and public speaking engagements.</li><li>Focus on tone, pacing, and audience engagement to maximize impact.</li><li>Revisions and coaching to refine delivery and enhance presentation skills.</li><li>Support for diverse contexts, including corporate, cultural, and literary events.</li></ul>',
+                        image: 'assets/images/services/speech.webp'
+                    },
+                    marketing: {
+                        title: 'Marketing & Promotion',
+                        description: 'Our marketing and promotion services are designed to elevate your book’s visibility and connect you with your target audience. We develop strategic campaigns to enhance your author brand, drive sales, and foster engagement across digital and traditional channels.',
+                        details: '<ul><li>Customized marketing plans tailored to your book and audience.</li><li>Social media campaigns to build an online presence and engage readers.</li><li>Public relations support, including press releases and media outreach.</li><li>Author website development and email marketing to sustain reader connections.</li></ul>',
+                        image: 'assets/images/services/marketing.webp'
+                    },
+                    ghostwriting: {
+                        title: 'Ghostwriting',
+                        description: 'Our professional ghostwriting services bring your ideas to life with precision and authenticity. We collaborate closely with you to craft a manuscript that reflects your vision and voice, delivering a polished work ready for publication while maintaining complete confidentiality.',
+                        details: '<ul><li>Comprehensive collaboration to capture your story, ideas, and tone.</li><li>Expert writing across genres, including memoirs, fiction, and non-fiction.</li><li>Full confidentiality to ensure your project remains private.</li><li>Seamless integration with our editing and publishing services for a complete solution.</li></ul>',
+                        image: 'assets/images/services/ghostwriting.webp'
                     }
                 };
 
-                // Update Service Details
-                function updateServiceDetails(serviceId) {
+                // Update Service Details and Scroll to Section
+                function updateServiceDetails(serviceId, scroll = false) {
                     const service = serviceData[serviceId];
-                    serviceDetails.innerHTML = `
-                        <h3>${service.title}</h3>
-                        <p>${service.description}</p>
-                        ${service.details}
-                        <a href="contact.htm" aria-label="Contact us about ${service.title}">Contact Us About This Service</a>
-                    `;
-                    serviceDetails.classList.remove('active');
-                    setTimeout(() => {
-                        serviceDetails.classList.add('active');
-                    }, 50);
+                    if (service) {
+                        serviceDetails.innerHTML = `
+                            <div class="service-details-content">
+                                <h3>${service.title}</h3>
+                                <p>${service.description}</p>
+                                ${service.details}
+                                <a href="contact.htm" aria-label="Contact us about ${service.title}">Contact Us About This Service</a>
+                            </div>
+                            <div class="service-details-image">
+                                <img src="${service.image}" alt="${service.title}">
+                            </div>
+                        `;
+                        serviceDetails.classList.remove('active');
+                        setTimeout(() => {
+                            serviceDetails.classList.add('active');
+                            // Smooth scroll to the service details if triggered by hash
+                            if (scroll) {
+                                const headerOffset = document.querySelector('header').offsetHeight;
+                                const elementPosition = serviceDetails.getBoundingClientRect().top + window.pageYOffset;
+                                window.scrollTo({
+                                    top: elementPosition - headerOffset - 20, // Adjust for header and padding
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 50);
+
+                        // Update the active tab
+                        serviceTabs.forEach(t => t.classList.remove('active'));
+                        const activeTab = document.querySelector(`.service-tab[data-service-id="${serviceId}"]`);
+                        if (activeTab) {
+                            activeTab.classList.add('active');
+                        }
+                    } else {
+                        console.error(`Service ID "${serviceId}" not found in serviceData.`);
+                    }
                 }
 
                 // Service Tab Click Handler
                 serviceTabs.forEach(tab => {
                     tab.addEventListener('click', () => {
                         console.log('Tab clicked:', tab.textContent);
-                        serviceTabs.forEach(t => t.classList.remove('active'));
-                        tab.classList.add('active');
                         const serviceId = tab.getAttribute('data-service-id');
                         updateServiceDetails(serviceId);
+                        // Update the URL hash without scrolling
+                        history.pushState(null, null, `#${serviceId}`);
                     });
                 });
 
-                // Initialize with First Service
-                updateServiceDetails('editing');
+                // Check URL hash on page load and activate the corresponding tab
+                const hash = window.location.hash.replace('#', '');
+                const validServiceIds = Object.keys(serviceData);
+                if (hash && validServiceIds.includes(hash)) {
+                    updateServiceDetails(hash, true); // Pass true to enable scrolling
+                } else {
+                    // Default to the first service if no valid hash
+                    updateServiceDetails('editing');
+                }
             } else {
                 console.error('Services section not found.');
             }
